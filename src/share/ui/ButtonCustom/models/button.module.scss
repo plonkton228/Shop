@@ -1,0 +1,37 @@
+.buttonC{
+  font: var(--font-l);
+  padding: 30px;
+}
+
+.reset{
+  position: relative;
+  background: none repeat scroll 0 0 transparent;
+  border: medium none;
+  border-spacing: 0;
+  color: #000000;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.42rem;
+  list-style: none outside none;
+  margin: 0;
+  text-align: left;
+  text-decoration: none;
+  text-indent: 0;
+}
+
+.reset:after{
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid #000000;
+  border-left: 2px solid #000000;
+
+  transform: rotate(-45deg);
+
+  right: 10px;
+  bottom: 40px;
+}
+
+
+

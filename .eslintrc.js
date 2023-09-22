@@ -31,6 +31,10 @@ ignorePatterns: ['**/config', '**/dist', '**/node_modules'],
         "@typescript-eslint/naming-convention": "off",
         "indent": [2, 4],
         "@typescript-eslint/indent": [2, 4],
+        "n/no-extraneous-import" : "off",
+        "@typescript-eslint/no-floating-promises" : "off"
+
+
      },
     "overrides": [{
         "files" :  ["**/src/**/*.test.{ts,tsx}"],

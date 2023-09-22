@@ -17,7 +17,7 @@ export const NavBar: React.FC = () => {
     const { t } = useTranslation('main')
     return (<>
         <div data-testid = 'Navbar' className = {cls.container}>
-            <div className = {cls.logo_container}><img src={logo}/> <h1>Solo <span>Pharma</span></h1></div>
+            <div className = {cls.logo_container}><img src={logo}/> <h1>{t('Solo')}<span>{t('Pharma')}</span></h1></div>
             <nav className = {cls.navigate_container}>
                 <LinkCustom to= '/' state={StateLink.NAVBAR}>{t('Domů')}</LinkCustom>
                 <ButtonCustom data-testid = 'ButtonNavbar' onClick={() => { setState((prevState) => !prevState) } } state={ButtonCustomState.RESET}>{t('Zboží')}</ButtonCustom>

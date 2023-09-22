@@ -1,8 +1,8 @@
-import {Intro} from "widgets/Intro/ui/Intro";
+import { Intro } from 'widgets/Intro/ui/Intro'
 
 const HomePage: React.FC = () => {
     return (<>
-      <Intro/>
+        <Intro/>
     </>)
 }
 export default HomePage

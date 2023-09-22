@@ -1,0 +1,46 @@
+.Modal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+
+  pointer-events: none;
+  opacity: 0;
+
+}
+
+.Back_container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgb(0 0 0  / 60%);
+
+
+}
+
+
+.Content_container {
+  border-radius: 4px;
+  padding: 10px;
+  background-color: #FFFFFF;
+}
+
+.open {
+  pointer-events: auto;
+  opacity: 1;
+
+  transition: all 0.3s linear;
+}
+
+.isClosing {
+
+  opacity: 0;
+  transition: all 0.3s linear;
+
+}
+
+

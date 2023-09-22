@@ -3,7 +3,8 @@ import { useClassName } from 'share/libs/useClassName/useClassName'
 import cls from '../models/button.module.scss'
 
 export enum ButtonCustomState {
-    RESET = 'reset'
+    RESET = 'reset',
+    NAVBARBUTTON = 'NavBarButton'
 }
 
 interface ButtonCustomProps extends ButtonHTMLAttributes<HTMLButtonElement> {

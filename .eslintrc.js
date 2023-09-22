@@ -32,7 +32,8 @@ ignorePatterns: ['**/config', '**/dist', '**/node_modules'],
         "indent": [2, 4],
         "@typescript-eslint/indent": [2, 4],
         "n/no-extraneous-import" : "off",
-        "@typescript-eslint/no-floating-promises" : "off"
+        "@typescript-eslint/no-floating-promises" : "off",
+        "no-useless-computed-key": "off"
 
 
      },

@@ -11,10 +11,15 @@ import { UnderNavBar } from 'features/UndeNavBar'
 import { ButtonCustom } from 'share/ui/ButtonCustom'
 import { ButtonCustomState } from 'share/ui/ButtonCustom/ui/ButtonCustom'
 import { useTranslation } from 'react-i18next'
+import { Modal } from 'widgets/Modal'
+import { Portal } from 'share/ui/Portal'
+import { useNavBar } from 'share/libs/useNavBar/useNavBar'
 
 export const NavBar: React.FC = () => {
     const [state, setState] = useState<boolean>(false)
     const { t } = useTranslation('main')
+    const { isOpen, OpenMode, CloseMode } = useNavBar()
+
     return (<>
         <div data-testid = 'Navbar' className = {cls.container}>
             <div className = {cls.logo_container}><img src={logo}/> <h1>{t('Solo')}<span>{t('Pharma')}</span></h1></div>
@@ -26,12 +31,13 @@ export const NavBar: React.FC = () => {
                 <LinkCustom to= '/aboutus' state={StateLink.NAVBAR}>{t('O společnosti')}</LinkCustom>
             </nav>
             <div className={cls.NavigatePanel}>
-                <img src={profile}/>
+                <ButtonCustom onClick={OpenMode} state={ButtonCustomState.NAVBARBUTTON}> <img src={profile}/> </ButtonCustom>
                 <img src={search}/>
                 <LanguageSwitcher/>
                 <img src={shop}/>
             </div>
         </div>
         <UnderNavBar state={state}/>
+        <Portal> <Modal isOpen={isOpen} close={CloseMode} /> </Portal>
     </>)
 }

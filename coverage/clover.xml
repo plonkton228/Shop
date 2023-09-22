@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1695392337174" clover="3.2.0">
+  <project timestamp="1695392337174" name="All files">
+    <metrics statements="41" coveredstatements="38" conditionals="2" coveredconditionals="1" methods="21" coveredmethods="17" elements="64" coveredelements="56" complexity="0" loc="41" ncloc="41" packages="16" files="16" classes="16"/>
+    <package name="config.SetUpJest">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="mockJest.ts" path="E:\Web\Solopharma\config\SetUpJest\mockJest.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.features.LanguageSwitcher">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="E:\Web\Solopharma\src\features\LanguageSwitcher\index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.features.LanguageSwitcher.ui">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+      <file name="LanguageSwitcher.tsx" path="E:\Web\Solopharma\src\features\LanguageSwitcher\ui\LanguageSwitcher.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.features.UndeNavBar">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="E:\Web\Solopharma\src\features\UndeNavBar\index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.features.UndeNavBar.ui">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="UnderNavBar.tsx" path="E:\Web\Solopharma\src\features\UndeNavBar\ui\UnderNavBar.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.share.libs.RouterProvider">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="RouterProvider.tsx" path="E:\Web\Solopharma\src\share\libs\RouterProvider\RouterProvider.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.share.libs.i18next">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="i18n.ts" path="E:\Web\Solopharma\src\share\libs\i18next\i18n.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.share.libs.useClassName">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="useClassName.tsx" path="E:\Web\Solopharma\src\share\libs\useClassName\useClassName.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="8" count="43" type="stmt"/>
+        <line num="10" count="8" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.share.libs.useSwitcherLanguage">
+      <metrics statements="15" coveredstatements="12" conditionals="2" coveredconditionals="1" methods="7" coveredmethods="4"/>
+      <file name="useSwitcherLanguage.ts" path="E:\Web\Solopharma\src\share\libs\useSwitcherLanguage\useSwitcherLanguage.ts">
+        <metrics statements="15" coveredstatements="12" conditionals="2" coveredconditionals="1" methods="7" coveredmethods="4"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="10" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="32" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.share.ui.ButtonCustom">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="E:\Web\Solopharma\src\share\ui\ButtonCustom\index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.share.ui.ButtonCustom.ui">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="ButtonCustom.tsx" path="E:\Web\Solopharma\src\share\ui\ButtonCustom\ui\ButtonCustom.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.share.ui.LanguageIcon.ui">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="LanguageIcon.tsx" path="E:\Web\Solopharma\src\share\ui\LanguageIcon\ui\LanguageIcon.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.share.ui.LinkCustom">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="E:\Web\Solopharma\src\share\ui\LinkCustom\index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.share.ui.LinkCustom.ui">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="LinkCustom.tsx" path="E:\Web\Solopharma\src\share\ui\LinkCustom\ui\LinkCustom.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="30" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.widgets.NavBar">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="E:\Web\Solopharma\src\widgets\NavBar\index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.widgets.NavBar.ui">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="NavBar.tsx" path="E:\Web\Solopharma\src\widgets\NavBar\ui\NavBar.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

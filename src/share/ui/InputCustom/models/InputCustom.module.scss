@@ -1,0 +1,21 @@
+.ContainerInput {
+  display: flex;
+  flex-direction: column;
+}
+
+.PlaceContainer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.InputCustom {
+  position: relative;
+
+
+}
+
+.modalInput {
+  padding: 10px 150px 10px 20px;
+  border: 1px solid gray;
+}
+

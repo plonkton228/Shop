@@ -6,11 +6,13 @@ interface ModalProps {
     isOpen: boolean
     children?: React.ReactNode
     close: () => void
+    lazy?: boolean
 
 }
 const ANIMATION_DELAY = 300
-export const Modal: React.FC<ModalProps> = ({ isOpen, children, close }: ModalProps) => {
+export const Modal: React.FC<ModalProps> = ({ isOpen, children, close, lazy }: ModalProps) => {
     const [isClosing, setIsClosing] = useState<boolean>()
+    const [hide, setHide] = useState<boolean>(true)
     const refTime = useRef<ReturnType<typeof setTimeout>>()
     const Closing = useCallback(() => {
 
@@ -28,11 +30,20 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, children, close }: ModalPr
     useEffect(() => {
         clearTimeout(refTime.current)
     }, [isOpen])
+    useEffect(() => {
+        if (isOpen && lazy) {
+            setHide(false)
+        }
+    }, [isOpen])
+
+    if (lazy && hide) {
+        return null
+    }
     return (<>
         <div className={useClassName({ cls: cls.Modal, mode, classes: [] })}>
             <div onClick={ Closing } className={cls.Back_container}>
                 <div onClick={(e) => { e.stopPropagation() } } className={cls.Content_container}>
-
+                    {children}
                 </div>
             </div>
         </div>

@@ -4,15 +4,21 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 import en from '../../../../public/locales/en/translation.json'
 import cz from '../../../../public/locales/cz/translation.json'
 import gr from '../../../../public/locales/gr/translation.json'
+import EnModal from '../../../../public/locales/en/modal.json'
+import CzModal from '../../../../public/locales/cz/modal.json'
+import GrModal from '../../../../public/locales/gr/modal.json'
 const resources = {
     en: {
-        main: en
+        main: en,
+        modal: EnModal
     },
     cz: {
-        main: cz
+        main: cz,
+        modal: CzModal
     },
     gr: {
-        main: gr
+        main: gr,
+        modal: GrModal
     }
 }
 i18n

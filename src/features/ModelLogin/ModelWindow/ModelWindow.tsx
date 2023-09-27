@@ -1,6 +1,6 @@
 import { Portal } from 'share/ui/Portal'
 import { Modal } from 'widgets/Modal'
-import {LoginForm} from "features/ModelLogin/LoginForm/LoginForm";
+import { LoginForm } from 'features/ModelLogin/LoginForm/LoginForm'
 
 interface ModalWindowProps {
     isOpen: boolean
@@ -10,7 +10,7 @@ export const ModelWindow: React.FC<ModalWindowProps> = ({ isOpen, close }: Modal
     return (<>
         <Portal element={document.body}>
             <Modal lazy={true} isOpen={isOpen} close={close}>
-                <LoginForm/>
+                <LoginForm close={close}/>
             </Modal>
         </Portal>
     </>)

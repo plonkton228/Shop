@@ -6,6 +6,7 @@
 .PlaceContainer{
   display: flex;
   justify-content: space-between;
+  padding-bottom: 4px;
 }
 
 .InputCustom {
@@ -15,7 +16,15 @@
 }
 
 .modalInput {
-  padding: 10px 150px 10px 20px;
-  border: 1px solid gray;
+ input {
+   padding: 10px 100px 10px 20px;
+   border: 1px solid gray;
+ }
+
+  span {
+    color: green;
+  }
 }
+
+
 

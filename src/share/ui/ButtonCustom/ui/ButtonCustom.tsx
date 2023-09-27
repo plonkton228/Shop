@@ -15,7 +15,7 @@ interface ButtonCustomProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 export const ButtonCustom: React.FC<ButtonCustomProps> = ({ children, classes, state, ...otherProps }: ButtonCustomProps) => {
     return (<>
-        <button className={useClassName({ cls: cls.buttonC, mode: {}, classes: [cls[state]] })} {...otherProps}>
+        <button className={useClassName({ cls: cls.buttonC, mode: {}, classes: [cls[state], classes] })} {...otherProps}>
             {children}
         </button>
     </>)

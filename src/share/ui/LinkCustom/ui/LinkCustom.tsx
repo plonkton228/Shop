@@ -4,7 +4,8 @@ import cls from '../models/LinkCustom.module.scss'
 export enum StateLink {
     NAVBAR = 'NavBar',
     UNDERNAVBAR = 'UnderNavBar',
-    LINKINTRO = 'LinkIntro'
+    LINKINTRO = 'LinkIntro',
+    LINKRESET = 'reset'
 }
 interface LinkCustomProps {
     classes?: string

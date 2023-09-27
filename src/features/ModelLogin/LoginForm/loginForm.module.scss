@@ -1,0 +1,71 @@
+.LoginContainer {
+  padding: 10px;
+}
+
+.LoginC hr {
+  border: 2px solid black
+}
+
+.OrderContainer {
+ position: relative;
+}
+
+.close {
+  position: absolute;
+  background-color: transparent;
+  top: 50%;
+  right: 40px;
+}
+
+
+.close:after {
+  content: "";
+  position: absolute;
+  width: 34px;
+  height: 4px;
+  background-color: #111111;
+  transform: rotate(40deg);
+}
+
+.close:before{
+  content: "";
+  position: absolute;
+  width: 34px;
+  height: 4px;
+  background-color: #111111;
+  transform: rotate(-40deg);
+}
+
+.InputContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 110px;
+  p {
+    align-self: center;
+  }
+  a {
+    color: green;
+  }
+
+
+}
+
+.BottanLogin {
+  align-self: center;
+  margin-top: 20px;
+}
+
+.InputLogin {
+  margin-top: 15px;
+}
+
+.checkboxContainer {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  p {
+    margin: 0;
+    align-self: end;
+  }
+
+}

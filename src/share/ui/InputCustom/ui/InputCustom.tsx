@@ -15,8 +15,8 @@ interface InputCustomProps {
     state: InputState
 }
 export const InputCustom: React.FC<InputCustomProps> = ({ onChange, value, classe, children, firstplace, secondplace, state, type }: InputCustomProps) => {
-    return(<div className={useClassName({cls: cls.ContainerInput, mode: {}, classes: []})}>
-        <div className={cls.PlaceContainer}> {firstplace} {secondplace}</div>
-        <input type={type} className={useClassName({cls: cls.InputCustom, mode: {}, classes: [cls[state]]})} value={value} onChange={(e) => { onChange(e.target.value) } } >{children}</input>
+    return (<div className={useClassName({ cls: cls.ContainerInput, mode: {}, classes: [cls[state], classe] })}>
+        <div className={cls.PlaceContainer}> {firstplace} <span>{secondplace}</span></div>
+        <input type={type} className={ cls.InputCustom } value={value} onChange={(e) => { onChange(e.target.value) } } >{children}</input>
     </div>)
 }

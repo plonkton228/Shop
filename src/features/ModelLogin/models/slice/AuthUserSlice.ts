@@ -1,10 +1,8 @@
-import {AuthUserShcnema} from "features/ModelLogin/models/types";
-import {createSlice} from "@reduxjs/toolkit";
-import {authUser} from "features/ModelLogin/models/reducers/authUser";
+import { type AuthUserShcnema } from 'features/ModelLogin/models/types'
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
+import { authUser } from 'features/ModelLogin/models/reducers/authUser'
 
 const initialState: AuthUserShcnema = {
-    email: '',
-    password: '',
     isLoading: false,
     error: ''
 }
@@ -12,9 +10,19 @@ const initialState: AuthUserShcnema = {
 const AuthUserSlice = createSlice({
     name: 'AuthUser',
     initialState,
+    reducers: {
+    },
     extraReducers: (builder) => {
-      builder.addCase(authUser.pending, (state, action) => {
-          state.isLoading = true
-      })
+        builder.addCase(authUser.pending, (state) => {
+            state.isLoading = true
+        })
+        builder.addCase(authUser.fulfilled, (state) => {
+            state.isLoading = false
+        })
+        builder.addCase(authUser.rejected, (state, action) => {
+            state.isLoading = false
+            state.error = action.payload as string
+        })
     }
 })
+

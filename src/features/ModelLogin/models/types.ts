@@ -1,11 +1,9 @@
-export interface User {
+export interface UserInfo {
     email: string
     password: string
 }
 
 export interface AuthUserShcnema {
-    email: string
-    password: string
     isLoading: boolean
     error?: string
 }

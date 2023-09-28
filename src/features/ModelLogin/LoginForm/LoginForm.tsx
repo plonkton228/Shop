@@ -1,24 +1,24 @@
-import {useTranslation} from 'react-i18next'
-import {InputCustom, InputState} from 'share/ui/InputCustom/ui/InputCustom'
-import {ButtonCustom} from 'share/ui/ButtonCustom'
-import {ButtonCustomState} from 'share/ui/ButtonCustom/ui/ButtonCustom'
+import { useTranslation } from 'react-i18next'
+import { InputCustom, InputState } from 'share/ui/InputCustom/ui/InputCustom'
+import { ButtonCustom } from 'share/ui/ButtonCustom'
+import { ButtonCustomState } from 'share/ui/ButtonCustom/ui/ButtonCustom'
 import cls from './loginForm.module.scss'
-import {useState} from "react";
-import {User} from "features/ModelLogin/models/types";
-import {LinkCustom} from "share/ui/LinkCustom";
-import {StateLink} from "share/ui/LinkCustom/ui/LinkCustom";
+import { useState } from 'react'
+import { type User } from 'features/ModelLogin/models/types'
+import { LinkCustom } from 'share/ui/LinkCustom'
+import { StateLink } from 'share/ui/LinkCustom/ui/LinkCustom'
 
 interface LoginFormProps {
     close: () => void
 }
 export const LoginForm: React.FC<LoginFormProps> = ({ close }: LoginFormProps) => {
-    const [user, setUser] = useState<User>({email: '', password: ''})
+    const [user, setUser] = useState<User>({ email: '', password: '' })
     const { t } = useTranslation('modal')
     const ChangeHandlerPassword = (e: string) => {
-        setUser({...user, password: e })
+        setUser({ ...user, password: e })
     }
     const ChangeHandlerEmail = (e: string) => {
-        setUser({...user, email: e })
+        setUser({ ...user, email: e })
     }
     return (
         <div className={cls.LoginC}>

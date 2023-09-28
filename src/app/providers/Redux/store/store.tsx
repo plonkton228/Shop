@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
-import counterReducer from '../models/slices/counterSlice'
+import { reducerEmail } from 'entities/EmailUser'
+import { reducerPassword } from 'entities/PasswordUser'
 
 const Reducers = {
-    counter: counterReducer
+    email: reducerEmail,
+    password: reducerPassword
 }
 export const SetUpStore = () => {
     return configureStore({

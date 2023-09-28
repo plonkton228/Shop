@@ -9,9 +9,10 @@ const userSlice = createSlice({
     initialState,
     reducers: {
         AutoUser (state, action: PayloadAction<User>) {
-           state.authData = action.payload
+            state.authData = action.payload
         }
     }
 })
 
 export const { AutoUser } = userSlice.actions
+export const userReducer = userSlice.reducer

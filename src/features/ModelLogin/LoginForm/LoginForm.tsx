@@ -16,6 +16,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ close }: LoginFormProps) =
     const dispath = useDispatch()
     const email = useSelector(getEmail)
     const password = useSelector(getPassword)
+    console.log(password)
 
     const { t } = useTranslation('modal')
     const ChangeHandlerPassword = (e: string) => {

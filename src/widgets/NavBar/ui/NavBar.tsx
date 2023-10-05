@@ -12,7 +12,7 @@ import { ButtonCustom } from 'share/ui/ButtonCustom'
 import { ButtonCustomState } from 'share/ui/ButtonCustom/ui/ButtonCustom'
 import { useTranslation } from 'react-i18next'
 import { useNavBar } from 'share/libs/useNavBar/useNavBar'
-import { ModelWindow } from 'features/ModelLogin/ModelWindow/ModelWindow'
+import { ModelWindow } from 'features/ModelLogin'
 
 export const NavBar: React.FC = () => {
     const [state, setState] = useState<boolean>(false)
@@ -37,6 +37,8 @@ export const NavBar: React.FC = () => {
             </div>
         </div>
         <UnderNavBar state={state}/>
-        <ModelWindow isOpen={isOpen} close={CloseMode}/>
+        {
+            isOpen && <ModelWindow isOpen={isOpen} close={CloseMode}/>
+        }
     </>)
 }

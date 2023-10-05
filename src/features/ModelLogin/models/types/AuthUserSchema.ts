@@ -3,7 +3,7 @@ export interface UserInfo {
     password: string
 }
 
-export interface AuthUserShcnema {
+export interface AuthUserSchema {
     isLoading: boolean
     error?: string
 }

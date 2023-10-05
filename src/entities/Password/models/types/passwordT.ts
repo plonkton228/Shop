@@ -1,4 +1,4 @@
-export interface PasswordScheme {
+export interface PasswordSchema {
     password: string
     error?: string
 }

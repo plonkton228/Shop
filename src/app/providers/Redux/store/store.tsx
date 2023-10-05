@@ -1,15 +1,24 @@
-import { configureStore } from '@reduxjs/toolkit'
-import { reducerEmail } from 'entities/EmailUser'
-import { reducerPassword } from 'entities/PasswordUser'
-import { userReducer } from 'entities/User'
+import { Action, configureStore, type ReducersMapObject } from '@reduxjs/toolkit'
 
-const Reducers = {
-    email: reducerEmail,
-    password: reducerPassword,
-    user: userReducer
-}
-export const SetUpStore = () => {
-    return configureStore({
-        reducer: Reducers
+import { userReducer } from 'entities/User'
+import { type GlobalScheme } from 'app/providers/Redux/models/types/ReduxType'
+import { createReducerManager } from 'app/providers/Redux/store/reducerManager'
+
+export function ReduxSetUp (initialState?: GlobalScheme, asyncReducer?: ReducersMapObject<GlobalScheme>) {
+    const Reducers: ReducersMapObject<GlobalScheme> = {
+        ...asyncReducer,
+        user: userReducer
+    }
+    const reducerManager = createReducerManager(Reducers)
+    const store = configureStore<GlobalScheme>({
+        reducer: reducerManager.reduce,
+        devTools: __IS_DEV__,
+        preloadedState: initialState
     })
+    // @ts-expect-error
+    store.reducerManager = reducerManager
+    return store
 }
+
+export const store = ReduxSetUp()
+export type AppDispatch = typeof store.dispatch

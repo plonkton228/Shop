@@ -1,8 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Loader, LoaderState } from './Loader'
+import {AlignDecorator} from "../../../../../config/storybook/decorators/AlignDecorator";
 
 const meta: Meta<typeof Loader> = {
-    component: Loader
+    component: Loader,
+    decorators: [
+        (Story) => (
+            <AlignDecorator>
+                <Story/>
+            </AlignDecorator>
+        )
+    ]
 }
 
 export default meta

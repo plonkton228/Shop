@@ -1,8 +1,8 @@
-import { type AuthUserShcnema } from 'features/ModelLogin/models/types'
-import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
-import { authUser } from 'features/ModelLogin/models/reducers/authUser'
+import { type AuthUserSchema } from 'features/ModelLogin/models/types/AuthUserSchema'
+import { createSlice } from '@reduxjs/toolkit'
+import { authUser } from 'features/ModelLogin/models/actions/authUser'
 
-const initialState: AuthUserShcnema = {
+const initialState: AuthUserSchema = {
     isLoading: false,
     error: ''
 }
@@ -25,3 +25,5 @@ const AuthUserSlice = createSlice({
         })
     }
 })
+
+export const AuthReducer = AuthUserSlice.reducer

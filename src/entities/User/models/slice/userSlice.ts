@@ -1,4 +1,4 @@
-import { type User, type UserScheme } from 'entities/User/models/type/UserType'
+import { type User, type UserScheme } from 'entities/User/models/type/UserSchema'
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 
 const initialState: UserScheme = {

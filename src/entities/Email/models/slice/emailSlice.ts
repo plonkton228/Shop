@@ -1,4 +1,4 @@
-import { type EmailSchema } from 'entities/EmailUser/models/type/EmailUserType'
+import { type EmailSchema } from 'entities/Email/models/types/emailSchema'
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 
 const initialState: EmailSchema = {
@@ -15,5 +15,6 @@ const emailSlice = createSlice({
         }
     }
 })
+
 export const { setEmail } = emailSlice.actions
-export const reducerEmail = emailSlice.reducer
+export const emailReducer = emailSlice.reducer

@@ -11,30 +11,10 @@
 }
 
 .close {
-  position: absolute;
-  background-color: transparent;
-  top: 50%;
-  right: 40px;
+ top: -13px;
 }
 
 
-.close:after {
-  content: "";
-  position: absolute;
-  width: 34px;
-  height: 4px;
-  background-color: #111111;
-  transform: rotate(40deg);
-}
-
-.close:before{
-  content: "";
-  position: absolute;
-  width: 34px;
-  height: 4px;
-  background-color: #111111;
-  transform: rotate(-40deg);
-}
 
 .InputContainer {
   display: flex;

@@ -5,7 +5,8 @@ import cls from '../models/button.module.scss'
 export enum ButtonCustomState {
     RESET = 'reset',
     NAVBARBUTTON = 'NavBarButton',
-    BUTTONMODAL = 'buttonModal'
+    BUTTONMODAL = 'buttonModal',
+    BUTTONCLOSE = 'ButtonClose'
 }
 
 interface ButtonCustomProps extends ButtonHTMLAttributes<HTMLButtonElement> {

@@ -1,7 +1,7 @@
-import type {Meta, StoryObj} from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import cls from '../models/LinkCustom.module.scss'
-import {LinkCustom, StateLink} from './LinkCustom'
-import {AlignDecorator} from "../../../../../config/storybook/decorators/AlignDecorator";
+import { LinkCustom, StateLink } from './LinkCustom'
+import { AlignDecorator } from '../../../../../config/storybook/decorators/AlignDecorator'
 
 const meta: Meta<typeof LinkCustom> = {
     component: LinkCustom,
@@ -31,7 +31,7 @@ export const UnderNavbarLink: Story = {
     },
     decorators: [
         (Story) => (
-            <div style={{ backgroundColor: 'aliceblue'}}>
+            <div style={{ backgroundColor: 'aliceblue' }}>
                 <Story/>
             </div>
         )

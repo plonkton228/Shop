@@ -13,11 +13,17 @@ import { ButtonCustomState } from 'share/ui/ButtonCustom/ui/ButtonCustom'
 import { useTranslation } from 'react-i18next'
 import { useNavBar } from 'share/libs/useNavBar/useNavBar'
 import { ModelWindow } from 'features/ModelLogin'
+import { AsyncSideBar } from 'widgets/SideBar/ui/AsyncSideBar'
 
 export const NavBar: React.FC = () => {
     const [state, setState] = useState<boolean>(false)
     const { t } = useTranslation('main')
     const { isOpen, OpenMode, CloseMode } = useNavBar()
+    const [isOpenSide, setIsOpenSide] = useState<boolean>()
+
+    const HandlerSideBar = () => {
+        setIsOpenSide((prevState) => !prevState)
+    }
 
     return (<>
         <div data-testid = 'Navbar' className = {cls.container}>
@@ -31,12 +37,16 @@ export const NavBar: React.FC = () => {
             </nav>
             <div className={cls.NavigatePanel}>
                 <ButtonCustom onClick={OpenMode} state={ButtonCustomState.NAVBARBUTTON}> <img src={profile}/> </ButtonCustom>
+                <ButtonCustom onClick={HandlerSideBar} state={ButtonCustomState.NAVBARBUTTON}> <img src={profile}/> </ButtonCustom>
                 <img src={search}/>
                 <LanguageSwitcher/>
                 <img src={shop}/>
             </div>
         </div>
         <UnderNavBar state={state}/>
+        {
+            isOpenSide && <AsyncSideBar lazy={true} setOpen={HandlerSideBar} Open={isOpenSide}/>
+        }
         {
             isOpen && <ModelWindow isOpen={isOpen} close={CloseMode}/>
         }

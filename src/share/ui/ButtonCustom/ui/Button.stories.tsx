@@ -36,4 +36,11 @@ export const buttonModal: Story = {
         state: ButtonCustomState.BUTTONMODAL
     }
 }
+
+export const buttonClose: Story = {
+    args: {
+        ...ResetButton.args,
+        state: ButtonCustomState.BUTTONCLOSE
+    }
+}
 export default meta

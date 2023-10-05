@@ -31,7 +31,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ close }: LoginFormProps) => {
     }
     return (
         <div className={cls.LoginC}>
-            <div className={cls.OrderContainer}> <h1>{t('Přihlásit se')}</h1> <div onClick={close} className={cls.close}/> </div>
+            <div className={cls.OrderContainer}> <h1>{t('Přihlásit se')}</h1> <ButtonCustom classes={cls.close} state={ButtonCustomState.BUTTONCLOSE} onClick={close}/> </div>
             <hr/>
             <div className={cls.InputContainer}>
                 <InputCustom value={email} onChange={HandlerEmail} classe={cls.InputLogin} firstplace={<div>{t('Emailová adresa')}</div>} state={InputState.MODALINPUT}></InputCustom>

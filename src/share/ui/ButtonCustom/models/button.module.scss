@@ -57,4 +57,31 @@
 }
 
 
+.ButtonClose {
+  position: absolute;
+  background-color: transparent;
+  right: 40px;
+  border: none;
+}
+
+
+.ButtonClose:after {
+  content: "";
+  position: absolute;
+  width: 34px;
+  height: 4px;
+  background-color: #111111;
+  transform: rotate(40deg);
+}
+
+.ButtonClose:before{
+  content: "";
+  position: absolute;
+  width: 34px;
+  height: 4px;
+  background-color: #111111;
+  transform: rotate(-40deg);
+}
+
+
 

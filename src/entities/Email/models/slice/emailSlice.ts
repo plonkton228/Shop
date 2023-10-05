@@ -6,7 +6,7 @@ const initialState: EmailSchema = {
     error: ''
 }
 
-const emailSlice = createSlice({
+export const emailSlice = createSlice({
     name: 'email',
     initialState,
     reducers: {

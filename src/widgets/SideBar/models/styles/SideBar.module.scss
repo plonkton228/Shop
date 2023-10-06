@@ -8,6 +8,11 @@
   opacity: 0;
   height: 100vh;
   transition: all 0.3s linear;
+
+}
+
+.SideBar h1 {
+  font: var(--font-l);
 }
 
 .SideBarContainer {

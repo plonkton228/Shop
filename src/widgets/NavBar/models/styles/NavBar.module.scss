@@ -60,6 +60,33 @@
   max-width: 30px;
   margin-left: 25px;
 }
+.Switcher {
+}
+
+@media (max-width: 1100px) {
+  .navigate_container{
+    display: none;
+  }
+  .NavigatePanel button{
+    display: none;
+
+  }
+  .Switcher {
+    display: none !important;
+  }
+  .container {
+    padding: 20px 10px;
+  }
+
+  .NavigatePanel img {
+    margin-left: 10px;
+  }
+  .logo_container h1 {
+    font-size: 30px;
+  }
+}
+
+
 
 
 

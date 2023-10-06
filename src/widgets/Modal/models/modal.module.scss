@@ -8,7 +8,11 @@
 
   pointer-events: none;
   opacity: 0;
+  font: var(--font-n)
 
+}
+.Modal h1 {
+  font: var(--font-l)
 }
 
 .Back_container {

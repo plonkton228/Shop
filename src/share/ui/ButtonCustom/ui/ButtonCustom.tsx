@@ -6,7 +6,8 @@ export enum ButtonCustomState {
     RESET = 'reset',
     NAVBARBUTTON = 'NavBarButton',
     BUTTONMODAL = 'buttonModal',
-    BUTTONCLOSE = 'ButtonClose'
+    BUTTONCLOSE = 'ButtonClose',
+    BUTTONBURGER = 'ButtonBurger',
 }
 
 interface ButtonCustomProps extends ButtonHTMLAttributes<HTMLButtonElement> {

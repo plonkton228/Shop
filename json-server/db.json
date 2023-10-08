@@ -28,5 +28,30 @@
   "profile": {
     "lastname": "Konovalov",
     "name": "Danik"
-  }
+  },
+  "goods": [
+    {
+      "id": "1",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    }
+  ]
 }

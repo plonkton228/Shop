@@ -19,6 +19,8 @@ $font-size-button: 20px;
 $font-size-order: 32px;
 $navbar-height: 80px;
 
+$skeleton-color: #79798e;
+$skeleton-shadow: #c2c2dc;
 
 :root{
  --font-l: #{$font-weight-l} #{$font-size-l}/#{$font-height-l} #{$font-family-l};
@@ -31,5 +33,8 @@ $navbar-height: 80px;
  --font-size-button: #{$font-size-button};
  --font-size-order: #{$font-size-order};
  --navbar-height: #{$navbar-height};
+
+ --skeleton-color: #{$skeleton-color};
+ --skeleton-shadow:  #{$skeleton-shadow};
 
 }

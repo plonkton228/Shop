@@ -12,7 +12,8 @@ export const webpackConfig = (settings : WebpackSettings): webpack.Configuration
       output: {
         filename: '[name].[contenthash].js',
         path: settings.paths.output,
-        clean: true
+        clean: true,
+          publicPath: '/'
       },
       plugins: pluginsConfig(settings.paths, settings.isDev, settings.apiUrl),
       module: {

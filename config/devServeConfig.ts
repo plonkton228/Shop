@@ -6,6 +6,8 @@ export const devServerConfig  = (devServerSettings: DevServer): Configuration =>
      static: {
       directory: devServerSettings.path
      },
-     port: devServerSettings.port
+     port: devServerSettings.port,
+      historyApiFallback: true,
+      hot: true,
   }
 }

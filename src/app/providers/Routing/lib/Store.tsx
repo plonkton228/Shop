@@ -5,11 +5,7 @@ import { GoodsPage } from 'pages/GoodsPage'
 import { OptPage } from 'pages/OptPage'
 import { ProjectPage } from 'pages/ProjectPage'
 import { ConverterPage } from 'pages/ConverterPage'
-import { BatariePage } from 'pages/BatariePage'
-import { KonektorPage } from 'pages/KonektorPage'
-import { KabelPage } from 'pages/KabelPage'
-import { PanelPage } from 'pages/PanelPage'
-import { MaterialPage } from 'pages/MaterialPage'
+import { DetailGoods } from 'pages/DetailGoods/index'
 
 export type AppRouteProps = RouteProps & {
     isAuth?: boolean
@@ -21,12 +17,8 @@ enum Routs {
     ABOUTUS = 'aboutus',
     OPT = 'opt',
     PROJECT = 'project',
-    KONEKTOR = 'konektor',
-    KABEL = 'kabel',
-    PANEL = 'panel',
     CONVERTER = 'converter',
-    BATARIE = 'batarie',
-    MATERIAL = 'material'
+    GOODS_DETAILS = 'goods_detail'
 }
 
 export const PathRouts: Record<Routs, string> = {
@@ -35,12 +27,8 @@ export const PathRouts: Record<Routs, string> = {
     [Routs.GOODS]: '/goods',
     [Routs.OPT]: '/opt',
     [Routs.PROJECT]: '/project',
-    [Routs.BATARIE]: '/batarie',
-    [Routs.KONEKTOR]: '/konektor',
-    [Routs.KABEL]: '/kabel',
-    [Routs.PANEL]: '/panel',
     [Routs.CONVERTER]: '/converter',
-    [Routs.MATERIAL]: '/material'
+    [Routs.GOODS_DETAILS]: '/goods/'
 }
 
 export const Store: Record<Routs, AppRouteProps> = {
@@ -70,24 +58,8 @@ export const Store: Record<Routs, AppRouteProps> = {
         element: <ConverterPage/>,
         isAuth: true
     },
-    [Routs.BATARIE]: {
-        path: PathRouts.batarie,
-        element: <BatariePage/>
-    },
-    [Routs.KONEKTOR]: {
-        path: PathRouts.konektor,
-        element: <KonektorPage/>
-    },
-    [Routs.KABEL]: {
-        path: PathRouts.kabel,
-        element: <KabelPage/>
-    },
-    [Routs.PANEL]: {
-        path: PathRouts.panel,
-        element: <PanelPage/>
-    },
-    [Routs.MATERIAL]: {
-        path: PathRouts.material,
-        element: <MaterialPage/>
+    [Routs.GOODS_DETAILS]: {
+        path: `${PathRouts.goods_detail}:id`,
+        element: <DetailGoods/>
     }
 }

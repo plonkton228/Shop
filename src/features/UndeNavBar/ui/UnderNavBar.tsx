@@ -12,12 +12,12 @@ export const UnderNavBar: React.FC<UnderNavBarProps> = memo(({ state }: UnderNav
     const { t } = useTranslation()
     return (<>
         <div data-testid = 'UnderNavbar' className={useClassName({ cls: cls.UnderNavbarContainer, mode: { [cls.open]: state }, classes: [] })}>
-            <LinkCustom to={'/konektor'} state={StateLink.UNDERNAVBAR}>{t('Konektor')}</LinkCustom>
-            <LinkCustom to={'/kabel'} state={StateLink.UNDERNAVBAR}>{t('Kabela')}</LinkCustom>
-            <LinkCustom to={'/panel'} state={StateLink.UNDERNAVBAR}>{t('solární panel')}</LinkCustom>
-            <LinkCustom to={'/converter'} state={StateLink.UNDERNAVBAR}>{t('Měnič')}</LinkCustom>
-            <LinkCustom to={'/batarie'} state={StateLink.UNDERNAVBAR}>{t('Baterie')}</LinkCustom>
-            <LinkCustom to={'/material'} state={StateLink.UNDERNAVBAR}>{t('Montážní materiály')}</LinkCustom>
+            <LinkCustom to={'/goods'} state={StateLink.UNDERNAVBAR}>{t('Konektor')}</LinkCustom>
+            <LinkCustom to={'/goods'} state={StateLink.UNDERNAVBAR}>{t('Kabela')}</LinkCustom>
+            <LinkCustom to={'/goods'} state={StateLink.UNDERNAVBAR}>{t('solární panel')}</LinkCustom>
+            <LinkCustom to={'/goods'} state={StateLink.UNDERNAVBAR}>{t('Měnič')}</LinkCustom>
+            <LinkCustom to={'/goods'} state={StateLink.UNDERNAVBAR}>{t('Baterie')}</LinkCustom>
+            <LinkCustom to={'/goods'} state={StateLink.UNDERNAVBAR}>{t('Montážní materiály')}</LinkCustom>
         </div>
     </>)
 })

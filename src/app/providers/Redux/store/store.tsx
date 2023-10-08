@@ -4,11 +4,12 @@ import { type GlobalScheme } from 'app/providers/Redux/models/types/ReduxType'
 import { createReducerManager } from 'app/providers/Redux/store/reducerManager'
 import { type Reducer, type CombinedState } from 'redux'
 import { profileReducer } from 'features/Profile/models/profileSlice/profileSlice'
+import {goodReducer} from "entities/Good";
 
 export function ReduxSetUp (initialState?: GlobalScheme, asyncReducer?: ReducersMapObject<GlobalScheme>) {
     const Reducers: ReducersMapObject<GlobalScheme> = {
         ...asyncReducer,
-        user: userReducer
+        user: userReducer,
     }
     const reducerManager = createReducerManager(Reducers)
     const store = configureStore<GlobalScheme>({

@@ -1,7 +1,33 @@
-export interface GoodSchema {
-    id: string
-    title: string
-    price: string
-    describe: string
 
+interface CharacteristicGood {
+    Ratedpower: string
+    Voc: string
+    Isc: string
+    Vmp: string
+    Imp: string
+    Účinnost: string
+    Tolerance: string
+    Maximální: string
+    Tlak: string
+}
+
+interface StructureGood {
+    Rozměr: string
+    Tloušťka: string
+    Weight: string
+    Článek: string
+    Propojovací: string
+    Konektor: string
+}
+export interface Good {
+    id: string
+    model: string
+    Characteristic: CharacteristicGood
+    Structure: StructureGood
+}
+
+export interface GoodSchema {
+    good?: Good
+    isLoading: boolean
+    error: string
 }

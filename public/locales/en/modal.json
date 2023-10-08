@@ -6,5 +6,8 @@
   "Zapomenuté heslo": "Forgotten password",
   "Zůstat přihlášen": "Stay logged in",
   "Nemáte účet?": "Don't have an account?",
-  "Zaregistrujte se zde": "Register here"
+  "Zaregistrujte se zde": "Register here",
+  "Nevyplnili jste pole pro e-mail": "You did not fill in the e-mail field",
+  "Nevyplnili jste pole pro heslo": "You did not fill in the password field",
+  "Něco se pokazilo": "Something went wrong"
 }

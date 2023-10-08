@@ -3,7 +3,7 @@ import { type Reducer } from '@reduxjs/toolkit'
 import { useEffect } from 'react'
 import { useStore } from 'react-redux'
 
-type DynamicList = {
+export type DynamicList = {
     [name in GlobalSchemaKeys]?: Reducer
 }
 interface DynamicProviderProps {

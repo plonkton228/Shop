@@ -5,7 +5,8 @@ export enum StateLink {
     NAVBAR = 'NavBar',
     UNDERNAVBAR = 'UnderNavBar',
     LINKINTRO = 'LinkIntro',
-    LINKRESET = 'reset'
+    LINKRESET = 'reset',
+    LINKMOBILE = 'LinkMobile'
 }
 interface LinkCustomProps {
     classes?: string

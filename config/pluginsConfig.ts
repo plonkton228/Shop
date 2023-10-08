@@ -3,7 +3,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import HTMLWebpackPlugin from 'html-webpack-plugin'
 import { ConfigPaths } from "./types/WebpackSettings"
 
-export const pluginsConfig = (paths: ConfigPaths, isDev: boolean): webpack.WebpackPluginInstance[] => {
+export const pluginsConfig = (paths: ConfigPaths, isDev: boolean, api: string): webpack.WebpackPluginInstance[] => {
   return [
     new HTMLWebpackPlugin({
        title: 'Solopharma',
@@ -14,7 +14,8 @@ export const pluginsConfig = (paths: ConfigPaths, isDev: boolean): webpack.Webpa
       chunkFilename: isDev ? "styles/[id].css" : "styles/[id].[contenthash].css",
     }),
       new webpack.DefinePlugin({
-          __IS_DEV__ : JSON.stringify(isDev)
+          __IS_DEV__ : JSON.stringify(isDev),
+          __API__: JSON.stringify(api)
       })
   ]
 }

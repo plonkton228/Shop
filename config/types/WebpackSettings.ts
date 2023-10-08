@@ -12,7 +12,7 @@ export interface ConfigPaths {
 }
 
 export interface DevServer {
-   port : number, 
+   port : number,
    path : string,
 }
 
@@ -20,10 +20,12 @@ export interface WebpackSettings {
     paths : ConfigPaths,
     isDev: boolean,
     devServer : DevServer,
-    mode : Modes
+    mode : Modes,
+    apiUrl: string
 }
 
 export interface EnvType {
     port : number,
-    mode : Modes
+    mode : Modes,
+    apiUrl: string
 }

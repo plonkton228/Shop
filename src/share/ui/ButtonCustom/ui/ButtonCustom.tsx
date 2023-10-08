@@ -1,4 +1,4 @@
-import { type ButtonHTMLAttributes } from 'react'
+import { type ButtonHTMLAttributes, memo } from 'react'
 import { useClassName } from 'share/libs/useClassName/useClassName'
 import cls from '../models/button.module.scss'
 
@@ -8,6 +8,8 @@ export enum ButtonCustomState {
     BUTTONMODAL = 'buttonModal',
     BUTTONCLOSE = 'ButtonClose',
     BUTTONBURGER = 'ButtonBurger',
+    BUTTONEDIT = 'ButtonEdit',
+    BUTTONCANCLE = 'ButtonCancle'
 }
 
 interface ButtonCustomProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -15,10 +17,10 @@ interface ButtonCustomProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     classes?: string
     state: ButtonCustomState
 }
-export const ButtonCustom: React.FC<ButtonCustomProps> = ({ children, classes, state, ...otherProps }: ButtonCustomProps) => {
+export const ButtonCustom: React.FC<ButtonCustomProps> = memo(({ children, classes, state, ...otherProps }: ButtonCustomProps) => {
     return (<>
         <button className={useClassName({ cls: cls.buttonC, mode: {}, classes: [cls[state], classes] })} {...otherProps}>
             {children}
         </button>
     </>)
-}
+})

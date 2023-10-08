@@ -1,26 +1,43 @@
-import { DynamicProvider } from 'share/libs/DynamicRedux/DynamicProvider'
-import { userReducer } from 'entities/User'
 import { SideBar } from 'widgets/SideBar'
-import { AsyncInnerProfile } from 'features/Profile/InnerProfiel/ui/AsyncInnerProfile'
-import { type ReducersMapObject } from '@reduxjs/toolkit'
+import { memo, useCallback, useEffect } from 'react'
+import { useAppDispatch } from 'share/libs/useRedux/useRedux'
+import { useSelector } from 'react-redux/es/exports'
+import { getLoadingProfile, profileReducer, getReadOnly, fetchProfile, setInfo, getNameProfile, getLastName } from 'features/Profile'
+import { DynamicProvider } from 'share/libs/DynamicRedux/DynamicProvider'
+import { AsyncInnerProfile } from '../../InnerProfiel/ui/AsyncInnerProfile'
 
 interface ProfileSideBarProps {
     Open: boolean
     HandlerOpen: () => void
 }
-export const ProfileSideBar: React.FC<ProfileSideBarProps> = (props: ProfileSideBarProps) => {
+export const ProfileSideBar: React.FC<ProfileSideBarProps> = memo((props: ProfileSideBarProps) => {
     const {
         Open,
         HandlerOpen
     } = props
-    const Reducers: ReducersMapObject = {
-        user: userReducer
-    }
+
+    const dispatch = useAppDispatch()
+    const isLoading = useSelector(getLoadingProfile)
+    const readOnly = useSelector(getReadOnly)
+    const name = useSelector(getNameProfile)
+    const lastname = useSelector(getLastName)
+    const EditName = useCallback((value?: string) => {
+        dispatch(setInfo({ name: value }))
+    }, [dispatch])
+
+    const EditLastName = useCallback((value?: string) => {
+        dispatch(setInfo({ lastname: value }))
+    }, [dispatch])
+
+    useEffect(() => {
+        dispatch(fetchProfile())
+    }, [dispatch])
+
     return (<>
-        <SideBar lazy={true} setOpen={HandlerOpen} Open={Open}>
-            <DynamicProvider DynamicReducers={Reducers}>
-                <AsyncInnerProfile/>
-            </DynamicProvider>
-        </SideBar>
+        <DynamicProvider DynamicReducers={ { profile: profileReducer } }>
+            <SideBar lazy={true} setOpen={HandlerOpen} Open={Open}>
+                <AsyncInnerProfile HandlerCloseSideBar = {HandlerOpen} EditName={EditName} EditLastName={EditLastName} readOnly={readOnly} lastname={lastname} name={name} isLoading={isLoading} />
+            </SideBar>
+        </DynamicProvider>
     </>)
-}
+})

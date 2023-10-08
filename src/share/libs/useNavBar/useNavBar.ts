@@ -1,17 +1,30 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 
 export const useNavBar = () => {
-    const [isOpen, setIsOpen] = useState<boolean>(false)
-    const OpenMode = () => {
-        setIsOpen(true)
-    }
-    const CloseMode = () => {
-        setIsOpen(false)
-    }
+    const [openModalLogin, setOpenModalLogin] = useState<boolean>(false)
+    const [openSideBar, setOpenSideBar] = useState<boolean>(false)
+    const [openUnderNavBar, setopenUnderNavBar] = useState<boolean>(false)
+    const OpenModalLogin = useCallback(() => {
+        setOpenModalLogin(true)
+    }, [openModalLogin])
+    const CloseModalLogin = useCallback(() => {
+        setOpenModalLogin(false)
+    }, [openModalLogin])
+    const HandlerSideBarToggle = useCallback(() => {
+        setOpenSideBar((prevState) => !prevState)
+    }, [openSideBar])
+    const HandlerUnderNavBarToggle = useCallback(() => {
+        setopenUnderNavBar((prevState) => !prevState)
+    }, [openUnderNavBar])
 
     return {
-        isOpen,
-        OpenMode,
-        CloseMode
+        OpenModalLogin,
+        openModalLogin,
+        CloseModalLogin,
+        openSideBar,
+        setOpenSideBar,
+        HandlerSideBarToggle,
+        openUnderNavBar,
+        HandlerUnderNavBarToggle
     }
 }

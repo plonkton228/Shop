@@ -51,7 +51,8 @@ const config: Config = {
         '<rootDir>config/SetUpJest/SetUpTest.ts'
     ],
     globals: {
-        __IS_DEV__: false
+        __IS_DEV__: false,
+        __API__: true
     }
 
 }

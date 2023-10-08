@@ -26,6 +26,11 @@
   a {
     color: green;
   }
+  h1{
+    align-self: center;
+    font-size: 30px;
+    color: red;
+  }
 
 
 }
@@ -48,4 +53,8 @@
     align-self: end;
   }
 
+}
+.error {
+  font-size: 15px !important;
+  color : red;
 }

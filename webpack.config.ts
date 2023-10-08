@@ -15,7 +15,7 @@ export default (env: EnvType): webpack.Configuration => {
             port: env.port || 80,
             path: path.resolve(__dirname, 'public')
         },
-
+        apiUrl: env.apiUrl || undefined,
         isDev: env.mode !== Modes.PRODUCTION
     }
     return webpackConfig(settings)

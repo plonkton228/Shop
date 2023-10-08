@@ -12,6 +12,10 @@ extends: [
     "plugin:i18next/recommended",
 
 ],
+    globals: {
+      __API__: true,
+        __IS_DEV__: true
+    },
     parser: "@typescript-eslint/parser",
     parserOptions: {
         ecmaVersion: "latest",

@@ -3,11 +3,12 @@ import { StateLink } from 'share/ui/LinkCustom/ui/LinkCustom'
 import cls from '../models/UnderNavBar.module.scss'
 import { useClassName } from 'share/libs/useClassName/useClassName'
 import { useTranslation } from 'react-i18next'
+import { memo } from 'react'
 
 interface UnderNavBarProps {
     state: boolean
 }
-export const UnderNavBar: React.FC<UnderNavBarProps> = ({ state }: UnderNavBarProps) => {
+export const UnderNavBar: React.FC<UnderNavBarProps> = memo(({ state }: UnderNavBarProps) => {
     const { t } = useTranslation()
     return (<>
         <div data-testid = 'UnderNavbar' className={useClassName({ cls: cls.UnderNavbarContainer, mode: { [cls.open]: state }, classes: [] })}>
@@ -19,4 +20,4 @@ export const UnderNavBar: React.FC<UnderNavBarProps> = ({ state }: UnderNavBarPr
             <LinkCustom to={'/material'} state={StateLink.UNDERNAVBAR}>{t('Montážní materiály')}</LinkCustom>
         </div>
     </>)
-}
+})

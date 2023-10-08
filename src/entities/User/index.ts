@@ -1,1 +1,1 @@
-export { AutoUser, userReducer } from './models/slice/userSlice'
+export { AutoUser, userReducer, reAuth, logout } from './models/slice/userSlice'

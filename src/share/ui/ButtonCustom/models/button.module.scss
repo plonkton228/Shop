@@ -83,14 +83,32 @@
   transform: rotate(-40deg);
 }
 
-//.ButtonBurger {
-//  position: relative;
-//  background-color: black;
-//  border: none;
-//  width: 30px;
-//  height: 1px;
-//  padding: 0;
-//}
+.ButtonBurger {
+  position: relative;
+  background-color: black;
+  border: none;
+  width: 30px;
+  height: 1px;
+  padding: 0;
+}
+
+.ButtonEdit {
+  padding: 10px;
+  background-color: gainsboro;
+  border: none;
+  color: gray;
+  font: var(--font-n);
+}
+
+.ButtonCancle {
+  padding: 10px;
+  background-color: transparent;
+  border: 1px solid red;
+  color: red;
+  font: var(--font-n);
+}
+
+
 
 
 

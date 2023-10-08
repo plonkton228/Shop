@@ -5,12 +5,13 @@ import { DynamicProvider } from 'share/libs/DynamicRedux/DynamicProvider'
 import { AuthReducer } from 'features/ModelLogin'
 import { emailReducer } from 'entities/Email'
 import { passwordReducer } from 'entities/Password'
+import { memo } from 'react'
 
 interface ModalWindowProps {
     isOpen: boolean
     close: () => void
 }
-export const ModelWindow: React.FC<ModalWindowProps> = ({ isOpen, close }: ModalWindowProps) => {
+export const ModelWindow: React.FC<ModalWindowProps> = memo(({ isOpen, close }: ModalWindowProps) => {
     return (<>
         <Portal element={document.body}>
             <Modal lazy={true} isOpen={isOpen} close={close}>
@@ -20,4 +21,4 @@ export const ModelWindow: React.FC<ModalWindowProps> = ({ isOpen, close }: Modal
             </Modal>
         </Portal>
     </>)
-}
+})

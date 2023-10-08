@@ -16,7 +16,7 @@ export function createReducerManager (initialReducers: ReducersMapObject<GlobalS
 
         // The root reducer function exposed by this object
         // This will be passed to the store
-        reduce: (state: CombinedState<GlobalScheme>, action: AnyAction) => {
+        reduce: (state: CombinedState<GlobalScheme>, action: AnyAction): GlobalScheme => {
             // If any reducers have been removed, clean up their state first
             if (keysToRemove.length > 0) {
                 state = { ...state }

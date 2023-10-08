@@ -11,6 +11,10 @@ import { KabelPage } from 'pages/KabelPage'
 import { PanelPage } from 'pages/PanelPage'
 import { MaterialPage } from 'pages/MaterialPage'
 
+export type AppRouteProps = RouteProps & {
+    isAuth?: boolean
+}
+
 enum Routs {
     HOME = 'home',
     GOODS = 'goods',
@@ -39,7 +43,7 @@ export const PathRouts: Record<Routs, string> = {
     [Routs.MATERIAL]: '/material'
 }
 
-export const Store: Record<Routs, RouteProps> = {
+export const Store: Record<Routs, AppRouteProps> = {
     [Routs.HOME]: {
         path: PathRouts.home,
         element: <HomePage/>
@@ -50,7 +54,8 @@ export const Store: Record<Routs, RouteProps> = {
     },
     [Routs.GOODS]: {
         path: PathRouts.goods,
-        element: <GoodsPage/>
+        element: <GoodsPage/>,
+        isAuth: true
     },
     [Routs.OPT]: {
         path: PathRouts.opt,
@@ -62,7 +67,8 @@ export const Store: Record<Routs, RouteProps> = {
     },
     [Routs.CONVERTER]: {
         path: PathRouts.converter,
-        element: <ConverterPage/>
+        element: <ConverterPage/>,
+        isAuth: true
     },
     [Routs.BATARIE]: {
         path: PathRouts.batarie,

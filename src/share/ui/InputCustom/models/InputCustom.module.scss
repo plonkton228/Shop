@@ -1,6 +1,11 @@
 .ContainerInput {
   display: flex;
   flex-direction: column;
+  margin-top: 15px;
+  span {
+    color: green;
+  }
+
 }
 
 .PlaceContainer{
@@ -11,19 +16,25 @@
 
 .InputCustom {
   position: relative;
-
+  margin: 0;
+  outline:none
 
 }
 
 .modalInput {
- input {
    padding: 10px 100px 10px 20px;
    border: 1px solid gray;
- }
 
-  span {
-    color: green;
-  }
+}
+
+.resetInput {
+  border: none;
+  background-color: transparent;
+}
+
+.resetInput:hover:focus {
+  border: none;
+
 }
 
 

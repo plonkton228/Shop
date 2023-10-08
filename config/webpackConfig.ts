@@ -14,14 +14,14 @@ export const webpackConfig = (settings : WebpackSettings): webpack.Configuration
         path: settings.paths.output,
         clean: true
       },
-      plugins: pluginsConfig(settings.paths, settings.isDev),
+      plugins: pluginsConfig(settings.paths, settings.isDev, settings.apiUrl),
       module: {
         rules: rulesConfig(settings.isDev),
-        
+
       },
       resolve: resolveConfig(settings.paths),
       devServer: settings.isDev ? devServerConfig(settings.devServer) : undefined,
       devtool: settings.isDev ?  'inline-source-map'  : undefined,
-      
+
   }
 }

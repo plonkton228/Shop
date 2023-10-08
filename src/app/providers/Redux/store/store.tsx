@@ -1,8 +1,9 @@
-import { Action, configureStore, type ReducersMapObject } from '@reduxjs/toolkit'
-
+import { configureStore, type ReducersMapObject } from '@reduxjs/toolkit'
 import { userReducer } from 'entities/User'
 import { type GlobalScheme } from 'app/providers/Redux/models/types/ReduxType'
 import { createReducerManager } from 'app/providers/Redux/store/reducerManager'
+import { type Reducer, type CombinedState } from 'redux'
+import { profileReducer } from 'features/Profile/models/profileSlice/profileSlice'
 
 export function ReduxSetUp (initialState?: GlobalScheme, asyncReducer?: ReducersMapObject<GlobalScheme>) {
     const Reducers: ReducersMapObject<GlobalScheme> = {
@@ -11,7 +12,7 @@ export function ReduxSetUp (initialState?: GlobalScheme, asyncReducer?: Reducers
     }
     const reducerManager = createReducerManager(Reducers)
     const store = configureStore<GlobalScheme>({
-        reducer: reducerManager.reduce,
+        reducer: reducerManager.reduce as Reducer<CombinedState<GlobalScheme>>,
         devTools: __IS_DEV__,
         preloadedState: initialState
     })

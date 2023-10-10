@@ -14,24 +14,764 @@
   "comments": [
     {
       "id": "1",
-      "body": "some comment",
-      "postId": "1"
+      "body": "test1 comment",
+      "goodsId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "body": "test2 comment",
+      "goodsId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "3",
+      "body": "test3 comment",
+      "goodsId": "1",
+      "userId": "1"
+    },
+    {
+      "goodsId": "1",
+      "userId": "1",
+      "id": "PZqlzLs"
+    },
+    {
+      "goodsId": "1",
+      "userId": "1",
+      "id": "uBGh3an"
+    },
+    {
+      "goodsId": "1",
+      "userId": "1",
+      "id": "KnpV6Vm"
+    },
+    {
+      "goodsId": "1",
+      "userId": "1",
+      "body": "dsfsddfs",
+      "id": "iqn9o3o"
+    },
+    {
+      "goodsId": "1",
+      "userId": "1",
+      "body": "some",
+      "id": "VnFvydk"
+    },
+    {
+      "goodsId": "1",
+      "userId": "1",
+      "body": "some2",
+      "id": "JxO8VXH"
+    },
+    {
+      "goodsId": "1",
+      "userId": "1",
+      "body": "The most popular comment",
+      "id": "7sIE6Rz"
+    },
+    {
+      "goodsId": "1",
+      "userId": "1",
+      "body": "wewe",
+      "id": "6Cj7va-"
+    },
+    {
+      "goodsId": "1",
+      "userId": "1",
+      "body": "хууй",
+      "id": "QqlNMV1"
     }
   ],
   "users": [
     {
       "id": "1",
+      "name": "Danik",
       "email": "admin@admin.com",
       "password": "admin"
     }
   ],
-  "profile": {
-    "lastname": "Konovalov",
-    "name": "Danik"
-  },
+  "profile": [
+    {
+      "lastname": "Konovalov",
+      "name": "Danik",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "lastname": "Malgin",
+      "name": "Nikita"
+    }
+  ],
   "goods": [
     {
       "id": "1",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "2",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "3",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "4",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "5",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "6",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "7",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "8",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "9",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "10",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "11",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "12",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "13",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "14",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "15",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "16",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "17",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "18",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "19",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "20",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "21",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "22",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "23",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "24",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "25",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "26",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "27",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "28",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "29",
+      "model": "SUN 78MD-HFS",
+      "Characteristic": {
+        "Ratedpower": "200w",
+        "Voc": "23V",
+        "Isc": "11A",
+        "Vmp": "19V",
+        "Imp": "10A",
+        "Účinnost": "20%",
+        "Tolerance": "0-+5W",
+        "Maximální": "1500V DC",
+        "Tlak": "2400mpa/5400mpa"
+      },
+      "Structure": {
+        "Rozměr": "1065mm*1045mm",
+        "Tloušťka": "3mm",
+        "Weight": "3.8kg",
+        "Článek": "Mono166*166mm, 36ks (6*6)",
+        "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
+        "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
+      }
+    },
+    {
+      "id": "30",
       "model": "SUN 78MD-HFS",
       "Characteristic": {
         "Ratedpower": "200w",

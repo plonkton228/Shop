@@ -1,23 +1,23 @@
 import cls from '../models/styles/ProfileSideBar.module.scss'
 import Order from '../models/imgs/Order.png'
 import Setting from '../models/imgs/Setting.png'
-import {useClassName} from 'share/libs/useClassName/useClassName'
+import { useClassName } from 'share/libs/useClassName/useClassName'
 import LogOut from '../models/imgs/LogOut.png'
-import {useTranslation} from 'react-i18next'
-import {memo, useCallback, useState} from 'react'
-import {LinkCustom} from 'share/ui/LinkCustom'
-import {StateLink} from 'share/ui/LinkCustom/ui/LinkCustom'
-import {Loader} from 'share/ui/Loader'
-import {LoaderState} from 'share/ui/Loader/ui/Loader'
-import {InputCustom, InputState} from 'share/ui/InputCustom/ui/InputCustom'
+import { useTranslation } from 'react-i18next'
+import { memo, useCallback, useState } from 'react'
+import { LinkCustom } from 'share/ui/LinkCustom'
+import { StateLink } from 'share/ui/LinkCustom/ui/LinkCustom'
+import { Loader } from 'share/ui/Loader'
+import { LoaderState } from 'share/ui/Loader/ui/Loader'
+import { InputCustom, InputState } from 'share/ui/InputCustom/ui/InputCustom'
 import HeaderProfile from 'features/Profile/HeaderProfile/ui/HeaderProfile'
-import {getErrorProfile} from 'features/Profile/models/selectors/getErrorProfile/getErrorProfile'
-import {useSelector} from 'react-redux/es/exports'
-import {ErrorsProfile} from 'features/Profile/models/types/ProfileType'
-import {ButtonCustom} from "share/ui/ButtonCustom";
-import {ButtonCustomState} from "share/ui/ButtonCustom/ui/ButtonCustom";
-import {useAppDispatch} from "share/libs/useRedux/useRedux";
-import {logout} from "entities/User";
+import { getErrorProfile } from 'features/Profile/models/selectors/getErrorProfile/getErrorProfile'
+import { useSelector } from 'react-redux/es/exports'
+import { ErrorsProfile } from 'features/Profile/models/types/ProfileType'
+import { ButtonCustom } from 'share/ui/ButtonCustom'
+import { ButtonCustomState } from 'share/ui/ButtonCustom/ui/ButtonCustom'
+import { useAppDispatch } from 'share/libs/useRedux/useRedux'
+import { logout } from 'entities/User'
 
 interface InnerProfileProps {
     isLoading?: boolean

@@ -7,6 +7,7 @@ import { getReadOnly, updateProfile, cancelEdit } from 'features/Profile'
 import { useAppDispatch } from 'share/libs/useRedux/useRedux'
 import { setReadonly } from 'features/Profile/models/profileSlice/profileSlice'
 import cls from '../models/HeaderProfile.module.scss'
+import { getUser } from 'entities/User/models/selectors/getUser/getUser'
 
 interface HedaerProfileProps {
     name: string
@@ -17,6 +18,7 @@ const HeaderProfile: React.FC<HedaerProfileProps> = memo((props: HedaerProfilePr
     const { t } = useTranslation('profile')
     const readOnly = useSelector(getReadOnly)
     const dispatch = useAppDispatch()
+    const user = useSelector(getUser)
     const {
         name,
         lastname
@@ -29,7 +31,7 @@ const HeaderProfile: React.FC<HedaerProfileProps> = memo((props: HedaerProfilePr
     }, [dispatch])
 
     const UpdateHandler = useCallback(() => {
-        dispatch(updateProfile({ lastname, name }))
+        dispatch(updateProfile({ lastname, name, id: user.id }))
     }, [dispatch, lastname, name])
 
     return (<>

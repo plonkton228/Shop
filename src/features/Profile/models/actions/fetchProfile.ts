@@ -1,11 +1,11 @@
-import {createAsyncThunk} from '@reduxjs/toolkit'
-import {api} from 'share/api/api'
-import {ErrorsProfile, type Profile} from 'features/Profile/models/types/ProfileType'
+import { createAsyncThunk } from '@reduxjs/toolkit'
+import { api } from 'share/api/api'
+import { ErrorsProfile, type Profile } from 'features/Profile/models/types/ProfileType'
 
-export const fetchProfile = createAsyncThunk<Profile, void>('profile/fetchProfile', async (_, thunkApi) => {
+export const fetchProfile = createAsyncThunk<Profile, string>('profile/fetchProfile', async (id, thunkApi) => {
     const { dispatch, rejectWithValue } = thunkApi
     try {
-        const data = await api.get<Profile>('profile')
+        const data = await api.get<Profile>(`profile/${id}`)
         if (!data.data) {
             throw new Error()
         }

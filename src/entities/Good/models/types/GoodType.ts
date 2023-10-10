@@ -1,5 +1,4 @@
-
-interface CharacteristicGood {
+export interface CharacteristicGood {
     Ratedpower: string
     Voc: string
     Isc: string
@@ -11,7 +10,7 @@ interface CharacteristicGood {
     Tlak: string
 }
 
-interface StructureGood {
+export interface StructureGood {
     Rozměr: string
     Tloušťka: string
     Weight: string

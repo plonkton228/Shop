@@ -3,8 +3,7 @@ import { useClassName } from 'share/libs/useClassName/useClassName'
 import { Portal } from 'share/ui/Portal'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { ButtonCustom, ButtonCustomState } from 'share/ui/ButtonCustom/ui/ButtonCustom'
-import { DynamicProvider } from 'share/libs/DynamicRedux/DynamicProvider'
-import { profileReducer } from 'features/Profile/models/profileSlice/profileSlice'
+
 
 interface SideBarProps {
     Open: boolean

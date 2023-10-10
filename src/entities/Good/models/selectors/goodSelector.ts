@@ -1,7 +1,6 @@
-import {GlobalScheme} from "app/providers/Redux/models/types/ReduxType";
-import {GoodSchema} from "entities/Good";
-import {createSelector} from "@reduxjs/toolkit";
-
+import { type GlobalScheme } from 'app/providers/Redux/models/types/ReduxType'
+import { type GoodSchema } from 'entities/Good'
+import { createSelector } from '@reduxjs/toolkit'
 
 export const getStateGood = (state: GlobalScheme) => state.goods
 export const getGood = createSelector(getStateGood, (state: GoodSchema) => state?.good)

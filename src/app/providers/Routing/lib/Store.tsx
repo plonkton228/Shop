@@ -5,7 +5,9 @@ import { GoodsPage } from 'pages/GoodsPage'
 import { OptPage } from 'pages/OptPage'
 import { ProjectPage } from 'pages/ProjectPage'
 import { ConverterPage } from 'pages/ConverterPage'
-import { DetailGoods } from 'pages/DetailGoods/index'
+import { DetailGoods } from 'entities/Good'
+import { OptPageTest } from 'pages/OptPageTest'
+
 
 export type AppRouteProps = RouteProps & {
     isAuth?: boolean
@@ -18,7 +20,8 @@ enum Routs {
     OPT = 'opt',
     PROJECT = 'project',
     CONVERTER = 'converter',
-    GOODS_DETAILS = 'goods_detail'
+    GOODS_DETAILS = 'goods_detail',
+    TEST_DETAILS = 'test_details'
 }
 
 export const PathRouts: Record<Routs, string> = {
@@ -28,7 +31,8 @@ export const PathRouts: Record<Routs, string> = {
     [Routs.OPT]: '/opt',
     [Routs.PROJECT]: '/project',
     [Routs.CONVERTER]: '/converter',
-    [Routs.GOODS_DETAILS]: '/goods/'
+    [Routs.GOODS_DETAILS]: '/goods/',
+    [Routs.TEST_DETAILS]: '/opt/'
 }
 
 export const Store: Record<Routs, AppRouteProps> = {
@@ -61,5 +65,9 @@ export const Store: Record<Routs, AppRouteProps> = {
     [Routs.GOODS_DETAILS]: {
         path: `${PathRouts.goods_detail}:id`,
         element: <DetailGoods/>
+    },
+    [Routs.TEST_DETAILS]: {
+        path: `${PathRouts.test_details}:id`,
+        element: <OptPageTest/>
     }
 }

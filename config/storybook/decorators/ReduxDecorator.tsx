@@ -1,7 +1,6 @@
 import {ReduxProvider} from "app/providers/Redux/ui/ReduxProvider";
 import {DeepPartial, ReducersMapObject} from "@reduxjs/toolkit";
 import {GlobalScheme} from "app/providers/Redux/models/types/ReduxType";
-import goodsPage from "pages/GoodsPage/ui/GoodsPage";
 import {AuthReducer} from "features/ModelLogin";
 import {passwordReducer} from "entities/Password";
 import {emailReducer} from "entities/Email";

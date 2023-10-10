@@ -39,7 +39,6 @@
   padding-left: 10px;
   flex-direction: column;
   text-align: end;
-  max-width: 400px;
 }
 
 
@@ -83,8 +82,12 @@
   margin: 40px 0;
 }
 
-.button {
-  margin-left: 30px;
+.buttonControl {
+  margin-left: 30px !important;
+  font-size: 30px !important;
+}
+.buttonControl:first-child {
+  margin-left: 0 !important;
   font-size: 30px !important;
 }
 
@@ -98,7 +101,7 @@
 @media (max-width: 1400px) {
   .PurchaseContainer {
     flex-direction: column;
-    align-items: center;
+    padding: 10px;
 
   }
   #img1 {
@@ -108,10 +111,15 @@
     display: none;
   }
 
-  .button {
+  .buttonControl {
     align-self: center;
-    margin-top: 20px;
+    margin-top: 20px!important;
+    padding: 10px !important;
+    max-width: 240px;
+    width: 100%;
+    margin-left: 0 !important;
   }
+
   .ContainerItem {
     align-items: center;
    padding: 80px 20px;
@@ -123,7 +131,7 @@
 
   }
   .buttonPurchase {
-    padding: 30px;
+    padding: 20px !important;
   }
 
   .ImgContainer {
@@ -133,6 +141,29 @@
   .Panel {
     align-items: center;
     margin: 0;
+  }
+
+  .ContainerItem h1{
+    font-size: 15px;
+    font-weight: 300;
+    padding: 10px;
+
+  }
+
+
+  .CharacteristicContainer {
+    align-self: stretch;
+    max-width: 100%;
+  }
+
+  .StructureContainer {
+    align-self: stretch;
+    max-width: 100%;
+  }
+
+  .InnerInfoContainer {
+    align-self: stretch;
+    max-width: 100%;
   }
 }
 

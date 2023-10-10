@@ -1,6 +1,14 @@
+
+
 const OptPage: React.FC = () => {
+
     return (<>
-   SolarPanel!
+    <div  >
+      <h1>Opt</h1>
+    </div>
     </>)
 }
 export default OptPage
+
+
+

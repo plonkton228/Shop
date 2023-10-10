@@ -5,6 +5,10 @@ import { type EmailSchema } from 'entities/Email/models/types/emailSchema'
 import { type AnyAction, type CombinedState, type Reducer } from '@reduxjs/toolkit'
 import { type ProfileSchema } from 'features/Profile/models/types/ProfileType'
 import { type GoodSchema } from 'entities/Good'
+import { type CommentSchema } from 'entities/Comments/models/types/CommentSchema'
+import { type AddCommentSchema } from 'features/AddComment'
+import { GoodsPageSchema } from 'pages/GoodsPage'
+
 
 export interface GlobalScheme {
     user: UserScheme
@@ -13,6 +17,9 @@ export interface GlobalScheme {
     email: EmailSchema
     profile: ProfileSchema
     goods: GoodSchema
+    comments: CommentSchema
+    addComment: AddCommentSchema
+    goodsPage: GoodsPageSchema
 }
 
 export type GlobalSchemaKeys = keyof GlobalScheme

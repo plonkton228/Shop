@@ -115,6 +115,29 @@
   padding: 25px 160px;
 }
 
+.ButtonInfo {
+  background: none repeat scroll 0 0 transparent;
+  border: 2px solid black;
+  margin: 0;
+  text-align: center;
+  transition: all 0.3s linear;
+}
+
+.ButtonInfo:hover {
+  background-color: black;
+  color: white;
+  transition: all 0.3s linear;
+}
+
+.ButtonPurchase:hover {
+  background-color: white;
+  color: black;
+  transition: all 0.3s linear;
+}
+
+
+
+
 
 
 

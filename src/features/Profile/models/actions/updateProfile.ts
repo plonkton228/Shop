@@ -11,7 +11,7 @@ export const updateProfile = createAsyncThunk<Profile, Profile, ThunkConfig<Erro
         return rejectWithValue(errors)
     }
     try {
-        const data = await api.put<Profile>('profile', Profile)
+        const data = await api.put<Profile>(`profile/${Profile.id}`, Profile)
         return data.data
     } catch (e) {
         errors.push(ErrorsProfile.ERROR_SERVER)

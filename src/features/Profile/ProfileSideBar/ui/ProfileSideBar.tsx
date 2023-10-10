@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux/es/exports'
 import { getLoadingProfile, profileReducer, getReadOnly, fetchProfile, setInfo, getNameProfile, getLastName } from 'features/Profile'
 import { DynamicProvider } from 'share/libs/DynamicRedux/DynamicProvider'
 import { AsyncInnerProfile } from '../../InnerProfiel/ui/AsyncInnerProfile'
+import { getUser } from 'entities/User/models/selectors/getUser/getUser'
 
 interface ProfileSideBarProps {
     Open: boolean
@@ -21,6 +22,7 @@ export const ProfileSideBar: React.FC<ProfileSideBarProps> = memo((props: Profil
     const readOnly = useSelector(getReadOnly)
     const name = useSelector(getNameProfile)
     const lastname = useSelector(getLastName)
+    const userId = useSelector(getUser)
     const EditName = useCallback((value?: string) => {
         dispatch(setInfo({ name: value }))
     }, [dispatch])
@@ -30,7 +32,7 @@ export const ProfileSideBar: React.FC<ProfileSideBarProps> = memo((props: Profil
     }, [dispatch])
 
     useEffect(() => {
-        dispatch(fetchProfile())
+        dispatch(fetchProfile(userId.id))
     }, [dispatch])
 
     return (<>

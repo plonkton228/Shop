@@ -4,6 +4,7 @@ import { NavBar } from 'widgets/NavBar'
 import { useEffect } from 'react'
 import { useAppDispatch } from 'share/libs/useRedux/useRedux'
 import { reAuth } from 'entities/User'
+import { Footer } from 'widgets/Footer'
 
 const App: React.FC = () => {
     const dispatch = useAppDispatch()
@@ -13,6 +14,7 @@ const App: React.FC = () => {
     return (<>
         <NavBar/>
         <Routing/>
+        <Footer/>
     </>)
 }
 export default App

@@ -17,8 +17,6 @@ type Story = StoryObj<typeof InputCustom>
 
 export const PrimaryButton: Story = {
     args: {
-        firstplace: 'First place',
-        secondplace: 'Second place',
         placeholder: 'Enter some..',
         state: InputState.MODALINPUT
 

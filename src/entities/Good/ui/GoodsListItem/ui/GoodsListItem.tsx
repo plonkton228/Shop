@@ -1,4 +1,4 @@
-import {memo, useCallback} from 'react'
+import { memo, useCallback } from 'react'
 import { Cart, CartListState } from 'share/ui/Cart'
 import imgItem from '../models/imgs/ImageSale.png'
 import { useTranslation } from 'react-i18next'
@@ -18,12 +18,12 @@ export const GoodsListItem: React.FC<GoodsListItemProps> = memo((props: GoodsLis
         model,
         tolerance,
         weight,
-        id,
+        id
     } = props
     const navigate = useNavigate()
     const NavigateClick = useCallback(() => {
         navigate(`${PathRouts.goods_detail}${id}`)
-    },[])
+    }, [])
     const { t } = useTranslation('goods')
 
     return (<>
@@ -35,5 +35,5 @@ export const GoodsListItem: React.FC<GoodsListItemProps> = memo((props: GoodsLis
                 <div> <p>{t('Weight')}</p> <p>{t(weight)}</p></div>
             </Cart>
         </div>
-        </>)
+    </>)
 })

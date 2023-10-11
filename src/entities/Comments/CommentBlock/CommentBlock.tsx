@@ -25,7 +25,7 @@ export const CommentBlock: React.FC<CommentBlockProps> = memo((props: CommentBlo
     }, [])
     if (isLoading) {
         return (<>
-            <Skeleton state={SkeletonState.V1}  height={'500px'} width={'100%'} border={'20px'}/>
+            <Skeleton state={SkeletonState.V1} height={'500px'} width={'100%'} border={'20px'}/>
             <Skeleton state={SkeletonState.V1} height={'300px'} width={'100%'} border={'20px'} marginTop={'20px'}/>
         </>)
     }

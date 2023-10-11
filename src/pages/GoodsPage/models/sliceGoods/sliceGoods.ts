@@ -6,7 +6,9 @@ import { type GoodsPageSchema } from '../types/GoodsPageSchema'
 import { type GlobalScheme } from 'app/providers/Redux/models/types/ReduxType'
 import { type Good } from 'entities/Good'
 import { fetchGoods } from '../actions/fetchGoods'
-import {PayloadAction} from "@reduxjs/toolkit/dist/createAction";
+import { type PayloadAction } from '@reduxjs/toolkit/dist/createAction'
+import { fetchFirstPageGoods } from "pages/GoodsPage/models/actions/fetchFirstPageGoods";
+
 
 const goodsAdapter = createEntityAdapter<Good>({
     selectId: (comment) => comment.id
@@ -32,32 +34,52 @@ const commentSlice = createSlice({
         },
         setSearch (state, action: PayloadAction<string>) {
             state.search = action.payload
+        },
+        setSort (state, action: PayloadAction<string>) {
+            state.sort = action.payload
         }
     },
     extraReducers: (builder) => (
-        builder.addCase(fetchGoods.pending, (state,action) => {
+        builder.addCase(fetchGoods.pending, (state, action) => {
             state.isLoading = true
             if (action.meta.arg.replace) {
                 goodsAdapter.removeAll(state)
             }
         }),
-            builder.addCase(fetchGoods.fulfilled, (state, action) => {
-                state.isLoading = false
-                state.hasMore = action.payload.length > 0
-                if( action.meta.arg.replace) {
-                    goodsAdapter.setAll(state, action.payload)
-                } else {
-                    goodsAdapter.addMany(state, action.payload)
-                }
+        builder.addCase(fetchGoods.fulfilled, (state, action) => {
+            state.isLoading = false
+            state.hasMore = action.payload.length > 0
+            if (action.meta.arg.replace) {
+                goodsAdapter.setAll(state, action.payload)
+            } else {
+                goodsAdapter.addMany(state, action.payload)
+            }
 
+        }),
+        builder.addCase(fetchGoods.rejected, (state, action) => {
+            state.isLoading = false
+            state.error = action.error as string
+        }),
 
-            }),
-            builder.addCase(fetchGoods.rejected, (state, action) => {
-                state.isLoading = false
-                state.error = action.error as string
-            })
+        builder.addCase(fetchFirstPageGoods.pending, (state, action) => {
+            state.isLoading = true
+            goodsAdapter.removeAll(state)
+        }),
+        builder.addCase(fetchFirstPageGoods.fulfilled, (state, action) => {
+            state.isLoading = false
+            state.error = undefined
+            if (action.meta.arg.replace) {
+                goodsAdapter.setAll(state, action.payload)
+            }
+            goodsAdapter.addMany(state, action.payload)
+
+        }),
+        builder.addCase(fetchFirstPageGoods.rejected, (state, action) => {
+            state.isLoading = false
+            state.error = action.error as string
+        })
 
     )
 })
 export const goodsPageReducer = commentSlice.reducer
-export const { setPage, setSearch } = commentSlice.actions
+export const { setPage, setSearch, setSort } = commentSlice.actions

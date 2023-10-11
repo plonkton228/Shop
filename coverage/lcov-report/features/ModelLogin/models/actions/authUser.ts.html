@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for features/ModelLogin/models/actions/authUser.ts</title>
+    <title>Code coverage report for features/ModelLogin/models/actions/logUser.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../../prettify.css" />
     <link rel="stylesheet" href="../../../../base.css" />
@@ -15,41 +15,41 @@
         }
     </style>
 </head>
-    
+
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">features/ModelLogin/models/actions</a> authUser.ts</h1>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">features/ModelLogin/models/actions</a> logUser.ts</h1>
         <div class='clearfix'>
-            
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">50% </span>
                 <span class="quiet">Statements</span>
                 <span class='fraction'>5/10</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
                 <span class='fraction'>0/2</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
                 <span class='fraction'>1/1</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">50% </span>
                 <span class="quiet">Lines</span>
                 <span class='fraction'>5/10</span>
             </div>
-        
-            
+
+
         </div>
         <p class="quiet">
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
@@ -114,7 +114,7 @@ import { AutoUser } from 'entities/User'
 import { USER_LOCALSTORAGE_KEY } from 'share/const/localstorage'
 import { api } from 'share/api/api'
 &nbsp;
-export const authUser = createAsyncThunk&lt;User | string, UserInfo&gt;('', async (userFiled, thunkApi) =&gt; {
+export const logUser = createAsyncThunk&lt;User | string, UserInfo&gt;('', async (userFiled, thunkApi) =&gt; {
     const { dispatch, rejectWithValue } = thunkApi
 &nbsp;
     try {
@@ -148,4 +148,3 @@ export const authUser = createAsyncThunk&lt;User | string, UserInfo&gt;('', asyn
         <script src="../../../../block-navigation.js"></script>
     </body>
 </html>
-    

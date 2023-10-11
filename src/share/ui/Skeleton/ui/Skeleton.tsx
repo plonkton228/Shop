@@ -2,7 +2,6 @@ import { useClassName } from 'share/libs/useClassName/useClassName'
 import cls from '../models/skeleton.module.scss'
 import { type CSSProperties, memo } from 'react'
 
-
 export enum SkeletonState {
     V1 = 'v1',
     V2 = 'v2'

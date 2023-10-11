@@ -80,6 +80,18 @@
       "userId": "1",
       "body": "хууй",
       "id": "QqlNMV1"
+    },
+    {
+      "goodsId": "2",
+      "userId": "2",
+      "body": "The best product",
+      "id": "ez6yBFK"
+    },
+    {
+      "goodsId": "1",
+      "userId": "2",
+      "body": "I wanna add comment too",
+      "id": "YSjwJll"
     }
   ],
   "users": [
@@ -88,12 +100,18 @@
       "name": "Danik",
       "email": "admin@admin.com",
       "password": "admin"
+    },
+    {
+      "id": "2",
+      "name": "Nikita",
+      "email": "malgin@malgin.com",
+      "password": "malgin"
     }
   ],
   "profile": [
     {
       "lastname": "Konovalov",
-      "name": "Danik",
+      "name": "Danik343",
       "id": "1"
     },
     {
@@ -124,7 +142,8 @@
         "Článek": "Mono166*166mm, 36ks (6*6)",
         "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
         "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
-      }
+      },
+      "type": "panel"
     },
     {
       "id": "2",
@@ -147,7 +166,8 @@
         "Článek": "Mono166*166mm, 36ks (6*6)",
         "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
         "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
-      }
+      },
+      "type": "material"
     },
     {
       "id": "3",
@@ -170,7 +190,8 @@
         "Článek": "Mono166*166mm, 36ks (6*6)",
         "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
         "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
-      }
+      },
+      "type": "panel"
     },
     {
       "id": "4",
@@ -216,7 +237,8 @@
         "Článek": "Mono166*166mm, 36ks (6*6)",
         "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
         "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
-      }
+      },
+      "type": "panel"
     },
     {
       "id": "6",
@@ -331,7 +353,8 @@
         "Článek": "Mono166*166mm, 36ks (6*6)",
         "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
         "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
-      }
+      },
+      "type": "panel"
     },
     {
       "id": "11",
@@ -423,7 +446,8 @@
         "Článek": "Mono166*166mm, 36ks (6*6)",
         "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
         "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
-      }
+      },
+      "type": "panel"
     },
     {
       "id": "15",
@@ -446,7 +470,8 @@
         "Článek": "Mono166*166mm, 36ks (6*6)",
         "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
         "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
-      }
+      },
+      "type": "kabel"
     },
     {
       "id": "16",
@@ -469,7 +494,8 @@
         "Článek": "Mono166*166mm, 36ks (6*6)",
         "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
         "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
-      }
+      },
+      "type": "kabel"
     },
     {
       "id": "17",
@@ -492,7 +518,8 @@
         "Článek": "Mono166*166mm, 36ks (6*6)",
         "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
         "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
-      }
+      },
+      "type": "material"
     },
     {
       "id": "18",
@@ -515,7 +542,8 @@
         "Článek": "Mono166*166mm, 36ks (6*6)",
         "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
         "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
-      }
+      },
+      "type": "kabel"
     },
     {
       "id": "19",
@@ -538,7 +566,8 @@
         "Článek": "Mono166*166mm, 36ks (6*6)",
         "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
         "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
-      }
+      },
+      "type": "batarie"
     },
     {
       "id": "20",
@@ -561,7 +590,8 @@
         "Článek": "Mono166*166mm, 36ks (6*6)",
         "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
         "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
-      }
+      },
+      "type": "kabel"
     },
     {
       "id": "21",
@@ -584,7 +614,8 @@
         "Článek": "Mono166*166mm, 36ks (6*6)",
         "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
         "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
-      }
+      },
+      "type": "converter"
     },
     {
       "id": "22",
@@ -607,7 +638,8 @@
         "Článek": "Mono166*166mm, 36ks (6*6)",
         "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
         "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
-      }
+      },
+      "type": "batarie"
     },
     {
       "id": "23",
@@ -630,7 +662,8 @@
         "Článek": "Mono166*166mm, 36ks (6*6)",
         "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
         "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
-      }
+      },
+      "type": "converter"
     },
     {
       "id": "24",
@@ -653,7 +686,8 @@
         "Článek": "Mono166*166mm, 36ks (6*6)",
         "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
         "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
-      }
+      },
+      "type": "converter"
     },
     {
       "id": "25",
@@ -676,7 +710,8 @@
         "Článek": "Mono166*166mm, 36ks (6*6)",
         "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
         "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
-      }
+      },
+      "type": "converter"
     },
     {
       "id": "26",
@@ -699,7 +734,8 @@
         "Článek": "Mono166*166mm, 36ks (6*6)",
         "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
         "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
-      }
+      },
+      "type": "batarie"
     },
     {
       "id": "27",
@@ -722,7 +758,8 @@
         "Článek": "Mono166*166mm, 36ks (6*6)",
         "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
         "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
-      }
+      },
+      "type": "converter"
     },
     {
       "id": "28",
@@ -745,7 +782,8 @@
         "Článek": "Mono166*166mm, 36ks (6*6)",
         "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
         "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
-      }
+      },
+      "type": "converter"
     },
     {
       "id": "29",
@@ -768,7 +806,8 @@
         "Článek": "Mono166*166mm, 36ks (6*6)",
         "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
         "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
-      }
+      },
+      "type": "batarie"
     },
     {
       "id": "30",
@@ -791,7 +830,8 @@
         "Článek": "Mono166*166mm, 36ks (6*6)",
         "Propojovací": "IP68 (3 bypassové diody), konektory kompatibilní s MC4",
         "Konektor": "44,0 mm² (IEC) Délka vodiče: (+)250 mm,\n(-)350mm, délku vodiče lze upravit na míru"
-      }
+      },
+      "type": "batarie"
     }
   ]
 }

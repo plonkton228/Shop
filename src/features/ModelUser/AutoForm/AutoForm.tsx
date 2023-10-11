@@ -1,0 +1,87 @@
+import { useTranslation } from 'react-i18next'
+import { InputCustom, InputState } from 'share/ui/InputCustom/ui/InputCustom'
+import { ButtonCustom } from 'share/ui/ButtonCustom'
+import { ButtonCustomState } from 'share/ui/ButtonCustom/ui/ButtonCustom'
+import cls from './AutoForm.module.scss'
+import { getPassword, setPassword } from 'entities/Password'
+import { useSelector } from 'react-redux'
+import { useCallback } from 'react'
+import { getEmail, setEmail } from 'entities/Email'
+import { useAppDispatch } from 'share/libs/useRedux/useRedux'
+import { getErrorAuth } from '../models/selectors/getErrorAuth/getErrorAuth'
+import { ErrorAuth } from '../models/types/AuthUserSchema'
+import { fetchFirstPageGoods } from 'pages/GoodsPage/models/actions/fetchFirstPageGoods'
+import { getName, setName } from 'entities/Name'
+import { getLastName, setLastName } from 'entities/Lastname'
+import { authUser } from 'features/ModelUser/models/actions/authUser'
+
+
+
+interface LoginFormProps {
+    close: () => void
+}
+const AutoForm: React.FC<LoginFormProps> = ({ close }: LoginFormProps) => {
+    const password = useSelector(getPassword)
+    const email = useSelector(getEmail)
+    const name = useSelector(getName)
+    const lastname = useSelector(getLastName)
+    const errors = useSelector(getErrorAuth)
+    const dispatch = useAppDispatch()
+    const { t } = useTranslation('modal')
+    const HandlerPassword = useCallback((e: string) => {
+        dispatch(setPassword(e))
+    }, [password])
+    const HandlerName = useCallback((e: string) => {
+        dispatch(setName(e))
+    }, [name])
+    const HandlerLastName = useCallback((e: string) => {
+        dispatch(setLastName(e))
+    }, [lastname])
+    const HandlerEmail = useCallback((e: string) => {
+        dispatch(setEmail(e))
+    }, [email])
+    const ClickHandler = useCallback(() => {
+        dispatch(authUser({ email, password, lastname, name, callback: close }))
+    }, [password, name, lastname, email, dispatch, close])
+    const validErros = {
+        [ErrorAuth.INCORRECT_EMAIL]: t('Zadali jste nesprávné e-mailové informace'),
+        [ErrorAuth.INCORRECT_PASSWORD]: t('Zadali jste nesprávné heslo'),
+        [ErrorAuth.INCORRECT_NAME]: t('Zadali jste nesprávné jméno'),
+        [ErrorAuth.INCORRECT_LASTNAME]: t('Zadali jste nesprávné příjmení'),
+        [ErrorAuth.ERROR_SERVER]: t('Něco se pokazilo')
+    }
+    return (
+        <div className={cls.LoginC}>
+            <div className={cls.OrderContainer}> <h1>{t('Přihlásit se')}</h1> <ButtonCustom classes={cls.close} state={ButtonCustomState.BUTTONCLOSE} onClick={close}/> </div>
+            <hr/>
+            <div className={cls.InputContainer}>
+                {
+                    errors?.map((error) => <h1 className={cls.error}>{validErros[error]}</h1>)
+                }
+                <div className={cls.ContainerInput}>
+                    <div className={cls.PlaceContainer}> {t('Emailová adresa')}</div>
+                    <InputCustom value={email} onChange={HandlerEmail} classe={cls.InputLogin} state={InputState.MODALINPUT}></InputCustom>
+                </div>
+
+                <div className={cls.ContainerInput}>
+                    <div className={cls.PlaceContainer}> {<div>{t('Název')}</div>} </div>
+                    <InputCustom value={name} onChange={HandlerName} classe={cls.InputLogin} state={InputState.MODALINPUT}></InputCustom>
+                </div>
+
+                <div className={cls.ContainerInput}>
+                    <div className={cls.PlaceContainer}> {<div>{t('Příjmení')}</div>}</div>
+                    <InputCustom value={lastname} onChange={HandlerLastName} classe={cls.InputLogin} state={InputState.MODALINPUT}></InputCustom>
+                </div>
+
+                <div className={cls.ContainerInput}>
+                    <div className={cls.PlaceContainer}> {<div>{t('Heslo')}</div>} </div>
+                    <InputCustom value={password} onChange={HandlerPassword} classe={cls.InputLogin} state={InputState.MODALINPUT} type= 'password'></InputCustom>
+                </div>
+                <div className={cls.checkboxContainer} > <InputCustom type='checkbox' state={InputState.MODALINPUT}/> <p>{ t('Zůstat přihlášen') }</p></div>
+                <ButtonCustom onClick={ClickHandler} classes={cls.BottanLogin} state={ButtonCustomState.BUTTONMODAL}>{t('Registrovat')}</ButtonCustom>
+            </div>
+        </div>
+    )
+
+}
+export default AutoForm

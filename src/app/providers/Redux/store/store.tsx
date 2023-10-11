@@ -3,15 +3,15 @@ import { userReducer } from 'entities/User'
 import { type GlobalScheme } from 'app/providers/Redux/models/types/ReduxType'
 import { createReducerManager } from 'app/providers/Redux/store/reducerManager'
 import { type Reducer, type CombinedState } from 'redux'
-import {goodsPageReducer} from "pages/GoodsPage";
-import {goodReducer} from "entities/Good";
-import {commentReducer} from "entities/Comments";
+import { goodsPageReducer } from 'pages/GoodsPage'
+import { goodReducer } from 'entities/Good'
+import { commentReducer } from 'entities/Comments'
 
 export function ReduxSetUp (initialState?: GlobalScheme, asyncReducer?: ReducersMapObject<GlobalScheme>) {
     const Reducers: ReducersMapObject<GlobalScheme> = {
         ...asyncReducer,
         user: userReducer,
-        goodsPage: goodsPageReducer,
+        goodsPage: goodsPageReducer
     }
     const reducerManager = createReducerManager(Reducers)
     const store = configureStore<GlobalScheme>({

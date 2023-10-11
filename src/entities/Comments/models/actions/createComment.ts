@@ -1,11 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { type comment, type typeForActionAddComment } from '../types/CommentSchema'
 import { type ThunkConfig } from 'app/providers/Redux/models/types/ReduxType'
-import { api } from 'share/api/api'
+import { API } from 'share/api/api'
 import { fetchCommentById } from '../actions/fetchCommentById'
 
 export const createComment = createAsyncThunk<comment, typeForActionAddComment, ThunkConfig<string>>('create/comment', async (payload, thunkAPI) => {
     const { dispatch, rejectWithValue } = thunkAPI
+    const api = new API().apiInstance
     try {
         const data = await api.post<comment>('comments', {
             goodsId: payload.goodsId,

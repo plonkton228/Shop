@@ -11,7 +11,8 @@ export enum ButtonCustomState {
     BUTTONEDIT = 'ButtonEdit',
     BUTTONCANCLE = 'ButtonCancle',
     BUTTONPURCHASE = 'ButtonPurchase',
-    BUTTONINFO = 'ButtonInfo'
+    BUTTONINFO = 'ButtonInfo',
+    BUTTONAUTO = 'AutoButton'
 }
 
 interface ButtonCustomProps extends ButtonHTMLAttributes<HTMLButtonElement> {

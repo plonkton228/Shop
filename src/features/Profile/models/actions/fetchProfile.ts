@@ -1,9 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { api } from 'share/api/api'
+import { API } from 'share/api/api'
 import { ErrorsProfile, type Profile } from 'features/Profile/models/types/ProfileType'
 
 export const fetchProfile = createAsyncThunk<Profile, string>('profile/fetchProfile', async (id, thunkApi) => {
     const { dispatch, rejectWithValue } = thunkApi
+    const api = new API().apiInstance
     try {
         const data = await api.get<Profile>(`profile/${id}`)
         if (!data.data) {

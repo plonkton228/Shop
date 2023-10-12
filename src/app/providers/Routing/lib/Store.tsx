@@ -8,7 +8,6 @@ import { ConverterPage } from 'pages/ConverterPage'
 import { DetailGoods } from 'entities/Good'
 import { OptPageTest } from 'pages/OptPageTest'
 
-
 export type AppRouteProps = RouteProps & {
     isAuth?: boolean
 }

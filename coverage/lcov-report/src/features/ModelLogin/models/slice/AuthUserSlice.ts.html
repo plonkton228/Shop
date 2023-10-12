@@ -15,41 +15,41 @@
         }
     </style>
 </head>
-    
+
 <body>
 <div class='wrapper'>
     <div class='pad1'>
         <h1><a href="../../../../../index.html">All files</a> / <a href="index.html">src/features/ModelLogin/models/slice</a> AuthUserSlice.ts</h1>
         <div class='clearfix'>
-            
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">30% </span>
                 <span class="quiet">Statements</span>
                 <span class='fraction'>3/10</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
                 <span class='fraction'>0/0</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
                 <span class='fraction'>0/4</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">30% </span>
                 <span class="quiet">Lines</span>
                 <span class='fraction'>3/10</span>
             </div>
-        
-            
+
+
         </div>
         <p class="quiet">
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
@@ -123,7 +123,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { type AuthUserSchema } from 'features/ModelLogin/models/types/AuthUserSchema'
 import { createSlice } from '@reduxjs/toolkit'
-import { authUser } from 'features/ModelLogin/models/actions/authUser'
+import { logUser } from 'features/ModelLogin/models/actions/logUser'
 &nbsp;
 const initialState: AuthUserSchema = {
     isLoading: false,
@@ -136,13 +136,13 @@ const AuthUserSlice = createSlice({
     reducers: {
     },
     extraReducers: <span class="fstat-no" title="function not covered" >(b</span>uilder) =&gt; {
-<span class="cstat-no" title="statement not covered" >        builder.addCase(authUser.pending, <span class="fstat-no" title="function not covered" >(s</span>tate) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        builder.addCase(logUser.pending, <span class="fstat-no" title="function not covered" >(s</span>tate) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            state.isLoading = true</span>
         })
-<span class="cstat-no" title="statement not covered" >        builder.addCase(authUser.fulfilled, <span class="fstat-no" title="function not covered" >(s</span>tate) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        builder.addCase(logUser.fulfilled, <span class="fstat-no" title="function not covered" >(s</span>tate) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            state.isLoading = false</span>
         })
-<span class="cstat-no" title="statement not covered" >        builder.addCase(authUser.rejected, <span class="fstat-no" title="function not covered" >(s</span>tate, action) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        builder.addCase(logUser.rejected, <span class="fstat-no" title="function not covered" >(s</span>tate, action) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            state.isLoading = false</span>
 <span class="cstat-no" title="statement not covered" >            state.error = action.payload as string</span>
         })
@@ -169,4 +169,3 @@ export const AuthReducer = AuthUserSlice.reducer
         <script src="../../../../../block-navigation.js"></script>
     </body>
 </html>
-    

@@ -12,16 +12,13 @@ interface InputCustomProps {
     value?: string
     children?: React.ReactNode
     classe?: string
-    firstplace?: React.ReactNode
-    secondplace?: React.ReactNode
     type?: string
     state: InputState
     placeholder?: string
     readonly?: boolean
 }
-export const InputCustom: React.FC<InputCustomProps> = memo(({ onChange, value, classe, children, firstplace, secondplace, state, type, placeholder, readonly }: InputCustomProps) => {
-    return (<div className={cls.ContainerInput}>
-        <div className={cls.PlaceContainer}> {firstplace} <span>{secondplace}</span></div>
+export const InputCustom: React.FC<InputCustomProps> = memo(({ onChange, value, classe, children, state, type, placeholder, readonly }: InputCustomProps) => {
+    return (
         <input className={useClassName({ cls: cls.InputCustom, mode: {}, classes: [cls[state], classe] })} readOnly={readonly} placeholder={placeholder} type={type} value={value} onChange={(e) => { onChange(e.target.value) } } >{children}</input>
-    </div>)
+    )
 })

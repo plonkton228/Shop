@@ -1,6 +1,6 @@
 import { memo, useEffect } from 'react'
 import { DynamicProvider } from 'share/libs/DynamicRedux/DynamicProvider'
-import {getErrorGood, getGood, getLoadingGood} from '../../../models/selectors/goodSelector'
+import { getErrorGood, getGood, getLoadingGood } from '../../../models/selectors/goodSelector'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { Skeleton } from 'share/ui/Skeleton'
@@ -10,8 +10,8 @@ import { fetchGoodById } from '../../../models/actions/fetchGoodById'
 import { SkeletonState } from 'share/ui/Skeleton/ui/Skeleton'
 import { goodReducer } from '../../../models/goodSlice/goodSlice'
 import { GoodItem } from '../../GoodItem/GoodItem'
-import {getErrorGoodsPage} from "pages/GoodsPage";
-import {useTranslation} from "react-i18next";
+import { getErrorGoodsPage } from 'pages/GoodsPage'
+import { useTranslation } from 'react-i18next'
 
 const DetailGoods: React.FC = () => {
     const data = useSelector(getGood)
@@ -28,7 +28,7 @@ const DetailGoods: React.FC = () => {
             <div >
                 <Skeleton state={SkeletonState.V1} height={'80vh'} width={'1400px'} border={'20px'}/>
             </div>
-            </>)
+        </>)
     }
     const ErrorProvide = () => {
         return (<>
@@ -38,7 +38,7 @@ const DetailGoods: React.FC = () => {
         </>)
     }
     if (error) {
-       return (<ErrorProvide/>)
+        return (<ErrorProvide/>)
     }
     return (<>
         <DynamicProvider DynamicReducers={{ goods: goodReducer, comments: commentReducer }}>

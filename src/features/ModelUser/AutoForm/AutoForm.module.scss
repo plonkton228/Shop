@@ -1,0 +1,77 @@
+.LoginContainer {
+  padding: 10px;
+}
+
+.LoginC hr {
+  border: 2px solid black
+}
+
+.OrderContainer {
+  position: relative;
+}
+
+.close {
+  top: -13px;
+}
+
+
+
+.InputContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 110px;
+  p {
+    align-self: center;
+  }
+  a {
+    color: green;
+  }
+  h1{
+    align-self: center;
+    font-size: 30px;
+    color: red;
+  }
+
+
+}
+
+.BottanLogin {
+  align-self: center;
+  margin-top: 20px;
+}
+
+.InputLogin {
+  margin-top: 15px;
+}
+
+.checkboxContainer {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  p {
+    margin: 0;
+    align-self: end;
+  }
+
+}
+.error {
+  font-size: 15px !important;
+  color : red;
+}
+
+.ContainerInput {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  padding: 0 20px;
+  span {
+    color: green;
+  }
+
+}
+
+.PlaceContainer{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 4px;
+}

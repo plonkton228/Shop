@@ -1,6 +1,5 @@
 .Container_MobileBar {
   display: flex;
-  align-items: start;
   flex-direction: column;
   position: fixed;
   top: 0;
@@ -11,9 +10,10 @@
   opacity: 0;
   height: 0;
   background-color: white;
-  padding-top: 80px;
+  padding: 80px 10px 10px 10px;
   overflow-y: scroll;
   overflow-x:hidden ;
+  align-items: stretch;
 }
 
 .Container_MobileBar hr {
@@ -24,7 +24,7 @@
 .open {
   pointer-events: auto;
   opacity: 1;
-  height: 700px;
+  height: 100%;
   transition: all 0.3s linear;
 }
 

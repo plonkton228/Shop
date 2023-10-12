@@ -59,7 +59,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\entities\Password\models\selectors\getPassword\getPassword.ts
+SF:src\entities\Password\models\selectors\getName\getName.ts
 FN:5,(anonymous_0)
 FNF:1
 FNH:1
@@ -73,7 +73,7 @@ BRF:2
 BRH:1
 end_of_record
 TN:
-SF:src\entities\Password\models\selectors\getStatePassword\getStatePassword.ts
+SF:src\entities\Password\models\selectors\getStateName\getStateName.ts
 FN:4,(anonymous_0)
 FNF:1
 FNH:1
@@ -85,7 +85,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\entities\Password\models\slice\passwordSlice.tsx
+SF:src\entities\Password\models\slice\nameSlice.tsx
 FN:11,(anonymous_0)
 FNF:1
 FNH:1
@@ -126,7 +126,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\features\ModelLogin\models\actions\authUser.ts
+SF:src\features\ModelLogin\models\actions\logUser.ts
 FN:8,(anonymous_0)
 FNF:1
 FNH:1

@@ -1,5 +1,5 @@
 import { type UserScheme } from 'entities/User/models/type/UserSchema'
-import { type AuthUserSchema } from 'features/ModelLogin/models/types/AuthUserSchema'
+import { type AuthUserSchema } from 'features/ModelUser/models/types/AuthUserSchema'
 import { type PasswordSchema } from 'entities/Password/models/types/passwordT'
 import { type EmailSchema } from 'entities/Email/models/types/emailSchema'
 import { type AnyAction, type CombinedState, type Reducer } from '@reduxjs/toolkit'
@@ -7,19 +7,23 @@ import { type ProfileSchema } from 'features/Profile/models/types/ProfileType'
 import { type GoodSchema } from 'entities/Good'
 import { type CommentSchema } from 'entities/Comments/models/types/CommentSchema'
 import { type AddCommentSchema } from 'features/AddComment'
-import { GoodsPageSchema } from 'pages/GoodsPage'
-
+import { type GoodsPageSchema } from 'pages/GoodsPage'
+import { type NameSchema } from 'entities/Name'
+import { type LastNameSchema } from 'entities/Lastname'
 
 export interface GlobalScheme {
     user: UserScheme
     auth: AuthUserSchema
     password: PasswordSchema
     email: EmailSchema
+    name: NameSchema
+    lastname: LastNameSchema
     profile: ProfileSchema
     goods: GoodSchema
     comments: CommentSchema
     addComment: AddCommentSchema
     goodsPage: GoodsPageSchema
+
 }
 
 export type GlobalSchemaKeys = keyof GlobalScheme

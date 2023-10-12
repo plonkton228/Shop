@@ -1,9 +1,14 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { type Good } from 'entities/Good/models/types/GoodType'
 import { type ThunkConfig } from 'app/providers/Redux/models/types/ReduxType'
-import { api } from 'share/api/api'
-import {getSearchGoods, setPage} from "pages/GoodsPage";
-import {getHasMoreGoods, getLimitGoods, getPageGoods} from "pages/GoodsPage/models/selectors/goodsPageSelector";
+import { API } from 'share/api/api'
+import { getSearchGoods, setPage } from 'pages/GoodsPage'
+import {
+    getHasMoreGoods,
+    getLimitGoods,
+    getPageGoods,
+    getSortGoods
+} from 'pages/GoodsPage/models/selectors/goodsPageSelector'
 
 interface fetchGoodsProps {
     replace?: boolean
@@ -14,6 +19,7 @@ export const fetchGoods = createAsyncThunk<Good[], fetchGoodsProps, ThunkConfig<
     const limit = getLimitGoods(getState())
     const hasMore = getHasMoreGoods(getState())
     const search = getSearchGoods(getState())
+    const api = new API().apiInstance
     try {
         const data = await api.get<Good[]>('/goods', {
             params: {
@@ -21,7 +27,7 @@ export const fetchGoods = createAsyncThunk<Good[], fetchGoodsProps, ThunkConfig<
                 _limit: limit,
                 q: search
             }
-        } )
+        })
         if (hasMore) {
             dispatch(setPage(page + 1))
         }

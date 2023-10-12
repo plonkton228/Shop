@@ -1,8 +1,7 @@
 import { memo } from 'react'
-import { type Good } from  '../../../models/types/GoodType'
+import { type Good } from '../../../models/types/GoodType'
 import { GoodsListItem } from '../../GoodsListItem/index'
 import cls from './GoodsList.module.scss'
-import {SearchGoods} from "pages/GoodsPage/ui/SearchGoods/ui/SearchGoods";
 
 export interface GoodsListProps {
     goods?: Good[]
@@ -16,11 +15,8 @@ export const GoodsList: React.FC<GoodsListProps> = memo((props: GoodsListProps) 
     }
 
     return (<div className={cls.GoodsContainer}>
-        <SearchGoods/>
         {
             goods.length > 0 ? goods.map(renderItem) : null
         }
     </div>)
 })
-
-

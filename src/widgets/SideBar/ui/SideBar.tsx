@@ -4,7 +4,6 @@ import { Portal } from 'share/ui/Portal'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { ButtonCustom, ButtonCustomState } from 'share/ui/ButtonCustom/ui/ButtonCustom'
 
-
 interface SideBarProps {
     Open: boolean
     setOpen: () => void

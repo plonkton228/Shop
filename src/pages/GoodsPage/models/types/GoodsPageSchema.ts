@@ -1,7 +1,6 @@
 import { type Good } from 'entities/Good'
 import { type EntityState } from '@reduxjs/toolkit'
 
-
 export interface GoodsPageSchema extends EntityState<Good> {
     isLoading: boolean
     error: string
@@ -10,4 +9,5 @@ export interface GoodsPageSchema extends EntityState<Good> {
     page?: number
     hasMore: boolean
     search?: string
+    sort?: string
 }

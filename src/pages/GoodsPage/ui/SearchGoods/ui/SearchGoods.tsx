@@ -14,6 +14,6 @@ export const SearchGoods: React.FC = () => {
         dispatch(fetchGoods({ replace: true }))
     }, [dispatch])
     return (<>
-            <InputCustom classe={cls.InputSearch} value={search} onChange={SearchChange} placeholder={'Search...'} state={InputState.COMMENTINPUT}/>
+        <InputCustom classe={cls.InputSearch} value={search} onChange={SearchChange} placeholder={'Search...'} state={InputState.COMMENTINPUT}/>
     </>)
 }

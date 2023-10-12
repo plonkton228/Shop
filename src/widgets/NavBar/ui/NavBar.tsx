@@ -6,7 +6,6 @@ import cls from '../models/styles/NavBar.module.scss'
 import { LinkCustom } from 'share/ui/LinkCustom'
 import { StateLink } from 'share/ui/LinkCustom/ui/LinkCustom'
 import { LanguageSwitcher } from 'features/LanguageSwitcher'
-import { UnderNavBar } from 'features/UndeNavBar'
 import { ButtonCustom } from 'share/ui/ButtonCustom'
 import { ButtonCustomState } from 'share/ui/ButtonCustom/ui/ButtonCustom'
 import { useTranslation } from 'react-i18next'
@@ -17,7 +16,7 @@ import { BurgerNavBar } from 'features/MobileNavBar'
 import { memo } from 'react'
 import { useSelector } from 'react-redux/es/exports'
 import { getStateUser } from 'entities/User/models/selectors/getStateUser/getStateUser'
-import {ModelAuto} from "features/ModelUser/ModelAuto/ModelAuto";
+import { ModelAuto } from 'features/ModelUser/ModelAuto/ModelAuto'
 
 export const NavBar: React.FC = memo(() => {
     const { t } = useTranslation('main')

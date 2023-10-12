@@ -2,4 +2,4 @@ export { getStateName } from 'entities/Name/models/selectors/getStateName/getSta
 export { getName } from 'entities/Name/models/selectors/getName/getName'
 export { setName } from './models/slice/nameSlice'
 export { nameReducer } from './models/slice/nameSlice'
-export { NameSchema } from './models/types/NameType'
+export type { NameSchema } from './models/types/NameType'

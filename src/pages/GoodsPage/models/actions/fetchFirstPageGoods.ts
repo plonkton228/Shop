@@ -1,10 +1,9 @@
-import {createAsyncThunk} from "@reduxjs/toolkit";
-import {Good} from "entities/Good";
-import {ThunkConfig} from "app/providers/Redux/models/types/ReduxType";
-import {API} from "share/api/api";
-import {useSelector} from "react-redux";
-import {getSortGoods} from "pages/GoodsPage/models/selectors/goodsPageSelector";
-
+import { createAsyncThunk } from '@reduxjs/toolkit'
+import { type Good } from 'entities/Good'
+import { type ThunkConfig } from 'app/providers/Redux/models/types/ReduxType'
+import { API } from 'share/api/api'
+import { useSelector } from 'react-redux'
+import { getSortGoods } from 'pages/GoodsPage/models/selectors/goodsPageSelector'
 
 interface fechFirstPageGood {
     replace?: boolean

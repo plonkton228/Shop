@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksolopharma=self.webpackChunksolopharma||[]).push([[277],{3277:(a,e,s)=>{s.r(e),s.d(e,{default:()=>t});var r=s(5893);const t=function(){return(0,r.jsx)(r.Fragment,{children:"Test Navigate"})}}}]);

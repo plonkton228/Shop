@@ -1,4 +1,4 @@
-import { type AuthUserSchema, ErrorAuth, type ErrorsLog } from '../types/AuthUserSchema'
+import { type AuthUserSchema, type ErrorAuth, type ErrorsLog } from '../types/AuthUserSchema'
 import { createSlice } from '@reduxjs/toolkit'
 import { logUser } from '../actions/logUser'
 import { authUser } from '../actions/authUser'

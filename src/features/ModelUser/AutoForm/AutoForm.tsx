@@ -15,8 +15,6 @@ import { getName, setName } from 'entities/Name'
 import { getLastName, setLastName } from 'entities/Lastname'
 import { authUser } from 'features/ModelUser/models/actions/authUser'
 
-
-
 interface LoginFormProps {
     close: () => void
 }

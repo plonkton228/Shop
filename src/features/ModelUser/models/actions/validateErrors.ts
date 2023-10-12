@@ -11,5 +11,3 @@ export const validateErrors = (user: UserInfo) => {
 
     return errorsValidate
 }
-
-

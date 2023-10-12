@@ -8,8 +8,7 @@ import cls from 'pages/GoodsPage/ui/GoodsPage/GoodsPage.module.scss'
 import { Skeleton, SkeletonState } from 'share/ui/Skeleton'
 import { GoodsList } from 'entities/Good'
 import { Page } from 'share/ui/Page/Page'
-import {SearchGoods} from "pages/GoodsPage/ui/SearchGoods/ui/SearchGoods";
-
+import { SearchGoods } from 'pages/GoodsPage/ui/SearchGoods/ui/SearchGoods'
 
 const GoodsPage: React.FC = () => {
     const arrGoods = useSelector(getGoods.selectAll)

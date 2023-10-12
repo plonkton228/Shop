@@ -18,7 +18,7 @@ import { ButtonCustom } from 'share/ui/ButtonCustom'
 import { ButtonCustomState } from 'share/ui/ButtonCustom/ui/ButtonCustom'
 import { useAppDispatch } from 'share/libs/useRedux/useRedux'
 import { logout } from 'entities/User'
-import {fetchFirstPageGoods} from "pages/GoodsPage/models/actions/fetchFirstPageGoods";
+import { fetchFirstPageGoods } from 'pages/GoodsPage/models/actions/fetchFirstPageGoods'
 
 interface InnerProfileProps {
     isLoading?: boolean
@@ -51,7 +51,7 @@ const InnerProfile: React.FC<InnerProfileProps> = memo((props: InnerProfileProps
     const logOut = useCallback(() => {
         HandlerCloseSideBar()
         dispatch(logout())
-        dispatch(fetchFirstPageGoods({replace: true}))
+        dispatch(fetchFirstPageGoods({ replace: true }))
     }, [name, lastname])
     const validate = {
         [ErrorsProfile.NO_USER_NAME]: t('Pole jména musí být vyplněno'),

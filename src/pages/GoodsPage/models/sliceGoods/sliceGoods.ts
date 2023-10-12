@@ -7,8 +7,7 @@ import { type GlobalScheme } from 'app/providers/Redux/models/types/ReduxType'
 import { type Good } from 'entities/Good'
 import { fetchGoods } from '../actions/fetchGoods'
 import { type PayloadAction } from '@reduxjs/toolkit/dist/createAction'
-import { fetchFirstPageGoods } from "pages/GoodsPage/models/actions/fetchFirstPageGoods";
-
+import { fetchFirstPageGoods } from 'pages/GoodsPage/models/actions/fetchFirstPageGoods'
 
 const goodsAdapter = createEntityAdapter<Good>({
     selectId: (comment) => comment.id

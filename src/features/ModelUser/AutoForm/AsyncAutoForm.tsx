@@ -1,3 +1,3 @@
-import React from "react";
+import React from 'react'
 
 export const AsyncAutoForm = React.lazy(async () => await import('./AutoForm'))

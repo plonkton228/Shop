@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import {ErrorAuth, ErrorsLog, type UserInfo} from '../types/AuthUserSchema'
+import { ErrorAuth, ErrorsLog, type UserInfo } from '../types/AuthUserSchema'
 import { type User } from 'entities/User/models/type/UserSchema'
 import { AutoUser } from 'entities/User'
 import { USER_LOCALSTORAGE_KEY } from 'share/const/localstorage'
@@ -7,7 +7,7 @@ import { API } from 'share/api/api'
 import { type ThunkConfig } from 'app/providers/Redux/models/types/ReduxType'
 import { type Profile } from 'features/Profile/models/types/ProfileType'
 import { validateErrorAuth } from '../actions/validateErrorAuth'
-import {validateErrors} from "features/ModelUser/models/actions/validateErrors";
+import { validateErrors } from 'features/ModelUser/models/actions/validateErrors'
 
 export const authUser = createAsyncThunk<User | string, UserInfo, ThunkConfig<ErrorAuth | ErrorAuth[]>>('auth/user', async (userFiled, thunkApi) => {
     const { dispatch, rejectWithValue } = thunkApi
@@ -15,7 +15,7 @@ export const authUser = createAsyncThunk<User | string, UserInfo, ThunkConfig<Er
     const errors = validateErrorAuth(userFiled)
     if (errors.length > 0) {
         console.log(errors)
-      return rejectWithValue(errors)
+        return rejectWithValue(errors)
     }
     try {
         const data = await api.post<User>('users', { email: userFiled.email, password: userFiled.password })

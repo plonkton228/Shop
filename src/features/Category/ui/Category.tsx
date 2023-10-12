@@ -1,13 +1,13 @@
-import {LinkCustom} from 'share/ui/LinkCustom'
-import {StateLink} from 'share/ui/LinkCustom/ui/LinkCustom'
+import { LinkCustom } from 'share/ui/LinkCustom'
+import { StateLink } from 'share/ui/LinkCustom/ui/LinkCustom'
 import cls from '../models/Category.module.scss'
-import {memo, useCallback} from 'react'
-import {useTranslation} from 'react-i18next'
-import {useAppDispatch} from "share/libs/useRedux/useRedux";
-import {setSort} from "pages/GoodsPage";
-import {ButtonCustom} from "share/ui/ButtonCustom";
-import {ButtonCustomState} from "share/ui/ButtonCustom/ui/ButtonCustom";
-import {fetchFirstPageGoods} from "pages/GoodsPage/models/actions/fetchFirstPageGoods";
+import { memo, useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useAppDispatch } from 'share/libs/useRedux/useRedux'
+import { setSort } from 'pages/GoodsPage'
+import { ButtonCustom } from 'share/ui/ButtonCustom'
+import { ButtonCustomState } from 'share/ui/ButtonCustom/ui/ButtonCustom'
+import { fetchFirstPageGoods } from 'pages/GoodsPage/models/actions/fetchFirstPageGoods'
 
 export const Category: React.FC = memo(() => {
     const { t } = useTranslation('profile')
@@ -15,32 +15,32 @@ export const Category: React.FC = memo(() => {
     const clickPanel = useCallback(() => {
         dispatch(setSort('panel'))
         dispatch(fetchFirstPageGoods({ replace: true }))
-},[dispatch])
+    }, [dispatch])
 
     const clickKonektor = useCallback(() => {
         dispatch(setSort('konektor'))
         dispatch(fetchFirstPageGoods({ replace: true }))
-    },[dispatch])
+    }, [dispatch])
 
     const clickKabel = useCallback(() => {
         dispatch(setSort('kabel'))
         dispatch(fetchFirstPageGoods({ replace: true }))
-    },[dispatch])
+    }, [dispatch])
 
     const clickBatarie = useCallback(() => {
         dispatch(setSort('batarie'))
         dispatch(fetchFirstPageGoods({ replace: true }))
-    },[dispatch])
+    }, [dispatch])
 
     const clickMaterial = useCallback(() => {
         dispatch(setSort('material'))
         dispatch(fetchFirstPageGoods({ replace: true }))
-    },[dispatch])
+    }, [dispatch])
 
     const clickConverter = useCallback(() => {
         dispatch(setSort('converter'))
         dispatch(fetchFirstPageGoods({ replace: true }))
-    },[dispatch])
+    }, [dispatch])
 
     return (<>
         <div className={cls.ContainerCategory} >

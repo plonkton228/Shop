@@ -1,16 +1,16 @@
-import {useTranslation} from 'react-i18next'
-import {InputCustom, InputState} from 'share/ui/InputCustom/ui/InputCustom'
-import {ButtonCustom} from 'share/ui/ButtonCustom'
-import {ButtonCustomState} from 'share/ui/ButtonCustom/ui/ButtonCustom'
+import { useTranslation } from 'react-i18next'
+import { InputCustom, InputState } from 'share/ui/InputCustom/ui/InputCustom'
+import { ButtonCustom } from 'share/ui/ButtonCustom'
+import { ButtonCustomState } from 'share/ui/ButtonCustom/ui/ButtonCustom'
 import cls from './loginForm.module.scss'
-import {LinkCustom} from 'share/ui/LinkCustom'
-import {StateLink} from 'share/ui/LinkCustom/ui/LinkCustom'
-import {getPassword, setPassword} from 'entities/Password'
-import {useSelector} from 'react-redux'
-import {useCallback} from 'react'
-import {getEmail, setEmail} from 'entities/Email'
-import {logUser} from '../models/actions/logUser'
-import {useAppDispatch} from 'share/libs/useRedux/useRedux'
+import { LinkCustom } from 'share/ui/LinkCustom'
+import { StateLink } from 'share/ui/LinkCustom/ui/LinkCustom'
+import { getPassword, setPassword } from 'entities/Password'
+import { useSelector } from 'react-redux'
+import { useCallback } from 'react'
+import { getEmail, setEmail } from 'entities/Email'
+import { logUser } from '../models/actions/logUser'
+import { useAppDispatch } from 'share/libs/useRedux/useRedux'
 import { ErrorsLog } from '../models/types/AuthUserSchema'
 import { fetchFirstPageGoods } from 'pages/GoodsPage/models/actions/fetchFirstPageGoods'
 import { getErrorLog } from 'features/ModelUser/models/selectors/getErrorLog/getErrorLog'
@@ -37,14 +37,14 @@ const LoginForm: React.FC<LoginFormProps> = ({ close, OpenModalAuto }: LoginForm
     // }
     const ClickHandler = useCallback(() => {
         dispatch(logUser({ email, password, callback: close })).then((response) => {
-            dispatch(fetchFirstPageGoods({replace: true}))
+            dispatch(fetchFirstPageGoods({ replace: true }))
         })
 
     }, [dispatch, email, password])
     const OpenAutoHandler = useCallback(() => {
         close()
         OpenModalAuto()
-    },[])
+    }, [])
     const validErros = {
         [ErrorsLog.NO_USER_EMAIL]: t('Nevyplnili jste pole pro e-mail'),
         [ErrorsLog.NO_USER_PASSWORD]: t('Nevyplnili jste pole pro heslo'),

@@ -3,7 +3,6 @@ import { type Good } from '../../../models/types/GoodType'
 import { GoodsListItem } from '../../GoodsListItem/index'
 import cls from './GoodsList.module.scss'
 
-
 export interface GoodsListProps {
     goods?: Good[]
 }

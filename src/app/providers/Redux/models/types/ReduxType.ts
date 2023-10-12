@@ -11,7 +11,6 @@ import { type GoodsPageSchema } from 'pages/GoodsPage'
 import { type NameSchema } from 'entities/Name'
 import { type LastNameSchema } from 'entities/Lastname'
 
-
 export interface GlobalScheme {
     user: UserScheme
     auth: AuthUserSchema

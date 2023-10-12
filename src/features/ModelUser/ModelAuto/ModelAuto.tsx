@@ -5,8 +5,8 @@ import { AuthReducer } from '../models/slice/AuthUserSlice'
 import { emailReducer } from 'entities/Email'
 import { passwordReducer } from 'entities/Password'
 import { memo } from 'react'
-import {nameReducer} from "entities/Name";
-import {lastNameReducer} from "entities/Lastname";
+import { nameReducer } from 'entities/Name'
+import { lastNameReducer } from 'entities/Lastname'
 import { AsyncAutoForm } from '../AutoForm/AsyncAutoForm'
 
 interface ModalWindowProps {
@@ -18,7 +18,7 @@ export const ModelAuto: React.FC<ModalWindowProps> = memo(({ isOpen, close }: Mo
         <Portal element={document.body}>
             <Modal lazy={true} isOpen={isOpen} close={close}>
                 <DynamicProvider DynamicReducers={{ auth: AuthReducer, email: emailReducer, password: passwordReducer, name: nameReducer, lastname: lastNameReducer }}>
-                  <AsyncAutoForm close={close}/>
+                    <AsyncAutoForm close={close}/>
                 </DynamicProvider>
             </Modal>
         </Portal>

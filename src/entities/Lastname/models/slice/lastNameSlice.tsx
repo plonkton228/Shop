@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import { type PasswordSchema } from 'entities/Password/models/types/passwordT'
-import {LastNameSchema} from "../types/LastNameTypes";
+import { type LastNameSchema } from '../types/LastNameTypes'
 const initialState: LastNameSchema = {
     lastname: ''
 }

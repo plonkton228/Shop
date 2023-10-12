@@ -1,13 +1,13 @@
-import {useSelector} from "react-redux";
-import {getErrorGoodsPage, getGoods, getLoadingGoodsPage} from "pages/GoodsPage";
-import {GoodsList} from "entities/Good";
-import {useTranslation} from "react-i18next";
-import {Skeleton, SkeletonState} from "share/ui/Skeleton";
-import {useEffect} from "react";
-import {useAppDispatch} from "share/libs/useRedux/useRedux";
-import {fetchFirstPageGoods} from "pages/GoodsPage/models/actions/fetchFirstPageGoods";
+import { useSelector } from 'react-redux'
+import { getErrorGoodsPage, getGoods, getLoadingGoodsPage } from 'pages/GoodsPage'
+import { GoodsList } from 'entities/Good'
+import { useTranslation } from 'react-i18next'
+import { Skeleton, SkeletonState } from 'share/ui/Skeleton'
+import { useEffect } from 'react'
+import { useAppDispatch } from 'share/libs/useRedux/useRedux'
+import { fetchFirstPageGoods } from 'pages/GoodsPage/models/actions/fetchFirstPageGoods'
 import cls from './GoodsHome.module.scss'
-import {fetchGoods} from "pages/GoodsPage/models/actions/fetchGoods";
+import { fetchGoods } from 'pages/GoodsPage/models/actions/fetchGoods'
 export const GoodsHome: React.FC = () => {
     const isLoadgin = useSelector(getLoadingGoodsPage)
     const arrGoods = useSelector(getGoods.selectAll)
@@ -25,18 +25,18 @@ export const GoodsHome: React.FC = () => {
             <Skeleton state={SkeletonState.V2} height={'400px'} width={'400px'} border={'20px'}/>
             <Skeleton state={SkeletonState.V2} height={'400px'} width={'400px'} border={'20px'}/>
             <Skeleton state={SkeletonState.V2} height={'400px'} width={'400px'} border={'20px'}/>
-            </div>)
+        </div>)
     }
     if (error) {
         return <h1
-        style={{
-            display: 'flex',
-            justifyContent: 'center'
-        }}
+            style={{
+                display: 'flex',
+                justifyContent: 'center'
+            }}
         >{t('Pro zobrazení produktů musíte být registrováni!')}</h1>
     }
     return (<>
         <GoodsList goods={arrGoods}/>
         {isLoadgin && <SkeletonProvider/>}
-        </>)
+    </>)
 }

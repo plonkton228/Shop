@@ -39,8 +39,7 @@ const AutoForm: React.FC<LoginFormProps> = ({ close }: LoginFormProps) => {
         dispatch(setEmail(e))
     }, [email])
     const ClickHandler = useCallback(() => {
-        dispatch(authUser({ email, password, lastname, name, callback: close })).then(() =>
-        {
+        dispatch(authUser({ email, password, lastname, name, callback: close })).then(() => {
             dispatch(fetchFirstPageGoods({ replace: true }))
         })
     }, [password, name, lastname, email, dispatch, close])
@@ -78,7 +77,6 @@ const AutoForm: React.FC<LoginFormProps> = ({ close }: LoginFormProps) => {
                     <div className={cls.PlaceContainer}> {<div>{t('Heslo')}</div>} </div>
                     <InputCustom value={password} onChange={HandlerPassword} classe={cls.InputLogin} state={InputState.MODALINPUT} type= 'password'></InputCustom>
                 </div>
-                <div className={cls.checkboxContainer} > <InputCustom type='checkbox' state={InputState.MODALINPUT}/> <p>{ t('Zůstat přihlášen') }</p></div>
                 <ButtonCustom onClick={ClickHandler} classes={cls.BottanLogin} state={ButtonCustomState.BUTTONMODAL}>{t('Registrovat')}</ButtonCustom>
             </div>
         </div>

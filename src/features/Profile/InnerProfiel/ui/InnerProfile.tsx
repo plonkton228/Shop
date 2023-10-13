@@ -19,7 +19,7 @@ import { ButtonCustomState } from 'share/ui/ButtonCustom/ui/ButtonCustom'
 import { useAppDispatch } from 'share/libs/useRedux/useRedux'
 import { logout } from 'entities/User'
 import { fetchFirstPageGoods } from 'pages/GoodsPage/models/actions/fetchFirstPageGoods'
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from 'react-router-dom'
 
 interface InnerProfileProps {
     isLoading?: boolean

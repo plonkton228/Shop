@@ -3,7 +3,7 @@ import cls from './CommentBlock.module.scss'
 import { Comment } from '../Comment/Comment'
 import { useSelector } from 'react-redux'
 import { getComments, getLodingComment } from '../index'
-import { fetchCommentById } from '../models/actions/fetchCommentById'
+import { fetchComments } from '../models/actions/fetchComments'
 import { useAppDispatch } from 'share/libs/useRedux/useRedux'
 import { Skeleton, SkeletonState } from 'share/ui/Skeleton'
 import { AddComment } from 'features/AddComment'
@@ -21,7 +21,7 @@ export const CommentBlock: React.FC<CommentBlockProps> = memo((props: CommentBlo
         id
     } = props
     useEffect(() => {
-        dispatch(fetchCommentById(id))
+        dispatch(fetchComments(id))
     }, [])
     if (isLoading) {
         return (<>

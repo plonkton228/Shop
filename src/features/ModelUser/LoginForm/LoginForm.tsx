@@ -63,7 +63,6 @@ const LoginForm: React.FC<LoginFormProps> = ({ close, OpenModalAuto }: LoginForm
                     <div className={cls.PlaceContainer}> {<div>{t('Heslo')}</div>} <span>{<LinkCustom to='#' state={StateLink.LINKRESET}>{t('Zapomenuté heslo')}</LinkCustom>}</span></div>
                     <InputCustom value={password} onChange={HandlerPassword} classe={cls.InputLogin} state={InputState.MODALINPUT} type= 'password'></InputCustom>
                 </div>
-                <div className={cls.checkboxContainer} > <InputCustom type='checkbox' state={InputState.MODALINPUT}/> <p>{ t('Zůstat přihlášen') }</p></div>
                 <ButtonCustom onClick={ClickHandler} classes={cls.BottanLogin} state={ButtonCustomState.BUTTONMODAL}>{t('pokračovat')}</ButtonCustom>
                 <p>{t('Nemáte účet?')} <ButtonCustom onClick={OpenAutoHandler} state={ButtonCustomState.BUTTONAUTO}>{t('Zaregistrujte se zde')}</ButtonCustom></p>
             </div>

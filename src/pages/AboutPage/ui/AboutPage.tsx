@@ -19,7 +19,6 @@ const AboutPage: React.FC = () => {
                 <p>{t('Tady se můžete spojit s generálním manažerem společnosti Solopharma Group s.r.o, kde se proberou všechny otázky na základě Vaší poptávky ')}</p>
             </div>
 
-
             <div>
                 <div className={cls.Order_container}><img src = {key} /> <h2>{t('Projekt na klíč')}</h2></div>
                 <p>{t('Spojte se s manažery naší společnosti Solopharma Group, s.r.o a probereme spolu všechna možná řešení a Vaše osobní požadavky. Připravíme nabídku na míru Vašim potřebám, zpracujeme potřebné doklady, projednáme následující instalaci a vyřízení dotace')}</p>

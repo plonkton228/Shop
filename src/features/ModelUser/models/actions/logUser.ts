@@ -7,7 +7,7 @@ import { API } from 'share/api/api'
 import { type ThunkConfig } from 'app/providers/Redux/models/types/ReduxType'
 import { validateErrors } from './validateErrors'
 
-export const logUser = createAsyncThunk<User | string, UserInfo, ThunkConfig<ErrorsLog | ErrorsLog[]>>('log/user', async (userFiled, thunkApi) => {
+export const logUser = createAsyncThunk<User | string, UserInfo, ThunkConfig<ErrorsLog[]>>('log/user', async (userFiled, thunkApi) => {
     const { dispatch, rejectWithValue } = thunkApi
     const api = new API().apiInstance
     const errors = validateErrors(userFiled)

@@ -21,5 +21,5 @@ export enum ErrorAuth {
 export interface AuthUserSchema {
     isLoading: boolean
     errorLog?: ErrorsLog[]
-    errorAuth?: | ErrorAuth[]
+    errorAuth?: ErrorAuth[]
 }

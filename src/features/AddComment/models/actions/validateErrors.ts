@@ -1,4 +1,4 @@
-import { ErrorsComment } from '../types/CommentSchema'
+import { ErrorsComment } from '../types/AddCommentSchema'
 
 export const validateErrors = (data: string) => {
     const errors: ErrorsComment[] = []

@@ -12,9 +12,11 @@ const App: React.FC = () => {
         dispatch(reAuth())
     }, [])
     return (<>
-        <NavBar/>
-        <Routing/>
-        <Footer/>
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100vh' }}>
+            <NavBar/>
+            <Routing/>
+            <Footer/>
+        </div>
     </>)
 }
 export default App

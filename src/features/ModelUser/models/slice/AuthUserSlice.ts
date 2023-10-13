@@ -24,7 +24,7 @@ const AuthUserSlice = createSlice({
         })
         builder.addCase(logUser.rejected, (state, action) => {
             state.isLoading = false
-            state.errorLog = action.payload as ErrorsLog[]
+            state.errorLog = action.payload
         })
 
         builder.addCase(authUser.pending, (state) => {
@@ -36,7 +36,7 @@ const AuthUserSlice = createSlice({
         })
         builder.addCase(authUser.rejected, (state, action) => {
             state.isLoading = false
-            state.errorAuth = action.payload as ErrorAuth[]
+            state.errorAuth = action.payload
         })
     }
 })

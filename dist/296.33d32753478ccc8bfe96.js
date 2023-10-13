@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunksolopharma=self.webpackChunksolopharma||[]).push([[296],{2296:(e,r,s)=>{s.r(r),s.d(r,{default:()=>l});var a=s(5893);const l=function(){return(0,a.jsx)(a.Fragment,{children:(0,a.jsx)("div",{style:{color:"red"},children:"ProfilePage!"})})}}}]);

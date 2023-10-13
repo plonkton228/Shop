@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunksolopharma=self.webpackChunksolopharma||[]).push([[609],{3574:(e,a,r)=>{r.r(a),r.d(a,{default:()=>n});var s=r(5893);const n=function(){return(0,s.jsx)(s.Fragment,{children:"ProjectPage"})}}}]);

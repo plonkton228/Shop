@@ -7,7 +7,6 @@ import { useEffect } from 'react'
 import { useAppDispatch } from 'share/libs/useRedux/useRedux'
 import { fetchFirstPageGoods } from 'pages/GoodsPage/models/actions/fetchFirstPageGoods'
 import cls from './GoodsHome.module.scss'
-import { fetchGoods } from 'pages/GoodsPage/models/actions/fetchGoods'
 export const GoodsHome: React.FC = () => {
     const isLoadgin = useSelector(getLoadingGoodsPage)
     const arrGoods = useSelector(getGoods.selectAll)

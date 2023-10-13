@@ -12,7 +12,6 @@ export const fetchCommentById = createAsyncThunk<comment[], string, ThunkConfig<
                 goodsId: id,
                 _expand: 'user'
             }
-
         })
         if (!data.data) {
             throw new Error()

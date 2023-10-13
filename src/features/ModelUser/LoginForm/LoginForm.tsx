@@ -31,10 +31,6 @@ const LoginForm: React.FC<LoginFormProps> = ({ close, OpenModalAuto }: LoginForm
     const HandlerEmail = useCallback((e: string) => {
         dispatch(setEmail(e))
     }, [email])
-    // const ClickHandler = () => {
-    //     close()
-    //     dispatch(logUser({ email, password })).then(() => dispatch(fetchFirstPageGoods()))
-    // }
     const ClickHandler = useCallback(() => {
         dispatch(logUser({ email, password, callback: close })).then((response) => {
             dispatch(fetchFirstPageGoods({ replace: true }))

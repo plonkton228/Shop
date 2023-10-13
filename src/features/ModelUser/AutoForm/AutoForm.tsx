@@ -39,7 +39,10 @@ const AutoForm: React.FC<LoginFormProps> = ({ close }: LoginFormProps) => {
         dispatch(setEmail(e))
     }, [email])
     const ClickHandler = useCallback(() => {
-        dispatch(authUser({ email, password, lastname, name, callback: close }))
+        dispatch(authUser({ email, password, lastname, name, callback: close })).then(() =>
+        {
+            dispatch(fetchFirstPageGoods({ replace: true }))
+        })
     }, [password, name, lastname, email, dispatch, close])
     const validErros = {
         [ErrorAuth.INCORRECT_EMAIL]: t('Zadali jste nesprávné e-mailové informace'),

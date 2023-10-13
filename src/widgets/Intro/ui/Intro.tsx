@@ -13,7 +13,7 @@ export const Intro: React.FC = () => {
                     <h1> {t('Udržte s námi')} <span>{t('ekologii a ušetřete')}</span>  </h1>
                 </div>
             </div>
-            <LinkCustom to={PathRouts.home} state={StateLink.LINKINTRO} classes={cls.linkMargin}>{t('Jad Objednat?')}</LinkCustom>
+            <LinkCustom to={PathRouts.aboutus} state={StateLink.LINKINTRO} classes={cls.linkMargin}>{t('Jad Objednat?')}</LinkCustom>
         </div>
     </>)
 }

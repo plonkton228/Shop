@@ -19,6 +19,7 @@ import { ButtonCustomState } from 'share/ui/ButtonCustom/ui/ButtonCustom'
 import { useAppDispatch } from 'share/libs/useRedux/useRedux'
 import { logout } from 'entities/User'
 import { fetchFirstPageGoods } from 'pages/GoodsPage/models/actions/fetchFirstPageGoods'
+import {useNavigate} from "react-router-dom";
 
 interface InnerProfileProps {
     isLoading?: boolean
@@ -45,12 +46,14 @@ const InnerProfile: React.FC<InnerProfileProps> = memo((props: InnerProfileProps
     const [open, setOpen] = useState<boolean>(false)
     const dispatch = useAppDispatch()
     const errors = useSelector(getErrorProfile)
+    const navigate = useNavigate()
     const HandlerOpen = useCallback(() => {
         setOpen(prevState => !prevState)
     }, [open])
     const logOut = useCallback(() => {
         HandlerCloseSideBar()
         dispatch(logout())
+        navigate('/')
         dispatch(fetchFirstPageGoods({ replace: true }))
     }, [name, lastname])
     const validate = {

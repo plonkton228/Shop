@@ -2,7 +2,7 @@ import {
     createEntityAdapter,
     createSlice
 } from '@reduxjs/toolkit'
-import { type comment, type CommentSchema } from '../types/CommentSchema'
+import {type comment, type CommentSchema, ErrorsComment} from '../types/CommentSchema'
 import { type GlobalScheme } from 'app/providers/Redux/models/types/ReduxType'
 import { fetchGoodById } from 'entities/Good/models/actions/fetchGoodById'
 import { fetchCommentById } from 'entities/Comments/models/actions/fetchCommentById'
@@ -18,7 +18,7 @@ const commentSlice = createSlice({
     initialState: commentAdapter.getInitialState<CommentSchema>({
         ids: [],
         isLoading: false,
-        error: '',
+        error: undefined,
         entities: {
         }
     }),
@@ -34,7 +34,7 @@ const commentSlice = createSlice({
         }),
         builder.addCase(fetchCommentById.rejected, (state, action) => {
             state.isLoading = false
-            state.error = action.error as string
+            state.error = action.payload as ErrorsComment
         })
 
     )

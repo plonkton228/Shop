@@ -18,13 +18,12 @@ export const authUser = createAsyncThunk<User | string, UserInfo, ThunkConfig<Er
         return rejectWithValue(errors)
     }
     try {
-        const data = await api.post<User>('users', { email: userFiled.email, password: userFiled.password })
+        const data = await api.post<User>('users', { email: userFiled.email, password: userFiled.password, name: userFiled.name })
         const data2 = await api.post<Profile>('profile', { id: data.data.id, name: userFiled.name, lastname: userFiled.lastname })
         if (!data.data || !data2.data) {
             throw new Error()
         }
         localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(data.data))
-        console.log('complete')
         dispatch(AutoUser(data.data))
         userFiled.callback()
         return data.data

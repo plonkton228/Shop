@@ -8,10 +8,13 @@ export interface comment {
     goodsId?: string
     userId?: string
 }
-
+export enum ErrorsComment {
+    SERVER_ERROR = 'SERVER_ERROR',
+    INCORRECT_DATA = 'INCORRECT_DATA'
+}
 export interface CommentSchema extends EntityState<comment> {
     isLoading: boolean
-    error: string
+    error: ErrorsComment[]
     comment?: comment[]
 }
 
@@ -20,3 +23,5 @@ export interface typeForActionAddComment {
     userId: string
     text: string
 }
+
+

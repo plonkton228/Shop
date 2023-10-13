@@ -1,4 +1,4 @@
-import { getTextAddComment, setText } from '../index'
+import {getErrorAddComment, getTextAddComment, setText} from '../index'
 import { InputCustom, InputState } from 'share/ui/InputCustom/ui/InputCustom'
 import { ButtonCustom } from 'share/ui/ButtonCustom'
 import { ButtonCustomState } from 'share/ui/ButtonCustom/ui/ButtonCustom'
@@ -10,11 +10,14 @@ import { useSelector } from 'react-redux'
 import { createComment } from 'entities/Comments/models/actions/createComment'
 import { useParams } from 'react-router-dom'
 import { getUser } from 'entities/User/models/selectors/getUser/getUser'
+import {ErrorsComment} from "entities/Comments/models/types/CommentSchema";
+import {getErrorComment} from "entities/Comments";
 
 const AddComment: React.FC = memo(() => {
     const { t } = useTranslation('goods')
     const id = useParams<{ id: string }>()
     const dispatch = useAppDispatch()
+    const errors = useSelector(getErrorComment)
     const text = useSelector(getTextAddComment)
     const user = useSelector(getUser)
     const ClickHandler = useCallback(() => {
@@ -24,8 +27,13 @@ const AddComment: React.FC = memo(() => {
     const onChangeHandler = useCallback((e: string) => {
         dispatch(setText(e))
     }, [dispatch])
+    const validateObj = {
+        [ErrorsComment.INCORRECT_DATA]: t('Vyplňte komentář'),
+        [ErrorsComment.SERVER_ERROR]: t('Zaregistrujte se zde')
+    }
     return (<>
         <div className={cls.AddContainer} >
+            <h3>{errors?.map((error) => validateObj[error])}</h3>
             <InputCustom value={text} onChange={onChangeHandler} classe={cls.InputCustom} placeholder= 'napsat komentář...' state={InputState.COMMENTINPUT}></InputCustom>
             <ButtonCustom classes={cls.ButtonSend} onClick={ClickHandler} state={ButtonCustomState.BUTTONPURCHASE}>{t('Odejít')}</ButtonCustom>
         </div>

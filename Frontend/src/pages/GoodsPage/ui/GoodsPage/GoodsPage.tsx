@@ -16,6 +16,7 @@ const GoodsPage: React.FC = () => {
     const hasMore = useSelector(getHasMoreGoods)
     const dispatch = useAppDispatch()
     useEffect(() => {
+        window.scrollTo(0, 0);
         dispatch(fetchGoods({ replace: false }))
 
         return () => {

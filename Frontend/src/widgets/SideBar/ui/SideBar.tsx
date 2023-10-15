@@ -10,7 +10,8 @@ interface SideBarProps {
     children?: React.ReactNode
     lazy?: boolean
 }
-const ANIMATION_DELAY = 300
+const ANIMATION_DELAY_CLOSE = 300
+const ANIMATION_DELAY_OPENING = 100
 export const SideBar: React.FC<SideBarProps> = (props: SideBarProps) => {
     const [hide, setHide] = useState<boolean>(true)
     const [isClosing, setIsClosing] = useState<boolean>(false)
@@ -28,13 +29,13 @@ export const SideBar: React.FC<SideBarProps> = (props: SideBarProps) => {
             setIsClosing(false)
             setIsOpening(false)
             setOpen()
-        }, ANIMATION_DELAY)
+        }, ANIMATION_DELAY_CLOSE)
     }, [])
 
      useEffect(() => {
         current.current = setTimeout(() => {
             setIsOpening(true)
-        }, ANIMATION_DELAY)
+        },ANIMATION_DELAY_OPENING)
     }, [])
 
 

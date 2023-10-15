@@ -5,14 +5,14 @@ import { useEffect } from 'react'
 import { useAppDispatch } from 'share/libs/useRedux/useRedux'
 import { reAuth } from 'entities/User'
 import { Footer } from 'widgets/Footer'
-import cls from './styles/app.module.scss'
+
 const App: React.FC = () => {
     const dispatch = useAppDispatch()
     useEffect(() => {
         dispatch(reAuth())
     }, [])
     return (<>
-        <div className = {cls.FlexContainer}>
+        <div>
             <NavBar/>
             <Routing/>
             <Footer/>

@@ -3,8 +3,12 @@ import profile from '../models/imgs/Profile.png'
 import job from '../models/imgs/Job.png'
 import key from '../models/imgs/Key.png'
 import cls from '../models/styles/AboutPage.module.scss'
+import {useEffect} from "react";
 const ProjectPage: React.FC = () => {
     const { t } = useTranslation()
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (<>
         <div className={cls.Container_About}>
             <h1>{t('Jak objednat?')}</h1>

@@ -1,7 +1,7 @@
 import axios, { type AxiosInstance } from 'axios'
 import { USER_LOCALSTORAGE_KEY } from 'share/const/localstorage'
 
-const BaseURL = __API__ || 'http://62.233.46.97:8000'
+const BaseURL = __API__ || 'http://localhost:8000'
 console.log(localStorage.getItem(USER_LOCALSTORAGE_KEY))
 
 export class API {

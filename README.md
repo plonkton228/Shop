@@ -1,2 +1,2 @@
 # Shop
-PS смотреть ветки : Docker/Release
+PS смотреть ветку : Docker

@@ -4,10 +4,10 @@ import { type ThunkConfig } from 'app/providers/Redux/models/types/ReduxType'
 import { API } from 'share/api/api'
 import { getSortGoods } from 'pages/GoodsPage/models/selectors/goodsPageSelector'
 
-interface fechFirstPageGood {
+interface fetchSortPageGood {
     replace?: boolean
 }
-export const fetchFirstPageGoods = createAsyncThunk<Good[], fechFirstPageGood, ThunkConfig<string>>('gooods/fetchFisrtPage', async (arg, thunkAPI) => {
+export const fetchSortPageGood = createAsyncThunk<Good[], fetchSortPageGood, ThunkConfig<string>>('gooods/fetchFisrtPage', async (arg, thunkAPI) => {
     const { rejectWithValue, getState } = thunkAPI
     const sort = getSortGoods(getState()) || 'panel'
     const api = new API()

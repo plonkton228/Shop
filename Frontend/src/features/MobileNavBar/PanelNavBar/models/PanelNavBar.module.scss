@@ -14,6 +14,7 @@
   overflow-y: scroll;
   overflow-x:hidden ;
   align-items: stretch;
+  z-index: 10;
 }
 
 .Container_MobileBar hr {
@@ -35,4 +36,9 @@
 
 .Inner_Container {
   overflow: hidden;
+}
+
+.close {
+  height: 0;
+  transition: all 0.3s linear;
 }

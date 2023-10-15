@@ -10,7 +10,7 @@ import { getEmail, setEmail } from 'entities/Email'
 import { useAppDispatch } from 'share/libs/useRedux/useRedux'
 import { getErrorAuth } from '../models/selectors/getErrorAuth/getErrorAuth'
 import { ErrorAuth } from '../models/types/AuthUserSchema'
-import { fetchFirstPageGoods } from 'pages/GoodsPage/models/actions/fetchFirstPageGoods'
+import { fetchSortPageGood } from 'pages/GoodsPage/models/actions/fetchSortPageGood'
 import { getName, setName } from 'entities/Name'
 import { getLastName, setLastName } from 'entities/Lastname'
 import { authUser } from 'features/ModelUser/models/actions/authUser'
@@ -40,7 +40,7 @@ const AutoForm: React.FC<LoginFormProps> = ({ close }: LoginFormProps) => {
     }, [email])
     const ClickHandler = useCallback(() => {
         dispatch(authUser({ email, password, lastname, name, callback: close })).then(() => {
-            dispatch(fetchFirstPageGoods({ replace: true }))
+            dispatch(fetchSortPageGood({ replace: true }))
         })
     }, [password, name, lastname, email, dispatch, close])
     const validErros = {

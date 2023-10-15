@@ -12,7 +12,7 @@ import { getEmail, setEmail } from 'entities/Email'
 import { logUser } from '../models/actions/logUser'
 import { useAppDispatch } from 'share/libs/useRedux/useRedux'
 import { ErrorsLog } from '../models/types/AuthUserSchema'
-import { fetchFirstPageGoods } from 'pages/GoodsPage/models/actions/fetchFirstPageGoods'
+import { fetchSortPageGood } from 'pages/GoodsPage/models/actions/fetchSortPageGood'
 import { getErrorLog } from 'features/ModelUser/models/selectors/getErrorLog/getErrorLog'
 
 interface LoginFormProps {
@@ -33,7 +33,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ close, OpenModalAuto }: LoginForm
     }, [email])
     const ClickHandler = useCallback(() => {
         dispatch(logUser({ email, password, callback: close })).then((response) => {
-            dispatch(fetchFirstPageGoods({ replace: true }))
+            dispatch(fetchSortPageGood({ replace: true }))
         })
 
     }, [dispatch, email, password])

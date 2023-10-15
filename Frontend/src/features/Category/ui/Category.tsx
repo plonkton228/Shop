@@ -1,45 +1,44 @@
 import cls from '../models/Category.module.scss'
-import { memo, useCallback } from 'react'
+import {memo, useCallback, useEffect} from 'react'
 import { useTranslation } from 'react-i18next'
 import { useAppDispatch } from 'share/libs/useRedux/useRedux'
 import { setSort } from 'pages/GoodsPage'
 import { ButtonCustom } from 'share/ui/ButtonCustom'
 import { ButtonCustomState } from 'share/ui/ButtonCustom/ui/ButtonCustom'
-import { fetchFirstPageGoods } from 'pages/GoodsPage/models/actions/fetchFirstPageGoods'
+import { fetchSortPageGood } from 'pages/GoodsPage/models/actions/fetchSortPageGood'
 
 export const Category: React.FC = memo(() => {
     const { t } = useTranslation('profile')
     const dispatch = useAppDispatch()
     const clickPanel = useCallback(() => {
         dispatch(setSort('panel'))
-        dispatch(fetchFirstPageGoods({ replace: true }))
+        dispatch(fetchSortPageGood({ replace: true }))
     }, [dispatch])
 
     const clickKonektor = useCallback(() => {
         dispatch(setSort('konektor'))
-        dispatch(fetchFirstPageGoods({ replace: true }))
+        dispatch(fetchSortPageGood({ replace: true }))
     }, [dispatch])
 
     const clickKabel = useCallback(() => {
         dispatch(setSort('kabel'))
-        dispatch(fetchFirstPageGoods({ replace: true }))
+        dispatch(fetchSortPageGood({ replace: true }))
     }, [dispatch])
 
     const clickBatarie = useCallback(() => {
         dispatch(setSort('batarie'))
-        dispatch(fetchFirstPageGoods({ replace: true }))
+        dispatch(fetchSortPageGood({ replace: true }))
     }, [dispatch])
 
     const clickMaterial = useCallback(() => {
         dispatch(setSort('material'))
-        dispatch(fetchFirstPageGoods({ replace: true }))
+        dispatch(fetchSortPageGood({ replace: true }))
     }, [dispatch])
 
     const clickConverter = useCallback(() => {
         dispatch(setSort('converter'))
-        dispatch(fetchFirstPageGoods({ replace: true }))
+        dispatch(fetchSortPageGood({ replace: true }))
     }, [dispatch])
-
     return (<>
         <div className={cls.ContainerCategory} >
             <div className={cls.InnerCategory}>

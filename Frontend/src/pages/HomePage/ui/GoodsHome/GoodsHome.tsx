@@ -1,11 +1,11 @@
 import { useSelector } from 'react-redux'
-import { getErrorGoodsPage, getGoods, getLoadingGoodsPage } from 'pages/GoodsPage'
+import {getErrorGoodsPage, getGoods, getLoadingGoodsPage, setSort} from 'pages/GoodsPage'
 import { GoodsList } from 'entities/Good'
 import { useTranslation } from 'react-i18next'
 import { Skeleton, SkeletonState } from 'share/ui/Skeleton'
 import { useEffect } from 'react'
 import { useAppDispatch } from 'share/libs/useRedux/useRedux'
-import { fetchFirstPageGoods } from 'pages/GoodsPage/models/actions/fetchFirstPageGoods'
+import { fetchSortPageGood } from 'pages/GoodsPage/models/actions/fetchSortPageGood'
 import cls from './GoodsHome.module.scss'
 export const GoodsHome: React.FC = () => {
     const isLoadgin = useSelector(getLoadingGoodsPage)
@@ -14,7 +14,12 @@ export const GoodsHome: React.FC = () => {
     const dispatch = useAppDispatch()
     const { t } = useTranslation('main')
     useEffect(() => {
-        dispatch(fetchFirstPageGoods({ replace: true }))
+        dispatch(fetchSortPageGood({ replace: true }))
+
+        return () => {
+            dispatch(setSort(undefined))
+            dispatch(fetchSortPageGood({ replace: true }))
+        }
     }, [])
     const SkeletonProvider = () => {
         return (<div className = {cls.SkeletonGoodsContaier}>

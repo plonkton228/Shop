@@ -7,7 +7,7 @@ import { type GlobalScheme } from 'app/providers/Redux/models/types/ReduxType'
 import { type Good } from 'entities/Good'
 import { fetchGoods } from '../actions/fetchGoods'
 import { type PayloadAction } from '@reduxjs/toolkit/dist/createAction'
-import { fetchFirstPageGoods } from 'pages/GoodsPage/models/actions/fetchFirstPageGoods'
+import { fetchSortPageGood } from 'pages/GoodsPage/models/actions/fetchSortPageGood'
 
 const goodsAdapter = createEntityAdapter<Good>({
     selectId: (comment) => comment.id
@@ -60,11 +60,11 @@ const commentSlice = createSlice({
             state.error = action.error as string
         }),
 
-        builder.addCase(fetchFirstPageGoods.pending, (state, action) => {
+        builder.addCase(fetchSortPageGood.pending, (state, action) => {
             state.isLoading = true
             goodsAdapter.removeAll(state)
         }),
-        builder.addCase(fetchFirstPageGoods.fulfilled, (state, action) => {
+        builder.addCase(fetchSortPageGood.fulfilled, (state, action) => {
             state.isLoading = false
             state.error = undefined
             if (action.meta.arg.replace) {
@@ -73,7 +73,7 @@ const commentSlice = createSlice({
             goodsAdapter.addMany(state, action.payload)
 
         }),
-        builder.addCase(fetchFirstPageGoods.rejected, (state, action) => {
+        builder.addCase(fetchSortPageGood.rejected, (state, action) => {
             state.isLoading = false
             state.error = action.error as string
         })

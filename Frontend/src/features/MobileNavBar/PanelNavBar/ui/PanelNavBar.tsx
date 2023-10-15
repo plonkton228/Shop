@@ -1,6 +1,6 @@
 import cls from '../models/PanelNavBar.module.scss'
 import { useClassName } from 'share/libs/useClassName/useClassName'
-import { useEffect, useState } from 'react'
+import {useCallback, useEffect, useRef, useState} from 'react'
 import { LanguageSwitcherMobile } from 'features/LanguageSwitcherMobile/ui/LanguageSwitcherMobile'
 import { LinkCustom } from 'share/ui/LinkCustom'
 import { StateLink } from 'share/ui/LinkCustom/ui/LinkCustom'
@@ -8,24 +8,33 @@ import { useTranslation } from 'react-i18next'
 import { PathRouts } from 'app/providers/Routing/lib/Store'
 
 interface PanelNavBarProps {
-    Open: boolean
+    Open: boolean,
+    isOpening: boolean,
+    isClosing?: boolean,
 }
+
 const PanelNavBar: React.FC<PanelNavBarProps> = (props: PanelNavBarProps) => {
     const [hide, setHide] = useState<boolean>(true)
     const { t } = useTranslation('navbar')
+
     const {
-        Open
+        Open,
+        isOpening,
+        isClosing
     } = props
+
     useEffect(() => {
-        if (hide && Open) {
+        if (Open) {
             setHide(false)
         }
     }, [Open])
-    if (hide) {
+    if (hide && !Open) {
         return null
     }
     return (<>
-        <div className={useClassName({ cls: cls.Container_MobileBar, mode: { [cls.open]: Open }, classes: [] })}>
+        <div className={useClassName({ cls: cls.Container_MobileBar, mode: { [cls.open]: isOpening , [cls.close]: isClosing}, classes: [] })}>
+            <hr/>
+            <LinkCustom to={PathRouts.home} state={StateLink.LINKMOBILE}>{t('Domů')}</LinkCustom>
             <hr/>
             <LinkCustom to={PathRouts.goods} state={StateLink.LINKMOBILE}>{t('solární panel')}</LinkCustom>
             <hr/>
@@ -50,8 +59,6 @@ const PanelNavBar: React.FC<PanelNavBarProps> = (props: PanelNavBarProps) => {
             <hr/>
             <LinkCustom to={'#'} state={StateLink.LINKMOBILE}>{t('O společnosti')}</LinkCustom>
             <hr/>
-
-            <LanguageSwitcherMobile/>
         </div>
     </>)
 }

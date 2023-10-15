@@ -9,7 +9,7 @@
   height: 100vh;
   transition: all 0.3s linear;
 
-  z-index: 10;
+  z-index: 100;
 
 }
 
@@ -36,13 +36,13 @@
 
 
 
-.OpenB {
+.OpenOuter {
   background-color: rgb(0 0 0  / 60%);
   pointer-events: auto;
   opacity: 1;
 }
 
-.OpenS {
+.OpenInner {
   width: 305px;
   transition: all 0.3s linear;
 }

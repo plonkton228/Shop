@@ -14,6 +14,7 @@ const ANIMATION_DELAY = 300
 export const SideBar: React.FC<SideBarProps> = (props: SideBarProps) => {
     const [hide, setHide] = useState<boolean>(true)
     const [isClosing, setIsClosing] = useState<boolean>(false)
+    const [isOpening , setIsOpening] = useState<boolean>(false)
     const current = useRef<ReturnType<typeof setTimeout>>()
     const {
         Open,
@@ -25,12 +26,20 @@ export const SideBar: React.FC<SideBarProps> = (props: SideBarProps) => {
         setIsClosing(true)
         current.current = setTimeout(() => {
             setIsClosing(false)
+            setIsOpening(false)
             setOpen()
         }, ANIMATION_DELAY)
     }, [])
 
+     useEffect(() => {
+        current.current = setTimeout(() => {
+            setIsOpening(true)
+        }, ANIMATION_DELAY)
+    }, [])
+
+
     useEffect(() => {
-        if (lazy && Open) {
+        if (Open) {
             setHide(false)
         }
     }, [Open])
@@ -39,8 +48,8 @@ export const SideBar: React.FC<SideBarProps> = (props: SideBarProps) => {
     }
     return (
         <Portal element={document.body}>
-            <div className={ useClassName({ cls: cls.SideBar, mode: { [cls.OpenB]: Open, [cls.closing]: isClosing }, classes: [] }) }>
-                <div className={ useClassName({ cls: cls.SideBarContainer, mode: { [cls.OpenS]: Open, [cls.closing]: isClosing }, classes: [] }) } >
+            <div className={ useClassName({ cls: cls.SideBar, mode: { [cls.OpenOuter]: isOpening, [cls.closing]: isClosing }, classes: [] }) }>
+                <div className={ useClassName({ cls: cls.SideBarContainer, mode: { [cls.OpenInner]: isOpening, [cls.closing]: isClosing }, classes: [] }) } >
                     <ButtonCustom onClick={Closing} state={ButtonCustomState.BUTTONCLOSE}/>
                     {children}
                 </div>

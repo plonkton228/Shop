@@ -18,7 +18,7 @@ import { ButtonCustom } from 'share/ui/ButtonCustom'
 import { ButtonCustomState } from 'share/ui/ButtonCustom/ui/ButtonCustom'
 import { useAppDispatch } from 'share/libs/useRedux/useRedux'
 import { logout } from 'entities/User'
-import { fetchFirstPageGoods } from 'pages/GoodsPage/models/actions/fetchFirstPageGoods'
+import { fetchSortPageGood } from 'pages/GoodsPage/models/actions/fetchSortPageGood'
 import { useNavigate } from 'react-router-dom'
 
 interface InnerProfileProps {
@@ -54,7 +54,7 @@ const InnerProfile: React.FC<InnerProfileProps> = memo((props: InnerProfileProps
         HandlerCloseSideBar()
         dispatch(logout())
         navigate('/')
-        dispatch(fetchFirstPageGoods({ replace: true }))
+        dispatch(fetchSortPageGood({ replace: true }))
     }, [name, lastname])
     const validate = {
         [ErrorsProfile.NO_USER_NAME]: t('Pole jména musí být vyplněno'),

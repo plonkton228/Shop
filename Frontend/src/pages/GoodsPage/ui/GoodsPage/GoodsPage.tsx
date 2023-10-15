@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import { getGoods, getLoadingGoodsPage } from 'pages/GoodsPage'
+import {getGoods, getLoadingGoodsPage, setPage} from 'pages/GoodsPage'
 import { getHasMoreGoods } from 'pages/GoodsPage/models/selectors/goodsPageSelector'
 import { useAppDispatch } from 'share/libs/useRedux/useRedux'
 import { useCallback, useEffect } from 'react'
@@ -17,6 +17,10 @@ const GoodsPage: React.FC = () => {
     const dispatch = useAppDispatch()
     useEffect(() => {
         dispatch(fetchGoods({ replace: false }))
+
+        return () => {
+            dispatch(setPage(1))
+        }
     }, [])
 
     const FetchNextItems = useCallback(() => {

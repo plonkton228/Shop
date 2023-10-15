@@ -28,10 +28,9 @@ const AddComment: React.FC = memo(() => {
         [ErrorsComment.INCORRECT_DATA]: t('Vyplňte komentář'),
         [ErrorsComment.SERVER_ERROR]: t('Zaregistrujte se zde')
     }
-    console.log(errors)
     return (<>
         <div className={cls.AddContainer} >
-            <h3>{errors?.map((error) => validateObj[error])}</h3>
+            <h3 className={cls.Error}>{errors?.map((error) => validateObj[error])}</h3>
             <InputCustom value={text} onChange={onChangeHandler} classe={cls.InputCustom} placeholder= 'napsat komentář...' state={InputState.COMMENTINPUT}></InputCustom>
             <ButtonCustom classes={cls.ButtonSend} onClick={ClickHandler} state={ButtonCustomState.BUTTONPURCHASE}>{t('Odejít')}</ButtonCustom>
         </div>

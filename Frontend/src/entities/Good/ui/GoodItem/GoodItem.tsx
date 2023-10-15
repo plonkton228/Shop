@@ -1,4 +1,4 @@
-import { memo, useCallback, useState } from 'react'
+import {memo, useCallback, useEffect, useState} from 'react'
 import { useTranslation } from 'react-i18next'
 import panel1 from './imgs/panel1.png'
 import panel2 from './imgs/panel2.png'
@@ -44,6 +44,9 @@ export const GoodItem: React.FC<GoodItemProps> = memo((props: GoodItemProps) => 
             Charakteristika: false
         })
     }, [state])
+    useEffect(() => {
+        window.scroll(0,0)
+    }, []);
     return (<>
         <div className = {cls.ContainerItem}>
             <div className={cls.PurchaseContainer}>

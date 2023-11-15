@@ -6,6 +6,7 @@ import { getLoadingProfile, profileReducer, getReadOnly, fetchProfile, setInfo, 
 import { DynamicProvider } from 'share/libs/DynamicRedux/DynamicProvider'
 import { AsyncInnerProfile } from '../../InnerProfiel/ui/AsyncInnerProfile'
 import { getUser } from 'entities/User/models/selectors/getUser/getUser'
+import { passwordReducer } from 'entities/Password'
 
 interface ProfileSideBarProps {
     Open: boolean
@@ -36,7 +37,7 @@ export const ProfileSideBar: React.FC<ProfileSideBarProps> = memo((props: Profil
     }, [dispatch])
 
     return (<>
-        <DynamicProvider DynamicReducers={ { profile: profileReducer } }>
+        <DynamicProvider DynamicReducers={ { profile: profileReducer, password: passwordReducer } }>
             <SideBar lazy={true} setOpen={HandlerOpen} Open={Open}>
                 <AsyncInnerProfile HandlerCloseSideBar = {HandlerOpen} EditFirstName={EditFirstName} EditEmail={EditEmail} readOnly={readOnly} first_name={first_name} email={email} isLoading={isLoading} />
             </SideBar>

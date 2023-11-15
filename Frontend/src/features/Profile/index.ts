@@ -4,6 +4,6 @@ export { getLoadingProfile } from './models/selectors/getLoadingProfile/getLoadi
 export { getReadOnly } from './models/selectors/getReadOnly/getReadOnly'
 export { getFormProfile } from './models/selectors/getFormProfile/getFormProfile'
 export { fetchProfile } from './models/actions/fetchProfile'
-export { updateEmail } from './models/actions/updateEmail'
+export { updateEmail } from './models/actions/updatePassword'
 export { getEmailProfile } from './models/selectors/getEmailProfile/getEmailProfile'
 export { getFirstNameProfile } from './models/selectors/getFirstNameProfile/getFirstNameProfile'

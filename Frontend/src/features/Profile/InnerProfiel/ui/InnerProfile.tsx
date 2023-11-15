@@ -13,7 +13,6 @@ import { InputCustom, InputState } from 'share/ui/InputCustom/ui/InputCustom'
 import HeaderProfile from 'features/Profile/HeaderProfile/ui/HeaderProfile'
 import { getErrorProfile } from 'features/Profile/models/selectors/getErrorProfile/getErrorProfile'
 import { useSelector } from 'react-redux/es/exports'
-import { ErrorsEmailUpdate } from '../../models/types/ProfileType'
 import { ButtonCustom } from 'share/ui/ButtonCustom'
 import { ButtonCustomState } from 'share/ui/ButtonCustom/ui/ButtonCustom'
 import { useAppDispatch } from 'share/libs/useRedux/useRedux'
@@ -56,18 +55,10 @@ const InnerProfile: React.FC<InnerProfileProps> = memo((props: InnerProfileProps
         navigate('/')
         dispatch(fetchSortPageGood({ replace: true }))
     }, [email, first_name])
-    const validate = {
-        [ErrorsEmailUpdate.NO_USER_EMAIL]: t('Pole příjmení musí být vyplněno'),
-        [ErrorsEmailUpdate.ERROR_SERVER]: t('Něco se pokazilo')
-    }
     return (<>
         <div className={ cls.ProfileContainer }>
             <div className={ cls.FlexContainer }>
                 <h1>{t('účet')}</h1>
-                {/* eslint-disable-next-line i18next/no-literal-string */}
-                {
-                    errorsEmail?.map((error) => <h1 key={error} className={cls.error}>{validate[error]}</h1>)
-                }
                 { isLoading
                     ? <Loader state={LoaderState.Secondary}/>
                     : <div>
@@ -79,7 +70,7 @@ const InnerProfile: React.FC<InnerProfileProps> = memo((props: InnerProfileProps
                 <div className={ cls.ContentContainer }> <img src={Order}/> <LinkCustom to = '#' state={StateLink.LINKRESET}>{t('Moje objednávky')}</LinkCustom></div>
                 <div onClick={HandlerOpen} className={ cls.ContentContainer }> <img src={Setting}/> <LinkCustom to = '#' state={StateLink.LINKRESET}>{t('Nastavení')}</LinkCustom></div>
                 <div className={ useClassName({ cls: cls.ContentContainerSet, mode: { [cls.open]: open }, classes: [] })}>
-                    <HeaderProfile first_name={first_name} email={email}/>
+                    <HeaderProfile/>
                 </div>
                 <div className={ cls.ContentContainer }> <img src={LogOut}/> <ButtonCustom onClick={logOut} state={ButtonCustomState.NAVBARBUTTON}>{t('Vystupte')}</ButtonCustom></div>
             </div>

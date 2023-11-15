@@ -1,13 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { fetchProfile } from 'features/Profile/models/actions/fetchProfile'
-import { type ErrorsEmailUpdate, type Profile, type ProfileSchema } from '../types/ProfileType'
-import { type PayloadAction } from '@reduxjs/toolkit/dist/createAction'
-import { updateEmail } from '../actions/updateEmail'
+import { type ErrorsPasswordUpdate, type Profile, type ProfileSchema } from '../types/ProfileType'
+import { updatePassword } from '../actions/updatePassword'
 
 const initialState: ProfileSchema = {
     isLoading: undefined,
-    errorsEmail: undefined,
-    readonly: true,
+    errorsPassword: undefined,
     data: undefined
 }
 
@@ -15,19 +13,7 @@ const ProfileSlice = createSlice({
     name: 'Profile',
     initialState,
     reducers: {
-        setReadonly (state, action: PayloadAction<boolean>) {
-            state.readonly = action.payload
-        },
-        setInfo (state, action: PayloadAction<Profile>) {
-            state.form = {
-                ...state.form,
-                ...action.payload
-            }
-        },
-        cancelEdit (state) {
-            state.readonly = true
-            state.form = state.data
-        }
+       
     },
     extraReducers: (builder) => {
         builder.addCase(fetchProfile.pending, (state) => {
@@ -37,29 +23,25 @@ const ProfileSlice = createSlice({
 
             state.isLoading = false
             state.data = action.payload
-            state.form = action.payload
         })
         builder.addCase(fetchProfile.rejected, (state, action) => {
             state.isLoading = false
-            state.errorsEmail = action.payload as ErrorsEmailUpdate[]
+            state.errorsPassword = action.payload as ErrorsPasswordUpdate[]
         })
 
-        builder.addCase(updateEmail.pending, (state) => {
+        builder.addCase(updatePassword.pending, (state) => {
             state.isLoading = true
         })
-        builder.addCase(updateEmail.fulfilled, (state, action) => {
+        builder.addCase(updatePassword.fulfilled, (state, action) => {
             state.isLoading = false
-            state.data = {email: action.payload, ...state.data}
-            state.form = {email: action.payload, ...state.data}
-            state.readonly = true
-            state.errorsEmail = undefined
+            state.errorsPassword = undefined
         })
-        builder.addCase(updateEmail.rejected, (state, action) => {
+        builder.addCase(updatePassword.rejected, (state, action) => {
             state.isLoading = false
-            state.errorsEmail = action.payload as ErrorsEmailUpdate[]
+            state.errorsPassword = action.payload as ErrorsPasswordUpdate[]
         })
     }
 })
 
 export const profileReducer = ProfileSlice.reducer
-export const { setReadonly, setInfo, cancelEdit } = ProfileSlice.actions
+

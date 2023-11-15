@@ -5,7 +5,8 @@ import cls from '../models/InputCustom.module.scss'
 export enum InputState {
     MODALINPUT = 'modalInput',
     RESETINPUT = 'resetInput',
-    COMMENTINPUT = 'CommentInput'
+    COMMENTINPUT = 'CommentInput',
+    INPUTPAYMENT = 'InputPayment'
 }
 interface InputCustomProps {
     onChange?: (e: string) => void

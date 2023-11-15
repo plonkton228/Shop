@@ -4,7 +4,7 @@ import { type EntityState } from '@reduxjs/toolkit'
 export interface comment {
     id: string
     user: User
-    body: string
+    content: string
     goodsId?: string
     userId?: string
 }

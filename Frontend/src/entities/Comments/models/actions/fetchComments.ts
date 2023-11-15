@@ -7,12 +7,7 @@ export const fetchComments = createAsyncThunk<comment[], string, ThunkConfig<str
     const { rejectWithValue } = thunkAPI
     const api = new API().apiInstance
     try {
-        const data = await api.get<comment[]>('/comments', {
-            params: {
-                goodsId: id,
-                _expand: 'user'
-            }
-        })
+        const data = await api.get<comment[]>(`/products/${id}/reviews/`)
         if (!data.data) {
             throw new Error()
         }

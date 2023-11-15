@@ -49,7 +49,7 @@ export const NavBar: React.FC = memo(() => {
         {
             authData
                 ? openSideBar && <ProfileSideBar HandlerOpen={HandlerSideBarToggle} Open={openSideBar}/>
-                : (openModalLogin && <ModelLog OpenModalAuto={OpenModalAuto} isOpen={openModalLogin} close={CloseModalLogin}/>) || (openModalAuto && <ModelAuto isOpen={openModalAuto} close={CloseModalAuto}/>)
+                : (openModalLogin && <ModelLog OpenModalAuto={OpenModalAuto} isOpen={openModalLogin} close={CloseModalLogin}/>) || (openModalAuto && <ModelAuto OpenLogForm={OpenModalLogin} isOpen={openModalAuto} close={CloseModalAuto}/>)
         }
 
     </>)

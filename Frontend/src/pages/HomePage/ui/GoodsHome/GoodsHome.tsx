@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import {getErrorGoodsPage, getGoods, getLoadingGoodsPage, setSort} from 'pages/GoodsPage'
+import {getErrorGoodsPage, getGoods, getLoadingGoodsPage, setSearch} from 'pages/GoodsPage'
 import { GoodsList } from 'entities/Good'
 import { useTranslation } from 'react-i18next'
 import { Skeleton, SkeletonState } from 'share/ui/Skeleton'
@@ -13,11 +13,12 @@ export const GoodsHome: React.FC = () => {
     const error = useSelector(getErrorGoodsPage)
     const dispatch = useAppDispatch()
     const { t } = useTranslation('main')
+    console.log(arrGoods)
     useEffect(() => {
         dispatch(fetchSortPageGood({ replace: true }))
 
         return () => {
-            dispatch(setSort(undefined))
+            dispatch(setSearch(undefined))
             dispatch(fetchSortPageGood({ replace: true }))
         }
     }, [])

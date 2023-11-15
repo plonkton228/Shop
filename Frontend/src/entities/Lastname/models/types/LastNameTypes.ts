@@ -1,4 +1,4 @@
 export interface LastNameSchema {
-    lastname: string
+    last_name: string
     error?: string
 }

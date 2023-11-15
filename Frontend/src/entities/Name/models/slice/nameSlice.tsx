@@ -1,7 +1,7 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import { type NameSchema } from '../types/NameType'
 const initialState: NameSchema = {
-    name: ''
+    first_name: undefined
 }
 
 export const nameSlice = createSlice({
@@ -9,7 +9,7 @@ export const nameSlice = createSlice({
     initialState,
     reducers: {
         setName (state, action: PayloadAction<string>) {
-            state.name = action.payload
+            state.first_name = action.payload
         }
     }
 })

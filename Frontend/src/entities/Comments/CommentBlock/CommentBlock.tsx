@@ -35,7 +35,7 @@ export const CommentBlock: React.FC<CommentBlockProps> = memo((props: CommentBlo
             <AddComment/>
             <div className={cls.InnerCommentsContainer}>
                 {
-                    com.map((elem) => <Comment key = { elem.id } userName={elem.user?.name} body={elem?.body}/>)
+                    com.map((elem) => <Comment key = { elem.id } userName={elem.user?.first_name} body={elem?.content}/>)
                 }
             </div>
         </div>

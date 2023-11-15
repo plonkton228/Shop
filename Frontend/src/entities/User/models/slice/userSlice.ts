@@ -1,6 +1,7 @@
 import { type User, type UserScheme } from 'entities/User/models/type/UserSchema'
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
-import { USER_LOCALSTORAGE_KEY } from 'share/const/localstorage'
+import { TOKEN_COOKIES, USER_COOKIES } from 'share/const/localstorage'
+import Cookies from 'js-cookie'
 
 const initialState: UserScheme = {
 }
@@ -10,16 +11,20 @@ const userSlice = createSlice({
     initialState,
     reducers: {
         AutoUser (state, action: PayloadAction<User>) {
+            Cookies.set(USER_COOKIES, JSON.stringify(action.payload))
             state.authData = action.payload
         },
         reAuth (state) {
-            const dataUser = localStorage.getItem(USER_LOCALSTORAGE_KEY)
-            if (dataUser) {
+            const dataUser = Cookies.get(USER_COOKIES)
+            const token = Cookies.get(TOKEN_COOKIES)
+            if(dataUser && token) {
+                console.log(token)
                 state.authData = JSON.parse(dataUser)
+                state.token = token
             }
         },
         logout (state) {
-            localStorage.removeItem(USER_LOCALSTORAGE_KEY)
+            Cookies.remove(USER_COOKIES)
             state.authData = undefined
         }
     }

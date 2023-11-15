@@ -5,7 +5,6 @@ import {
 import { type GoodsPageSchema } from '../types/GoodsPageSchema'
 import { type GlobalScheme } from 'app/providers/Redux/models/types/ReduxType'
 import { type Good } from 'entities/Good'
-import { fetchGoods } from '../actions/fetchGoods'
 import { type PayloadAction } from '@reduxjs/toolkit/dist/createAction'
 import { fetchSortPageGood } from 'pages/GoodsPage/models/actions/fetchSortPageGood'
 
@@ -22,43 +21,21 @@ const commentSlice = createSlice({
         isLoading: false,
         error: undefined,
         entities: {
-        },
-        page: 1,
-        limit: 6,
-        hasMore: true
+        }
     }),
     reducers: {
-        setPage (state, action: PayloadAction<number>) {
-            state.page = action.payload
-        },
         setSearch (state, action: PayloadAction<string>) {
             state.search = action.payload
         },
-        setSort (state, action: PayloadAction<string>) {
-            state.sort = action.payload
-        }
+
+        setSearchMain (state, action: PayloadAction<string>) {
+            state.searchMain = action.payload
+        },
+    
+    
     },
     extraReducers: (builder) => (
-        builder.addCase(fetchGoods.pending, (state, action) => {
-            state.isLoading = true
-            if (action.meta.arg.replace) {
-                goodsAdapter.removeAll(state)
-            }
-        }),
-        builder.addCase(fetchGoods.fulfilled, (state, action) => {
-            state.isLoading = false
-            state.hasMore = action.payload.length > 0
-            if (action.meta.arg.replace) {
-                goodsAdapter.setAll(state, action.payload)
-            } else {
-                goodsAdapter.addMany(state, action.payload)
-            }
 
-        }),
-        builder.addCase(fetchGoods.rejected, (state, action) => {
-            state.isLoading = false
-            state.error = action.error as string
-        }),
 
         builder.addCase(fetchSortPageGood.pending, (state, action) => {
             state.isLoading = true
@@ -81,4 +58,4 @@ const commentSlice = createSlice({
     )
 })
 export const goodsPageReducer = commentSlice.reducer
-export const { setPage, setSearch, setSort } = commentSlice.actions
+export const {  setSearch, setSearchMain } = commentSlice.actions

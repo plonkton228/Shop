@@ -12,17 +12,19 @@ export enum ButtonCustomState {
     BUTTONCANCLE = 'ButtonCancle',
     BUTTONPURCHASE = 'ButtonPurchase',
     BUTTONINFO = 'ButtonInfo',
-    BUTTONAUTO = 'AutoButton'
+    BUTTONAUTO = 'AutoButton',
+    BUTTONBASKET = 'ButtonBasket'
 }
 
 interface ButtonCustomProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children?: React.ReactNode
     classes?: string
+    mode?: Record<string, boolean>
     state: ButtonCustomState
 }
-export const ButtonCustom: React.FC<ButtonCustomProps> = memo(({ children, classes, state, ...otherProps }: ButtonCustomProps) => {
+export const ButtonCustom: React.FC<ButtonCustomProps> = memo(({ children, classes, state, mode = {}, ...otherProps }: ButtonCustomProps) => {
     return (<>
-        <button className={useClassName({ cls: cls.buttonC, mode: {}, classes: [cls[state], classes] })} {...otherProps}>
+        <button className={useClassName({ cls: cls.buttonC, mode: mode, classes: [cls[state], classes] })} {...otherProps}>
             {children}
         </button>
     </>)

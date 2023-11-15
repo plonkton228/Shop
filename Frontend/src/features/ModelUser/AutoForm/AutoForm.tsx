@@ -17,8 +17,9 @@ import { authUser } from 'features/ModelUser/models/actions/authUser'
 
 interface LoginFormProps {
     close: () => void
+    OpenLogForm: () => void
 }
-const AutoForm: React.FC<LoginFormProps> = ({ close }: LoginFormProps) => {
+const AutoForm: React.FC<LoginFormProps> = ({ close, OpenLogForm }: LoginFormProps) => {
     const password = useSelector(getPassword)
     const email = useSelector(getEmail)
     const name = useSelector(getName)
@@ -39,9 +40,7 @@ const AutoForm: React.FC<LoginFormProps> = ({ close }: LoginFormProps) => {
         dispatch(setEmail(e))
     }, [email])
     const ClickHandler = useCallback(() => {
-        dispatch(authUser({ email, password, lastname, name, callback: close })).then(() => {
-            dispatch(fetchSortPageGood({ replace: true }))
-        })
+        dispatch(authUser({ email, password, lastname, name, close: close }))
     }, [password, name, lastname, email, dispatch, close])
     const validErros = {
         [ErrorAuth.INCORRECT_EMAIL]: t('Zadali jste nesprávné e-mailové informace'),

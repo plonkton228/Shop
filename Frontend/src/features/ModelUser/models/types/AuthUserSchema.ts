@@ -3,8 +3,10 @@ export interface UserInfo {
     password: string
     name?: string
     lastname?: string
-    callback?: () => void
+    close?: () => void
+    OpenModalLog?: () => void
 }
+
 
 export enum ErrorsLog {
     ERROR_SERVER = 'ERROR_SERVER',

@@ -2,21 +2,24 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 import { type Good } from 'entities/Good'
 import { type ThunkConfig } from 'app/providers/Redux/models/types/ReduxType'
 import { API } from 'share/api/api'
-import { getSortGoods } from 'pages/GoodsPage/models/selectors/goodsPageSelector'
+import { getSearchGoods, getSearchMainGoods } from 'pages/GoodsPage/models/selectors/goodsPageSelector'
 
 interface fetchSortPageGood {
     replace?: boolean
 }
 export const fetchSortPageGood = createAsyncThunk<Good[], fetchSortPageGood, ThunkConfig<string>>('gooods/fetchFisrtPage', async (arg, thunkAPI) => {
     const { rejectWithValue, getState } = thunkAPI
-    const sort = getSortGoods(getState()) || 'panel'
+    const sort = getSearchGoods(getState()) || ''
+    const search = getSearchMainGoods(getState()) || ''
     const api = new API()
     try {
-        const data = await api.apiInstance.get<Good[]>('/goods', {
+        const data = await api.apiInstance.get<Good[]>('/BaseProductListView', {
             params: {
-                q: sort
+                ProductDescription: sort,
+                name: search
             }
         })
+        console.log(data.data)
         if (!data.data) {
             throw new Error()
         }

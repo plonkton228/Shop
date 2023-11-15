@@ -1,5 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit'
-import { type ProfileSchema } from 'features/Profile/models/types/ProfileType'
-import { getProfileState } from 'features/Profile/models/selectors/getProfileState/getProfileState'
+import { type ProfileSchema } from '../../types/ProfileType'
+import { getProfileState } from '../getProfileState/getProfileState'
 
-export const getErrorProfile = createSelector(getProfileState, (state: ProfileSchema) => state?.errors)
+export const getErrorProfile = createSelector(getProfileState, (state: ProfileSchema) => state?.errorsEmail)

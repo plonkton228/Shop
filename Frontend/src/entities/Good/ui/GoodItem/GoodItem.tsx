@@ -10,13 +10,13 @@ import { ButtonCustomState } from 'share/ui/ButtonCustom/ui/ButtonCustom'
 import { CommentBlock } from 'entities/Comments'
 import { DynamicProvider } from 'share/libs/DynamicRedux/DynamicProvider'
 import { addCommentReducer } from 'features/AddComment'
-import { type CharacteristicGood, type StructureGood } from '../../models/types/GoodType'
+import { type Parametrs } from '../../models/types/GoodType'
 
 interface GoodItemProps {
     id: string
-    Characteristic: CharacteristicGood
-    Structure: StructureGood
+    parametrs: Parametrs
     model: string
+    price: string
 
 }
 interface StateComponent {
@@ -26,9 +26,9 @@ interface StateComponent {
 export const GoodItem: React.FC<GoodItemProps> = memo((props: GoodItemProps) => {
     const {
         id,
-        Characteristic,
-        Structure,
-        model
+        parametrs,
+        model,
+        price
     } = props
     const [state, setState] = useState<StateComponent>({ Charakteristika: true, Comments: false })
     const { t } = useTranslation('goods')
@@ -58,7 +58,7 @@ export const GoodItem: React.FC<GoodItemProps> = memo((props: GoodItemProps) => 
                 <div className={cls.Panel}>
                     <h2 style={{ fontSize: '30px' }}>{t('SUNERGY')}435w-450w</h2>
                     <h2>{t('solární panel')}</h2>
-                    <h2>300.00 {t('Kč')}</h2>
+                    <h2> {price} {t('Kč')}</h2>
                     <ButtonCustom classes={cls.buttonPurchase} state={ButtonCustomState.BUTTONPURCHASE}>{t('Přidat do košíku')}</ButtonCustom>
                 </div>
             </div>
@@ -75,26 +75,26 @@ export const GoodItem: React.FC<GoodItemProps> = memo((props: GoodItemProps) => 
                         <div className={cls.CharacteristicContainer}>
                             <h1>{t('Statická přenosová charakteristika')}</h1>
                             <div className={cls.InnerInfoContainer}>
-                                <div><p>{t('Jmenovitý výkon')}</p> <p>{Characteristic?.Ratedpower}</p></div>
-                                <div><p>{t('Voc')}</p> <p>{Characteristic?.Voc}</p></div>
-                                <div><p>{t('Isc')}</p> <p>{Characteristic?.Isc}</p></div>
-                                <div><p>{t('Vmp')}</p> <p>{Characteristic?.Vmp}</p></div>
-                                <div><p>{t('Imp')}</p> <p>{Characteristic?.Imp}</p></div>
-                                <div><p>{t('Účinnost')}</p> <p>{Characteristic?.Účinnost}</p></div>
-                                <div><p>{t('Tolerance')}</p> <p>{Characteristic?.Tolerance}</p></div>
-                                <div><p>{t('Maximální napětí systému')}</p> <p>{Characteristic?.Maximální}</p></div>
-                                <div><p>{t('Tlak větru/sněhu')}</p> <p>{Characteristic?.Tlak}</p></div>
+                                <div><p>{t('Jmenovitý výkon')}</p> <p>{parametrs?.Ratedpower}</p></div>
+                                <div><p>{t('Voc')}</p> <p>{parametrs?.Voc}</p></div>
+                                <div><p>{t('Isc')}</p> <p>{parametrs?.Isc}</p></div>
+                                <div><p>{t('Vmp')}</p> <p>{parametrs?.Vmp}</p></div>
+                                <div><p>{t('Imp')}</p> <p>{parametrs?.Imp}</p></div>
+                                <div><p>{t('Účinnost')}</p> <p>{parametrs?.Účinnost}</p></div>
+                                <div><p>{t('Tolerance')}</p> <p>{parametrs?.Tolerance}</p></div>
+                                <div><p>{t('Maximální napětí systému')}</p> <p>{parametrs?.Maximální}</p></div>
+                                <div><p>{t('Tlak větru/sněhu')}</p> <p>{parametrs?.Tlak}</p></div>
                             </div>
                         </div>
                         <div className={cls.StructureContainer}>
                             <h1>{t('Strukturální vlastnost')}</h1>
                             <div className={cls.InnerInfoContainer}>
-                                <div><p>{t('Rozměr')}</p>  <p>{Structure?.Rozměr}</p></div>
-                                <div><p>{t('Tloušťka')}</p>  <p>{Structure?.Tloušťka}</p></div>
-                                <div><p>{t('Weight')}</p>  <p>{Structure?.Weight}</p></div>
-                                <div><p>{t('Článek')}</p>  <p>{Structure?.Článek}</p></div>
-                                <div><p>{t('Propojovací skříňka')}</p>  <p>{Structure?.Propojovací}</p></div>
-                                <div><p>{t('Konektor')}</p>  <p>{Structure?.Konektor}</p></div>
+                                <div><p>{t('Rozměr')}</p>  <p>{parametrs?.Rozměr}</p></div>
+                                <div><p>{t('Tloušťka')}</p>  <p>{parametrs?.Tloušťka}</p></div>
+                                <div><p>{t('Weight')}</p>  <p>{parametrs?.Weight}</p></div>
+                                <div><p>{t('Článek')}</p>  <p>{parametrs?.Článek}</p></div>
+                                <div><p>{t('Propojovací skříňka')}</p>  <p>{parametrs?.Propojovací}</p></div>
+                                <div><p>{t('Konektor')}</p>  <p>{parametrs?.Konektor}</p></div>
                             </div>
                         </div>
                     </>

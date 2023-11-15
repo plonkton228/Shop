@@ -19,7 +19,8 @@ const AddComment: React.FC = memo(() => {
     const text = useSelector(getTextAddComment)
     const user = useSelector(getUser)
     const ClickHandler = useCallback(() => {
-        dispatch(createComment({ goodsId: id.id, text, userId: user.id }))
+         console.log('ho')
+        dispatch(createComment({ goodsId: id.id, text, author: user.first_name }))
     }, [dispatch, text])
     const onChangeHandler = useCallback((e: string) => {
         dispatch(setText(e))

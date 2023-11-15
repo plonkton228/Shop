@@ -2,7 +2,7 @@ import cls from '../models/Category.module.scss'
 import {memo, useCallback, useEffect} from 'react'
 import { useTranslation } from 'react-i18next'
 import { useAppDispatch } from 'share/libs/useRedux/useRedux'
-import { setSort } from 'pages/GoodsPage'
+import { setSearch } from 'pages/GoodsPage'
 import { ButtonCustom } from 'share/ui/ButtonCustom'
 import { ButtonCustomState } from 'share/ui/ButtonCustom/ui/ButtonCustom'
 import { fetchSortPageGood } from 'pages/GoodsPage/models/actions/fetchSortPageGood'
@@ -11,32 +11,32 @@ export const Category: React.FC = memo(() => {
     const { t } = useTranslation('profile')
     const dispatch = useAppDispatch()
     const clickPanel = useCallback(() => {
-        dispatch(setSort('panel'))
+        dispatch(setSearch('panel'))
         dispatch(fetchSortPageGood({ replace: true }))
     }, [dispatch])
 
     const clickKonektor = useCallback(() => {
-        dispatch(setSort('konektor'))
+        dispatch(setSearch('konektor'))
         dispatch(fetchSortPageGood({ replace: true }))
     }, [dispatch])
 
     const clickKabel = useCallback(() => {
-        dispatch(setSort('kabel'))
+        dispatch(setSearch('kabel'))
         dispatch(fetchSortPageGood({ replace: true }))
     }, [dispatch])
 
     const clickBatarie = useCallback(() => {
-        dispatch(setSort('batarie'))
+        dispatch(setSearch('batarie'))
         dispatch(fetchSortPageGood({ replace: true }))
     }, [dispatch])
 
     const clickMaterial = useCallback(() => {
-        dispatch(setSort('material'))
+        dispatch(setSearch('material'))
         dispatch(fetchSortPageGood({ replace: true }))
     }, [dispatch])
 
     const clickConverter = useCallback(() => {
-        dispatch(setSort('converter'))
+        dispatch(setSearch('converter'))
         dispatch(fetchSortPageGood({ replace: true }))
     }, [dispatch])
     return (<>

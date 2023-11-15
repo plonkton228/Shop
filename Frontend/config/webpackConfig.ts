@@ -26,3 +26,4 @@ export const webpackConfig = (settings : WebpackSettings): webpack.Configuration
 
   }
 }
+ 

@@ -12,13 +12,14 @@ import { AsyncAutoForm } from '../AutoForm/AsyncAutoForm'
 interface ModalWindowProps {
     isOpen: boolean
     close: () => void
+    OpenLogForm: () => void
 }
-export const ModelAuto: React.FC<ModalWindowProps> = memo(({ isOpen, close }: ModalWindowProps) => {
+export const ModelAuto: React.FC<ModalWindowProps> = memo(({ isOpen, close, OpenLogForm }: ModalWindowProps) => {
     return (<>
         <Portal element={document.body}>
             <Modal lazy={true} isOpen={isOpen} close={close}>
                 <DynamicProvider DynamicReducers={{ auth: AuthReducer, email: emailReducer, password: passwordReducer, name: nameReducer, lastname: lastNameReducer }}>
-                    <AsyncAutoForm close={close}/>
+                    <AsyncAutoForm OpenLogForm={OpenLogForm} close={close}/>
                 </DynamicProvider>
             </Modal>
         </Portal>

@@ -7,10 +7,11 @@ export const fetchGoodById = createAsyncThunk<Good, string, ThunkConfig<string>>
     const { rejectWithValue } = thunkAPI
     const api = new API().apiInstance
     try {
-        const data = await api.get<Good>(`/goods/${id}`)
+        const data = await api.get<Good>(`/products/${id}`)
         if (!data.data) {
             throw new Error()
         }
+        console.log(data.data)
         return data.data
     } catch (e) {
         return rejectWithValue(e)

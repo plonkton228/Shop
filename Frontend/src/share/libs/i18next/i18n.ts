@@ -20,27 +20,34 @@ import NavBarGR from '../../../../public/locales/gr/NavBarMobile.json'
 import GoodsCz from '../../../../public/locales/cz/goods.json'
 import GoodsEn from '../../../../public/locales/en/goods.json'
 import GoodsGr from '../../../../public/locales/gr/goods.json'
+
+import BasketCz from '../../../../public/locales/cz/basket.json'
+import BasketEn from '../../../../public/locales/en/basket.json'
+import BasketGr from '../../../../public/locales/gr/basket.json'
 const resources = {
     en: {
         main: en,
         modal: EnModal,
         profile: EnProfile,
         navbar: NavBarEN,
-        goods: GoodsEn
+        goods: GoodsEn,
+        basket: BasketEn
     },
     cz: {
         main: cz,
         modal: CzModal,
         profile: CZProfile,
         navbar: NavBarCZ,
-        goods: GoodsCz
+        goods: GoodsCz,
+        basket: BasketCz
     },
     gr: {
         main: gr,
         modal: GrModal,
         profile: GrProfile,
         navbar: NavBarGR,
-        goods: GoodsGr
+        goods: GoodsGr,
+        basket: BasketGr
     }
 }
 i18n

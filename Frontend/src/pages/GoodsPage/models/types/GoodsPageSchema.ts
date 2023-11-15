@@ -5,9 +5,7 @@ export interface GoodsPageSchema extends EntityState<Good> {
     isLoading: boolean
     error: string
     goods?: Good[]
-    limit?: number
-    page?: number
-    hasMore: boolean
     search?: string
-    sort?: string
+    searchMain?: string
+    
 }

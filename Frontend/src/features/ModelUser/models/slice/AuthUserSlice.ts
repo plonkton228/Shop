@@ -2,6 +2,7 @@ import { type AuthUserSchema } from '../types/AuthUserSchema'
 import { createSlice } from '@reduxjs/toolkit'
 import { logUser } from '../actions/logUser'
 import { authUser } from '../actions/authUser'
+import { userMe } from '../actions/userMe'
 
 const initialState: AuthUserSchema = {
     isLoading: false,
@@ -27,6 +28,7 @@ const AuthUserSlice = createSlice({
             state.errorLog = action.payload
         })
 
+
         builder.addCase(authUser.pending, (state) => {
             state.isLoading = true
         })
@@ -37,6 +39,19 @@ const AuthUserSlice = createSlice({
         builder.addCase(authUser.rejected, (state, action) => {
             state.isLoading = false
             state.errorAuth = action.payload
+        })
+
+
+        builder.addCase(userMe.pending, (state) => {
+            state.isLoading = true
+        })
+        builder.addCase(userMe.fulfilled, (state) => {
+            state.isLoading = false
+            state.errorAuth = undefined
+        })
+        builder.addCase(userMe.rejected, (state) => {
+            state.isLoading = false
+    
         })
     }
 })

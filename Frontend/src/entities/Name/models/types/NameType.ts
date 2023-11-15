@@ -1,4 +1,4 @@
 export interface NameSchema {
-    name: string
+    first_name: string
     error?: string
 }

@@ -1,4 +1,4 @@
-export interface CharacteristicGood {
+export interface Parametrs {
     Ratedpower: string
     Voc: string
     Isc: string
@@ -8,9 +8,6 @@ export interface CharacteristicGood {
     Tolerance: string
     Maximální: string
     Tlak: string
-}
-
-export interface StructureGood {
     Rozměr: string
     Tloušťka: string
     Weight: string
@@ -18,11 +15,12 @@ export interface StructureGood {
     Propojovací: string
     Konektor: string
 }
+
 export interface Good {
     id: string
-    model: string
-    Characteristic: CharacteristicGood
-    Structure: StructureGood
+    name: string
+    parameters: Parametrs
+    price: string
 }
 
 export interface GoodSchema {

@@ -3,15 +3,15 @@ import { memo, useCallback } from 'react'
 import { ButtonCustom } from 'share/ui/ButtonCustom'
 import { ButtonCustomState } from 'share/ui/ButtonCustom/ui/ButtonCustom'
 import { useSelector } from 'react-redux/es/exports'
-import { getReadOnly, updateProfile, cancelEdit } from 'features/Profile'
+import { getReadOnly, updateEmail, cancelEdit } from '../../index'
 import { useAppDispatch } from 'share/libs/useRedux/useRedux'
 import { setReadonly } from 'features/Profile/models/profileSlice/profileSlice'
 import cls from '../models/HeaderProfile.module.scss'
 import { getUser } from 'entities/User/models/selectors/getUser/getUser'
 
 interface HedaerProfileProps {
-    name: string
-    lastname: string
+    email: string
+    first_name: string
 }
 const HeaderProfile: React.FC<HedaerProfileProps> = memo((props: HedaerProfileProps) => {
 
@@ -20,8 +20,8 @@ const HeaderProfile: React.FC<HedaerProfileProps> = memo((props: HedaerProfilePr
     const dispatch = useAppDispatch()
     const user = useSelector(getUser)
     const {
-        name,
-        lastname
+        email,
+        first_name
     } = props
     const onEdit = useCallback(() => {
         dispatch(setReadonly(false))
@@ -31,8 +31,8 @@ const HeaderProfile: React.FC<HedaerProfileProps> = memo((props: HedaerProfilePr
     }, [dispatch])
 
     const UpdateHandler = useCallback(() => {
-        dispatch(updateProfile({ lastname, name, id: user.id }))
-    }, [dispatch, lastname, name])
+        dispatch(updateEmail(email))
+    }, [dispatch, email, first_name])
 
     return (<>
         {

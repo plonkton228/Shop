@@ -14,10 +14,9 @@ export const createComment = createAsyncThunk<comment, typeForActionAddComment, 
         return rejectWithValue(errors)
     }
     try {
-        const data = await api.post<comment>('comments', {
-            goodsId: payload.goodsId,
-            userId: payload.userId,
-            body: payload.text
+        const data = await api.patch<comment>(`/reviews/${payload.goodsId}`, {
+            content: payload.text,
+            author: payload.author
         })
         if (!data.data) {
             throw new Error()

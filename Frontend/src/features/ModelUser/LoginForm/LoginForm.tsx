@@ -32,7 +32,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ close, OpenModalAuto }: LoginForm
         dispatch(setEmail(e))
     }, [email])
     const ClickHandler = useCallback(() => {
-        dispatch(logUser({ email, password, callback: close })).then((response) => {
+        dispatch(logUser({ email, password, close: close, OpenModalLog: OpenModalAuto })).then((response) => {
             dispatch(fetchSortPageGood({ replace: true }))
         })
 

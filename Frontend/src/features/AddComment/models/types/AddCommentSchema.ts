@@ -5,7 +5,7 @@ export enum ErrorsComment {
 
 export interface typeForActionAddComment {
     goodsId: string
-    userId: string
+    author: string
     text: string
 }
 

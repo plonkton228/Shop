@@ -1,34 +1,27 @@
 import { useSelector } from 'react-redux'
-import {getGoods, getLoadingGoodsPage, setPage} from 'pages/GoodsPage'
-import { getHasMoreGoods } from 'pages/GoodsPage/models/selectors/goodsPageSelector'
+import {getGoods, getLoadingGoodsPage, getSearchGoods} from 'pages/GoodsPage'
 import { useAppDispatch } from 'share/libs/useRedux/useRedux'
-import { useCallback, useEffect } from 'react'
-import { fetchGoods } from 'pages/GoodsPage/models/actions/fetchGoods'
+import {  useEffect } from 'react'
 import cls from 'pages/GoodsPage/ui/GoodsPage/GoodsPage.module.scss'
 import { Skeleton, SkeletonState } from 'share/ui/Skeleton'
 import { GoodsList } from 'entities/Good'
 import { Page } from 'share/ui/Page/Page'
 import { SearchGoods } from 'pages/GoodsPage/ui/SearchGoods/ui/SearchGoods'
+import { fetchSortPageGood } from 'pages/GoodsPage/models/actions/fetchSortPageGood'
+import { getSearchMainGoods } from 'pages/GoodsPage/models/selectors/goodsPageSelector'
 
 const GoodsPage: React.FC = () => {
     const arrGoods = useSelector(getGoods.selectAll)
     const isLoading = useSelector(getLoadingGoodsPage)
-    const hasMore = useSelector(getHasMoreGoods)
+    const search = useSelector(getSearchMainGoods)
     const dispatch = useAppDispatch()
     useEffect(() => {
         window.scrollTo(0, 0);
-        dispatch(fetchGoods({ replace: false }))
+        dispatch(fetchSortPageGood({replace: true}))
 
-        return () => {
-            dispatch(setPage(1))
-        }
-    }, [])
+    }, [search])
 
-    const FetchNextItems = useCallback(() => {
-        if (hasMore) {
-            dispatch(fetchGoods({ replace: false }))
-        }
-    }, [dispatch, hasMore])
+
     const SkeletonsLoader = () => {
         return (<>
             <div className={cls.SkeletonGoodsContaier}>
@@ -45,7 +38,8 @@ const GoodsPage: React.FC = () => {
         </>)
     }
     return (<>
-        <Page onScrollEnd={FetchNextItems}>
+
+        <Page>
             <div className={cls.InputConatiner}><SearchGoods/></div>
             <GoodsList goods={arrGoods}/>
             {isLoading && <SkeletonsLoader/>}

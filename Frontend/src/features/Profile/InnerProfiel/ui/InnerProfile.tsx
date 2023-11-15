@@ -13,7 +13,7 @@ import { InputCustom, InputState } from 'share/ui/InputCustom/ui/InputCustom'
 import HeaderProfile from 'features/Profile/HeaderProfile/ui/HeaderProfile'
 import { getErrorProfile } from 'features/Profile/models/selectors/getErrorProfile/getErrorProfile'
 import { useSelector } from 'react-redux/es/exports'
-import { ErrorsProfile } from 'features/Profile/models/types/ProfileType'
+import { ErrorsEmailUpdate } from '../../models/types/ProfileType'
 import { ButtonCustom } from 'share/ui/ButtonCustom'
 import { ButtonCustomState } from 'share/ui/ButtonCustom/ui/ButtonCustom'
 import { useAppDispatch } from 'share/libs/useRedux/useRedux'
@@ -23,29 +23,29 @@ import { useNavigate } from 'react-router-dom'
 
 interface InnerProfileProps {
     isLoading?: boolean
-    name?: string
-    lastname?: string
+    first_name?: string
+    email?: string
     error?: string
     readOnly?: boolean
-    EditName?: () => void
-    EditLastName?: () => void
+    EditFirstName?: () => void
+    EditEmail?: () => void
     HandlerCloseSideBar?: () => void
 }
 const InnerProfile: React.FC<InnerProfileProps> = memo((props: InnerProfileProps) => {
     const {
         isLoading,
-        name,
-        lastname,
+        email,
+        first_name,
         error,
         readOnly,
-        EditName,
-        EditLastName,
+        EditFirstName,
+        EditEmail,
         HandlerCloseSideBar
     } = props
     const { t } = useTranslation('profile')
     const [open, setOpen] = useState<boolean>(false)
     const dispatch = useAppDispatch()
-    const errors = useSelector(getErrorProfile)
+    const errorsEmail = useSelector(getErrorProfile)
     const navigate = useNavigate()
     const HandlerOpen = useCallback(() => {
         setOpen(prevState => !prevState)
@@ -55,11 +55,10 @@ const InnerProfile: React.FC<InnerProfileProps> = memo((props: InnerProfileProps
         dispatch(logout())
         navigate('/')
         dispatch(fetchSortPageGood({ replace: true }))
-    }, [name, lastname])
+    }, [email, first_name])
     const validate = {
-        [ErrorsProfile.NO_USER_NAME]: t('Pole jména musí být vyplněno'),
-        [ErrorsProfile.NO_USER_LASTNAME]: t('Pole příjmení musí být vyplněno'),
-        [ErrorsProfile.ERROR_SERVER]: t('Něco se pokazilo')
+        [ErrorsEmailUpdate.NO_USER_EMAIL]: t('Pole příjmení musí být vyplněno'),
+        [ErrorsEmailUpdate.ERROR_SERVER]: t('Něco se pokazilo')
     }
     return (<>
         <div className={ cls.ProfileContainer }>
@@ -67,20 +66,20 @@ const InnerProfile: React.FC<InnerProfileProps> = memo((props: InnerProfileProps
                 <h1>{t('účet')}</h1>
                 {/* eslint-disable-next-line i18next/no-literal-string */}
                 {
-                    errors?.map((error) => <h1 key={error} className={cls.error}>{validate[error]}</h1>)
+                    errorsEmail?.map((error) => <h1 key={error} className={cls.error}>{validate[error]}</h1>)
                 }
                 { isLoading
                     ? <Loader state={LoaderState.Secondary}/>
                     : <div>
 
-                        <div className={cls.InputContainer}> <p>{t('název')}</p> : <InputCustom onChange={EditName} readonly={readOnly} value={name} state={InputState.RESETINPUT}></InputCustom> </div>
-                        <div className={cls.InputContainer}> <p>{t('příjmení')}</p> : <InputCustom onChange={EditLastName} readonly={readOnly} value={lastname} state={InputState.RESETINPUT}></InputCustom> </div>
+                        <div className={cls.InputContainer}> <p>{t('název')}</p> : <InputCustom onChange={EditEmail} readonly={readOnly} value={email} state={InputState.RESETINPUT}></InputCustom> </div>
+                        <div className={cls.InputContainer}> <p>{t('příjmení')}</p> : <InputCustom onChange={EditFirstName} readonly={true} value={first_name} state={InputState.RESETINPUT}></InputCustom> </div>
                     </div>
                 }
                 <div className={ cls.ContentContainer }> <img src={Order}/> <LinkCustom to = '#' state={StateLink.LINKRESET}>{t('Moje objednávky')}</LinkCustom></div>
                 <div onClick={HandlerOpen} className={ cls.ContentContainer }> <img src={Setting}/> <LinkCustom to = '#' state={StateLink.LINKRESET}>{t('Nastavení')}</LinkCustom></div>
                 <div className={ useClassName({ cls: cls.ContentContainerSet, mode: { [cls.open]: open }, classes: [] })}>
-                    <HeaderProfile name={name} lastname={lastname}/>
+                    <HeaderProfile first_name={first_name} email={email}/>
                 </div>
                 <div className={ cls.ContentContainer }> <img src={LogOut}/> <ButtonCustom onClick={logOut} state={ButtonCustomState.NAVBARBUTTON}>{t('Vystupte')}</ButtonCustom></div>
             </div>

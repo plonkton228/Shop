@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { fetchProfile } from 'features/Profile/models/actions/fetchProfile'
-import { type ErrorsProfile, type Profile, type ProfileSchema } from 'features/Profile/models/types/ProfileType'
+import { type ErrorsEmailUpdate, type Profile, type ProfileSchema } from '../types/ProfileType'
 import { type PayloadAction } from '@reduxjs/toolkit/dist/createAction'
-import { updateProfile } from 'features/Profile/models/actions/updateProfile'
+import { updateEmail } from '../actions/updateEmail'
 
 const initialState: ProfileSchema = {
     isLoading: undefined,
-    errors: undefined,
+    errorsEmail: undefined,
     readonly: true,
     data: undefined
 }
@@ -41,22 +41,22 @@ const ProfileSlice = createSlice({
         })
         builder.addCase(fetchProfile.rejected, (state, action) => {
             state.isLoading = false
-            state.errors = action.payload as ErrorsProfile[]
+            state.errorsEmail = action.payload as ErrorsEmailUpdate[]
         })
 
-        builder.addCase(updateProfile.pending, (state) => {
+        builder.addCase(updateEmail.pending, (state) => {
             state.isLoading = true
         })
-        builder.addCase(updateProfile.fulfilled, (state, action) => {
+        builder.addCase(updateEmail.fulfilled, (state, action) => {
             state.isLoading = false
-            state.data = action.payload
-            state.form = action.payload
+            state.data = {email: action.payload, ...state.data}
+            state.form = {email: action.payload, ...state.data}
             state.readonly = true
-            state.errors = undefined
+            state.errorsEmail = undefined
         })
-        builder.addCase(updateProfile.rejected, (state, action) => {
+        builder.addCase(updateEmail.rejected, (state, action) => {
             state.isLoading = false
-            state.errors = action.payload as ErrorsProfile[]
+            state.errorsEmail = action.payload as ErrorsEmailUpdate[]
         })
     }
 })

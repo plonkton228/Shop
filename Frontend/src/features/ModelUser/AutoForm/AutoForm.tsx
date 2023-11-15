@@ -5,7 +5,7 @@ import { ButtonCustomState } from 'share/ui/ButtonCustom/ui/ButtonCustom'
 import cls from './AutoForm.module.scss'
 import { getPassword, setPassword } from 'entities/Password'
 import { useSelector } from 'react-redux'
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 import { getEmail, setEmail } from 'entities/Email'
 import { useAppDispatch } from 'share/libs/useRedux/useRedux'
 import { getErrorAuth } from '../models/selectors/getErrorAuth/getErrorAuth'
@@ -14,12 +14,14 @@ import { fetchSortPageGood } from 'pages/GoodsPage/models/actions/fetchSortPageG
 import { getName, setName } from 'entities/Name'
 import { getLastName, setLastName } from 'entities/Lastname'
 import { authUser } from 'features/ModelUser/models/actions/authUser'
+import VerifyWindow from './VerifyWondow'
 
 interface LoginFormProps {
     close: () => void
     OpenLogForm: () => void
 }
 const AutoForm: React.FC<LoginFormProps> = ({ close, OpenLogForm }: LoginFormProps) => {
+    const [open, setOpen] = useState<boolean>(false)
     const password = useSelector(getPassword)
     const email = useSelector(getEmail)
     const name = useSelector(getName)
@@ -40,8 +42,17 @@ const AutoForm: React.FC<LoginFormProps> = ({ close, OpenLogForm }: LoginFormPro
         dispatch(setEmail(e))
     }, [email])
     const ClickHandler = useCallback(() => {
-        dispatch(authUser({ email, password, lastname, name, close: close }))
-    }, [password, name, lastname, email, dispatch, close])
+        dispatch(authUser({ email, password, lastname, name, close: close, OpenModalLog: ClickHandlerVerifyOpen }))
+    }, [password, name, lastname, email, dispatch, close, open, setOpen])
+    const ClickHandlerVerifyClose = useCallback(() => {
+        setOpen(false)
+    },[open])
+    const ClickHandlerVerifyOpen = useCallback(() => {
+        setOpen(true)
+    },[open])
+    
+
+
     const validErros = {
         [ErrorAuth.INCORRECT_EMAIL]: t('Zadali jste nesprávné e-mailové informace'),
         [ErrorAuth.INCORRECT_PASSWORD]: t('Zadali jste nesprávné heslo'),
@@ -78,6 +89,7 @@ const AutoForm: React.FC<LoginFormProps> = ({ close, OpenLogForm }: LoginFormPro
                 </div>
                 <ButtonCustom onClick={ClickHandler} classes={cls.BottanLogin} state={ButtonCustomState.BUTTONMODAL}>{t('Registrovat')}</ButtonCustom>
             </div>
+            <VerifyWindow isOpen = {open} close={ClickHandlerVerifyClose} />
         </div>
     )
 

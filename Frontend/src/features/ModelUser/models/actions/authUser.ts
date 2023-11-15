@@ -13,7 +13,6 @@ export const authUser = createAsyncThunk<User | string, UserInfo, ThunkConfig<Er
     const api = new API().apiInstance
     const errors = validateErrorAuth(userFiled)
     if (errors.length) {
-        console.log(errors)
         return rejectWithValue(errors)
     }
     try {

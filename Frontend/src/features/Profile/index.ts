@@ -1,0 +1,6 @@
+export { ProfileSideBar } from './ProfileSideBar/ui/ProfileSideBar'
+export { profileReducer } from './models/profileSlice/profileSlice'
+export { getLoadingProfile } from './models/selectors/getLoadingProfile/getLoadingProfile'
+export { fetchProfile } from './models/actions/fetchProfile'
+export { getEmailProfile } from './models/selectors/getEmailProfile/getEmailProfile'
+export { getFirstNameProfile } from './models/selectors/getFirstNameProfile/getFirstNameProfile'
